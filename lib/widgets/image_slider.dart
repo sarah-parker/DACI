@@ -29,7 +29,7 @@ class ImageSlider extends StatelessWidget {
     ];
 
     return ImageSlideshow(
-        initialPage: Random().nextInt(7),
+        initialPage: Random().nextInt(images.length - 1),
         height: height,
         width: width,
         autoPlayInterval: 5000,
