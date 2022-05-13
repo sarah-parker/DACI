@@ -1,6 +1,9 @@
+import 'package:daci/constants/text.dart';
 import 'package:daci/widgets/button_data.dart';
+import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/material.dart';
+import 'package:vrouter/vrouter.dart';
 
 class AppBar extends StatefulWidget {
   final double maxWidthSize;
@@ -21,11 +24,34 @@ class AppBar extends StatefulWidget {
 }
 
 class _AppBarState extends State<AppBar> {
-  List showBorder = [false, false, false, false, false];
+  List showMenuBorder = [false, false, false, false, false];
+  List showSubmenuBorder = [false, false, false];
 
   @override
   Widget build(BuildContext context) {
+    final List<ButtonData> subMenuList = [
+      ButtonData(
+          label: 'YouNP',
+          goToRoute: () {
+            context.vRouter.to('/');
+          },
+          index: 0),
+      ButtonData(
+          label: 'TOTR',
+          goToRoute: () {
+            context.vRouter.to('/');
+          },
+          index: 0),
+      ButtonData(
+          label: 'HOTY',
+          goToRoute: () {
+            context.vRouter.to('/');
+          },
+          index: 0),
+    ];
+
     return material.AppBar(
+      iconTheme: Theme.of(context).iconTheme,
       elevation: 0,
       centerTitle: true,
       title: Row(
@@ -34,36 +60,90 @@ class _AppBarState extends State<AppBar> {
             onPressed: () {
               widget.buttonDataList[0].goToRoute();
             },
-            child: Text('Downs Arabian Club Inc.',
-                style: Theme.of(context).textTheme.headline1),
+            child: Text(appTitle, style: Theme.of(context).textTheme.headline1),
           ),
-          Container(
-              height: 80,
-              padding: const EdgeInsets.only(left: 8.0),
-              child: VerticalDivider(
-                color: Theme.of(context).backgroundColor,
-              )),
-          for (var button in widget.buttonDataList)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                    color: Theme.of(context).appBarTheme.backgroundColor,
-                    border: showBorder[button.index]
-                        ? Border(
-                            bottom: BorderSide(
-                                color: Theme.of(context).backgroundColor,
-                                width: 2),
-                          )
-                        : null),
-                child: InkWell(
-                  onTap: (() {}),
-                  onHover: (hovered) {
-                    setState(() {
-                      showBorder[button.index] = hovered;
-                    });
-                  },
-                  child: TextButton(
+          !ScreenSizeWidget.isSmallScreen(context)
+              ? Container(
+                  height: 80,
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: VerticalDivider(
+                    color: Theme.of(context).backgroundColor,
+                  ))
+              : Container(),
+          !ScreenSizeWidget.isSmallScreen(context)
+              ? Row(children: _generateRowElements(subMenuList))
+              : Container()
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _generateRowElements(subMenuList) {
+    List<Widget> buttons = [];
+    for (var button in widget.buttonDataList) {
+      buttons.add(Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+              color: Theme.of(context).appBarTheme.backgroundColor,
+              border: showMenuBorder[button.index]
+                  ? Border(
+                      bottom: BorderSide(
+                          color: Theme.of(context).backgroundColor, width: 2),
+                    )
+                  : null),
+          child: InkWell(
+            onTap: (() {}),
+            onHover: (hovered) {
+              setState(() {
+                showMenuBorder[button.index] = hovered;
+              });
+            },
+            child: button.label == 'Shows'
+                ? _generateSubMenu(subMenuList, button)
+                // PopupMenuButton(
+                //     child: Text(button.label,
+                //         style: Theme.of(context).appBarTheme.titleTextStyle),
+                //     itemBuilder: ((context) => [
+                //           PopupMenuItem(
+                //               child: DecoratedBox(
+                //             decoration: BoxDecoration(
+                //                 color: Theme.of(context)
+                //                     .appBarTheme
+                //                     .backgroundColor,
+                //                 border: showMenuBorder[button.index]
+                //                     ? Border(
+                //                         bottom: BorderSide(
+                //                             color: Theme.of(context)
+                //                                 .backgroundColor,
+                //                             width: 2),
+                //                       )
+                //                     : null),
+                //             child: InkWell(
+                //               onTap: (() {}),
+                //               onHover: (hovered) {
+                //                 setState(() {
+                //                   showMenuBorder[button.index] = hovered;
+                //                 });
+                //               },
+                //               child: Text('YouNP',
+                //                   style: Theme.of(context)
+                //                       .appBarTheme
+                //                       .titleTextStyle),
+                //             ),
+                //           )),
+                //           PopupMenuItem(
+                //               child: Text('TOTR',
+                //                   style: Theme.of(context)
+                //                       .appBarTheme
+                //                       .titleTextStyle)),
+                //           PopupMenuItem(
+                //               child: Text('HOTY',
+                //                   style: Theme.of(context)
+                //                       .appBarTheme
+                //                       .titleTextStyle)),
+                //         ]))
+                : TextButton(
                     onPressed: () {
                       button.goToRoute();
                     },
@@ -72,11 +152,47 @@ class _AppBarState extends State<AppBar> {
                       style: Theme.of(context).appBarTheme.titleTextStyle,
                     ),
                   ),
-                ),
-              ),
-            ),
-        ],
-      ),
-    );
+          ),
+        ),
+      ));
+    }
+    return buttons;
+  }
+
+  Widget _generateSubMenu(List<ButtonData> submenu, ButtonData parentButton) {
+    // Widget buttons = [];
+
+    // for (var button in submenu)
+    // buttons.add(
+    return PopupMenuButton(
+        offset: const Offset(0, 14),
+        child: Text(parentButton.label,
+            style: Theme.of(context).appBarTheme.titleTextStyle),
+        itemBuilder: ((context) => [
+              for (var item in submenu)
+                PopupMenuItem(
+                    child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).appBarTheme.backgroundColor,
+                      border: showSubmenuBorder[item.index]
+                          ? Border(
+                              bottom: BorderSide(
+                                  color: Theme.of(context).backgroundColor,
+                                  width: 2),
+                            )
+                          : null),
+                  child: InkWell(
+                    onTap: (() {}),
+                    onHover: (hovered) {
+                      setState(() {
+                        showSubmenuBorder[item.index] = hovered;
+                      });
+                    },
+                    child: Text(item.label,
+                        style: Theme.of(context).appBarTheme.titleTextStyle),
+                  ),
+                )),
+            ]));
+    // return buttons;
   }
 }

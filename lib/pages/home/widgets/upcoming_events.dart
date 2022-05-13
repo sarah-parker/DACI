@@ -1,3 +1,4 @@
+import 'package:daci/widgets/button_data.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:vrouter/vrouter.dart';
@@ -8,6 +9,32 @@ class UpcomingEvents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<ButtonData> eventsList = [
+      ButtonData(
+          label: 'Gatton Show - 16 July 2022',
+          goToRoute: () {
+            context.vRouter.to('/');
+          },
+          index: 0),
+      ButtonData(
+          label: 'Youth & Non- Professional Show - 24 July 2022',
+          goToRoute: () {
+            context.vRouter.to('/');
+          },
+          index: 1),
+      ButtonData(
+          label: 'Top Of The Range Show - 12 & 13 November 2022',
+          goToRoute: () {
+            context.vRouter.to('/');
+          },
+          index: 2),
+      ButtonData(
+          label: 'Horse Of The Year Show - 12 & 13 November 2022',
+          goToRoute: () {
+            context.vRouter.to('/');
+          },
+          index: 3)
+    ];
     return ConstrainedBox(
       constraints: BoxConstraints(
           maxWidth: ScreenSizeWidget.isSmallScreen(context)
@@ -15,7 +42,7 @@ class UpcomingEvents extends StatelessWidget {
               : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
-        color: Theme.of(context).hoverColor,
+        color: Theme.of(context).primaryColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
@@ -32,54 +59,19 @@ class UpcomingEvents extends StatelessWidget {
               indent: screenSize.width * .03,
               endIndent: screenSize.width * .03,
             ),
-            InkWell(
-              onTap: (() {}),
-              child: TextButton(
-                onPressed: () {
-                  context.vRouter.to('/committee');
-                },
-                child: Text(
-                  'Gatton Show - 16 July 2022',
-                  style: Theme.of(context).textTheme.bodyText1,
+            for (var button in eventsList)
+              InkWell(
+                onTap: (() {}),
+                child: TextButton(
+                  onPressed: () {
+                    button.goToRoute;
+                  },
+                  child: Text(
+                    button.label,
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: (() {}),
-              child: TextButton(
-                onPressed: () {
-                  context.vRouter.to('/committee');
-                },
-                child: Text(
-                  'Youth & Non- Professional Show - 24 July 2022',
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: (() {}),
-              child: TextButton(
-                onPressed: () {
-                  context.vRouter.to('/committee');
-                },
-                child: Text(
-                  'Top Of The Range Show - 12 & 13 November 2022',
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: (() {}),
-              child: TextButton(
-                onPressed: () {
-                  context.vRouter.to('/committee');
-                },
-                child: Text(
-                  'Horse Of The Year Show - 12 & 13 November 2022',
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              ),
-            )
           ],
         ),
       ),

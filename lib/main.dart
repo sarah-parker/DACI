@@ -1,9 +1,7 @@
 import 'package:daci/app.dart';
-import 'package:daci/pages/committee.dart';
+import 'package:daci/pages/committee/committee.dart';
 import 'package:daci/pages/home/home.dart';
-import 'package:daci/pages/shows.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:vrouter/vrouter.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -28,25 +26,25 @@ class RoutedApp extends StatelessWidget {
               App(child: child), // Child is the widget from nestedRoutes
           nestedRoutes: [
             VWidget(path: null, widget: const Home()),
-            VWidget(path: '/committee', widget: Committee()),
-            VWidget(path: '/schedules', widget: Home()),
+            VWidget(path: '/committee', widget: const Committee()),
+            VWidget(path: '/schedules', widget: const Home()),
             VNester(
               path: '/shows',
-              widgetBuilder: (child) => Home(),
+              widgetBuilder: (child) => const Home(),
               nestedRoutes: [
                 VWidget(
                   path: 'enter',
-                  widget: Home(),
+                  widget: const Home(),
                 ),
               ],
             ), // child will take the value of the widget in nestedRoutes)
             VNester(
               path: '/results',
-              widgetBuilder: (child) => Home(),
+              widgetBuilder: (child) => const Home(),
               nestedRoutes: [
                 VWidget(
                   path: 'enter',
-                  widget: Home(),
+                  widget: const Home(),
                 ),
               ],
             ), // child will take the value of the widget in nestedRoutes)

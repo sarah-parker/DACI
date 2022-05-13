@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-Color daciDark = Color(0xFF0D3B66);
-Color daciLight = Color(0xFF84BCDA);
-Color daciBackground = Color(0xFFE7ECEF);
+Color daciDark = const Color(0xFF0D3B66);
+Color daciLight = const Color(0xFF84BCDA);
+Color daciBackground = const Color(0xFFE7ECEF);
 
 const MaterialColor dacidarkmaterial =
     MaterialColor(_dacidarkmaterialPrimaryValue, <int, Color>{
