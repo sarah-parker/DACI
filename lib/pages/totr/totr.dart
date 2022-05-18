@@ -1,10 +1,9 @@
 import 'package:daci/constants/text.dart';
-import 'package:daci/pages/committee/widgets/committee_members.dart';
 import 'package:daci/widgets/image_slider.dart';
 import 'package:flutter/material.dart';
 
-class Committee extends StatelessWidget {
-  const Committee({Key? key}) : super(key: key);
+class Totr extends StatelessWidget {
+  const Totr({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +23,15 @@ class Committee extends StatelessWidget {
                 height: screenSize.height * .5,
                 width: screenSize.width * .5,
                 images: [
-                  Image.asset('images/slideshow/Committee.jpg',
-                      fit: BoxFit.cover),
-                  Image.asset('images/slideshow/Social.jpg', fit: BoxFit.cover),
-                  Image.asset('images/slideshow/TOTR9.jpg', fit: BoxFit.cover),
-                  Image.asset('images/slideshow/YouNP3.jpg', fit: BoxFit.cover),
-                  Image.asset('images/slideshow/YouNP2.jpeg',
-                      fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR3.jpg', fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR4.jpg', fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR5.jpg', fit: BoxFit.cover),
                   Image.asset('images/slideshow/TOTR6.jpg', fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR7.jpg', fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR8.jpg', fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR9.jpg', fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR10.jpg', fit: BoxFit.cover),
+                  Image.asset('images/slideshow/TOTR11.jpg', fit: BoxFit.cover),
                 ],
               ),
             ),
@@ -43,15 +43,26 @@ class Committee extends StatelessWidget {
                 )),
             const Padding(padding: EdgeInsets.only(top: 15)),
             Text(
-              'Committee',
+              'Top Of The Range Show',
               style: Theme.of(context).textTheme.headline2,
               textAlign: TextAlign.left,
             ),
+            const Padding(padding: EdgeInsets.only(top: 15)),
+            Text(
+              '22 - 23 October 2022',
+              style: Theme.of(context).textTheme.headline5,
+              textAlign: TextAlign.left,
+            ),
+            // Text(
+            //   'Laidley Showgrounds',
+            //   style: Theme.of(context).textTheme.headline5,
+            //   textAlign: TextAlign.left,
+            // ),
+
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
-              child: Text(committeeText),
+              child: Text(totrText),
             ),
-            const CommitteeMembers()
           ],
         ),
       ),

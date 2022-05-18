@@ -18,30 +18,37 @@ final daciTheme = ThemeData(
     iconTheme: IconThemeData(color: daciBackground),
     splashColor: daciDark,
     textTheme: TextTheme(
-        bodyText1: GoogleFonts.openSans(color: Colors.black),
-        headline1: GoogleFonts.montserrat(
-          fontSize: 25,
-          color: daciBackground,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 3,
-        ),
-        headline2: GoogleFonts.montserrat(
-          fontSize: 20,
-          color: daciDark,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 2,
-        ),
-        headline3: GoogleFonts.montserrat(
-          fontSize: 20,
-          color: Colors.black,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 2,
-        ),
-        headline4: GoogleFonts.montserrat(
-          fontSize: 14,
-          color: daciBackground,
-          fontWeight: FontWeight.w400,
-          letterSpacing: 3,
-        )),
+      bodyText1: GoogleFonts.openSans(color: Colors.black),
+      headline1: GoogleFonts.montserrat(
+        fontSize: 25,
+        color: daciBackground,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 3,
+      ),
+      headline2: GoogleFonts.montserrat(
+        fontSize: 20,
+        color: daciDark,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 2,
+      ),
+      headline3: GoogleFonts.montserrat(
+        fontSize: 20,
+        color: Colors.black,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 2,
+      ),
+      headline4: GoogleFonts.montserrat(
+        fontSize: 14,
+        color: daciBackground,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 3,
+      ),
+      headline5: GoogleFonts.montserrat(
+        fontSize: 14,
+        color: daciDark,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 2,
+      ),
+    ),
     backgroundColor: daciBackground,
     hoverColor: daciDark);

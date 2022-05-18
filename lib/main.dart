@@ -1,6 +1,9 @@
 import 'package:daci/app.dart';
 import 'package:daci/pages/committee/committee.dart';
 import 'package:daci/pages/home/home.dart';
+import 'package:daci/pages/hoty/hoty.dart';
+import 'package:daci/pages/totr/totr.dart';
+import 'package:daci/pages/younp/younp.dart';
 import 'package:flutter/material.dart';
 import 'package:vrouter/vrouter.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -28,26 +31,30 @@ class RoutedApp extends StatelessWidget {
             VWidget(path: null, widget: const Home()),
             VWidget(path: '/committee', widget: const Committee()),
             VWidget(path: '/schedules', widget: const Home()),
-            VNester(
-              path: '/shows',
-              widgetBuilder: (child) => const Home(),
-              nestedRoutes: [
-                VWidget(
-                  path: 'enter',
-                  widget: const Home(),
-                ),
-              ],
-            ), // child will take the value of the widget in nestedRoutes)
-            VNester(
-              path: '/results',
-              widgetBuilder: (child) => const Home(),
-              nestedRoutes: [
-                VWidget(
-                  path: 'enter',
-                  widget: const Home(),
-                ),
-              ],
-            ), // child will take the value of the widget in nestedRoutes)
+            // VNester(
+            //   path: '/younp',
+            //   widgetBuilder: (child) => const Younp(),
+            //   nestedRoutes: [
+            VWidget(
+              path: '/younp',
+              widget: const Younp(),
+            ),
+            // ],
+            // ), // child will take the value of the widget in nestedRoutes)
+            // VNester(
+            // path: '/results',
+            // widgetBuilder: (child) => const Home(),
+            // nestedRoutes: [
+            VWidget(
+              path: '/totr',
+              widget: const Totr(),
+            ),
+            // ],
+            // ), // child will take the value of the widget in nestedRoutes)
+            VWidget(
+              path: '/hoty',
+              widget: const Hoty(),
+            ),
           ],
         ),
       ],

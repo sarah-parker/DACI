@@ -32,3 +32,48 @@ const String committeeText =
         ' as well as supporting Arabian horse enthusiasts in the Darling Downs and south-east' +
         ' QLD regions. Not to mention the Downs Arabian Club is one of the friendliest' +
         ' groups around! \n\nThis year’s office bearers and committee are as follows:\n';
+
+const String younpText = 'The Youth & Non-Professional Show is a fun and ' +
+    'relaxed showring environment for competitors to gain skills and confidence. ' +
+    'While the show is organised by the committee of the DACI, it is run by ' +
+    'professional handlers, trainers and riders from throughout southeast Queensland ' +
+    'who take on all roles from announcing, marshaling, stewarding and providing ' +
+    'guidance and tips to competitors throughout the day. Combining led, saddle ' +
+    'and the ever popular novelty classes there is something for everyone. The ' +
+    'show also offers newbie classes – these classes are open to any horse and ' +
+    'rider who is in their first year of showing.';
+
+const String totrText = 'The Top of the Range Arabian Event has long been considered ' +
+    'one of the friendliest shows on the circuit. It is also a proving ground for national ' +
+    'champions, with many of the countries highest award winners taking supreme at the ' +
+    'Top of the Range before going on to win at the Australian Arabian National Championships.\n\n' +
+    'The show offers a full range of purebred and derivative halter classes alongside the ' +
+    'ever popular Egyptian E’ffair and Crabbet Crusade classes. We also feature the Endurance ' +
+    'Halter Horse and Endurance Horse under Saddle classes, for competing endurance ' +
+    'horses with riders to handle.\n\n' +
+    'In performance we run a full program of purebred and derivative classes, including ' +
+    'HSAA classes and the Gala Event. The Gala Event is a combined halter and performance ' +
+    'class with a set workout and prizemoney. The show also runs a full youth program.';
+
+const String hotyText = 'The Queensland Arabian Saddle Horse of the year is the ' +
+    'penultimate event of Arabian Saddle Horse competitions.\n\n' +
+    'Since 2014 the Downs Arabian Club has hosted this prestigious event, running in ' +
+    'conjunction with the Top of the Range Arabian Event. We are proud to offer two ' +
+    'great shows over one weekend!\n\n' +
+    'The show was first held in 1994 in conjunction with Equestrian Australia.  14 ' +
+    'Purebred Arabian stallions contended for the title that year.  The QLD Crabbet ' +
+    'Arabian Group (with Russell Flynn and Kathy Saggers organising) ran the show and ' +
+    'it was held in conjunction with EA for the last time in 1997 at Brookfield. That ' +
+    'was 31 August 1997, the day that Princess Diana had been killed in a car crash. ' +
+    'Competitors remember announcements being made over the loudspeaker to inform them ' +
+    'of the accident. In 1997 and 1998 at Brookfield  Peter Wright on one of his stallions ' +
+    'lead the horses into each class.  The 1999 Show then moved to Toowoomba with EA ' +
+    'and from 2000 and on the QLD HOTY became a stand alone show finding it’s home at ' +
+    'Gatton for a number of years.\n\n' +
+    'The perpetual trophies originally belonged with the Queensland Crabbet Group’s ' +
+    'Arabian Summer Show. The Lady Diana Trophy for Purebred Newcomers was donated by ' +
+    'Phyllis Hopf in memory of one of her great foundation mares. The Eileen Wolfe trophy ' +
+    'for Champion Youth Rider was named for Eileen Wolfe, the longtime secretary of ' +
+    'the Crabbet Group, and an organizer of the Summer Show.  The Mark Grundy trophy ' +
+    'for Derivative Newcomer is named for Mark Grundy, a prominent Crabbet breeder ' +
+    'and a great showman who handled successful horses such as Arabian Park Phaeton.';

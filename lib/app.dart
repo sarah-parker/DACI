@@ -62,7 +62,7 @@ class _AppState extends State<App> {
       ButtonData(
           label: 'Shows',
           goToRoute: () {
-            context.vRouter.to('/committee');
+            // context.vRouter.to('/committee');
           },
           index: 3),
       ButtonData(

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class ImageSlider extends StatelessWidget {
-  // final Directory _photoDir = Directory('../images/slideshow');
   final double width;
   final double height;
   final List<Widget> images;

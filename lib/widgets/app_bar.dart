@@ -33,19 +33,19 @@ class _AppBarState extends State<AppBar> {
       ButtonData(
           label: 'YouNP',
           goToRoute: () {
-            context.vRouter.to('/');
+            context.vRouter.to('/younp');
           },
           index: 0),
       ButtonData(
           label: 'TOTR',
           goToRoute: () {
-            context.vRouter.to('/');
+            context.vRouter.to('/totr');
           },
           index: 0),
       ButtonData(
           label: 'HOTY',
           goToRoute: () {
-            context.vRouter.to('/');
+            context.vRouter.to('/hoty');
           },
           index: 0),
     ];
@@ -101,48 +101,6 @@ class _AppBarState extends State<AppBar> {
             },
             child: button.label == 'Shows'
                 ? _generateSubMenu(subMenuList, button)
-                // PopupMenuButton(
-                //     child: Text(button.label,
-                //         style: Theme.of(context).appBarTheme.titleTextStyle),
-                //     itemBuilder: ((context) => [
-                //           PopupMenuItem(
-                //               child: DecoratedBox(
-                //             decoration: BoxDecoration(
-                //                 color: Theme.of(context)
-                //                     .appBarTheme
-                //                     .backgroundColor,
-                //                 border: showMenuBorder[button.index]
-                //                     ? Border(
-                //                         bottom: BorderSide(
-                //                             color: Theme.of(context)
-                //                                 .backgroundColor,
-                //                             width: 2),
-                //                       )
-                //                     : null),
-                //             child: InkWell(
-                //               onTap: (() {}),
-                //               onHover: (hovered) {
-                //                 setState(() {
-                //                   showMenuBorder[button.index] = hovered;
-                //                 });
-                //               },
-                //               child: Text('YouNP',
-                //                   style: Theme.of(context)
-                //                       .appBarTheme
-                //                       .titleTextStyle),
-                //             ),
-                //           )),
-                //           PopupMenuItem(
-                //               child: Text('TOTR',
-                //                   style: Theme.of(context)
-                //                       .appBarTheme
-                //                       .titleTextStyle)),
-                //           PopupMenuItem(
-                //               child: Text('HOTY',
-                //                   style: Theme.of(context)
-                //                       .appBarTheme
-                //                       .titleTextStyle)),
-                //         ]))
                 : TextButton(
                     onPressed: () {
                       button.goToRoute();
@@ -160,14 +118,8 @@ class _AppBarState extends State<AppBar> {
   }
 
   Widget _generateSubMenu(List<ButtonData> submenu, ButtonData parentButton) {
-    // Widget buttons = [];
-
-    // for (var button in submenu)
-    // buttons.add(
     return PopupMenuButton(
-        offset: const Offset(0, 14),
-        child: Text(parentButton.label,
-            style: Theme.of(context).appBarTheme.titleTextStyle),
+        offset: const Offset(0, 20),
         itemBuilder: ((context) => [
               for (var item in submenu)
                 PopupMenuItem(
@@ -182,7 +134,9 @@ class _AppBarState extends State<AppBar> {
                             )
                           : null),
                   child: InkWell(
-                    onTap: (() {}),
+                    onTap: (() {
+                      item.goToRoute();
+                    }),
                     onHover: (hovered) {
                       setState(() {
                         showSubmenuBorder[item.index] = hovered;
@@ -192,7 +146,11 @@ class _AppBarState extends State<AppBar> {
                         style: Theme.of(context).appBarTheme.titleTextStyle),
                   ),
                 )),
-            ]));
-    // return buttons;
+            ]),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5.0),
+          child: Text(parentButton.label,
+              style: Theme.of(context).appBarTheme.titleTextStyle),
+        ));
   }
 }
