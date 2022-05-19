@@ -1,4 +1,5 @@
 import 'package:daci/constants/text.dart';
+import 'package:daci/pages/home/widgets/membership_form.dart';
 import 'package:daci/pages/home/widgets/upcoming_events.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,9 @@ class HomeSmall extends StatelessWidget {
     return Column(
       children: [
         UpcomingEvents(screenSize: screenSize),
+        Padding(
+            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        MembershipForm(screenSize: screenSize, textAlign: TextAlign.center,),
         Padding(
             padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         Text(

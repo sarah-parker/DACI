@@ -10,12 +10,14 @@ class AppBar extends StatefulWidget {
   final String appTitle;
   final AssetImage? appLogo;
   final List<ButtonData> buttonDataList;
+  final List<ButtonData> subMenuList;
 
   const AppBar(
       {this.maxWidthSize = 0.0,
       required this.appTitle,
       required this.buttonDataList,
       this.appLogo,
+      required this.subMenuList,
       key})
       : super(key: key);
 
@@ -29,27 +31,6 @@ class _AppBarState extends State<AppBar> {
 
   @override
   Widget build(BuildContext context) {
-    final List<ButtonData> subMenuList = [
-      ButtonData(
-          label: 'YouNP',
-          goToRoute: () {
-            context.vRouter.to('/younp');
-          },
-          index: 0),
-      ButtonData(
-          label: 'TOTR',
-          goToRoute: () {
-            context.vRouter.to('/totr');
-          },
-          index: 0),
-      ButtonData(
-          label: 'HOTY',
-          goToRoute: () {
-            context.vRouter.to('/hoty');
-          },
-          index: 0),
-    ];
-
     return material.AppBar(
       iconTheme: Theme.of(context).iconTheme,
       elevation: 0,
@@ -71,7 +52,7 @@ class _AppBarState extends State<AppBar> {
                   ))
               : Container(),
           !ScreenSizeWidget.isSmallScreen(context)
-              ? Row(children: _generateRowElements(subMenuList))
+              ? Row(children: _generateRowElements(widget.subMenuList))
               : Container()
         ],
       ),

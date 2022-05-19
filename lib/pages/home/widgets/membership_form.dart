@@ -5,7 +5,11 @@ import 'dart:html' as html;
 
 class MembershipForm extends StatelessWidget {
   final Size screenSize;
-  const MembershipForm({Key? key, required this.screenSize}) : super(key: key);
+  final TextAlign textAlign;
+
+  const MembershipForm(
+      {Key? key, required this.screenSize, required this.textAlign})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +39,9 @@ class MembershipForm extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(screenSize.height * 0.01),
-              child: const Text(
+              child: Text(
                 membershipText,
-                textAlign: TextAlign.justify,
+                textAlign: textAlign,
               ),
             ),
             InkWell(

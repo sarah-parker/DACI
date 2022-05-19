@@ -39,7 +39,10 @@ class HomeLarge extends StatelessWidget {
           children: [
             UpcomingEvents(screenSize: screenSize),
             const Padding(padding: EdgeInsets.symmetric(vertical: 12)),
-            MembershipForm(screenSize: screenSize)
+            MembershipForm(
+              screenSize: screenSize,
+              textAlign: TextAlign.justify,
+            )
           ],
         )
       ],
