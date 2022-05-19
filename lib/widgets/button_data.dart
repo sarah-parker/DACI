@@ -1,8 +1,7 @@
 class ButtonData {
   final String label;
   final void Function() goToRoute;
-  final int index;
+  final int? index;
 
-  ButtonData(
-      {required this.label, required this.goToRoute, required this.index});
+  ButtonData({required this.label, required this.goToRoute, this.index});
 }

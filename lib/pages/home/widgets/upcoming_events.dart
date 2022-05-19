@@ -13,27 +13,23 @@ class UpcomingEvents extends StatelessWidget {
       ButtonData(
           label: 'Gatton Show - 16 July 2022',
           goToRoute: () {
-            context.vRouter.to('/');
-          },
-          index: 0),
+            // context.vRouter.to('/');
+          }),
       ButtonData(
           label: 'Youth & Non- Professional Show - 24 July 2022',
           goToRoute: () {
-            context.vRouter.to('/');
-          },
-          index: 1),
+            context.vRouter.to('/younp');
+          }),
       ButtonData(
-          label: 'Top Of The Range Show - 12 & 13 November 2022',
+          label: 'Top Of The Range Show - 22-23 October 2022',
           goToRoute: () {
-            context.vRouter.to('/');
-          },
-          index: 2),
+            context.vRouter.to('/totr');
+          }),
       ButtonData(
-          label: 'Horse Of The Year Show - 12 & 13 November 2022',
+          label: 'Horse Of The Year Show - 22-23 October 2022',
           goToRoute: () {
-            context.vRouter.to('/');
-          },
-          index: 3)
+            context.vRouter.to('/hoty');
+          })
     ];
     return ConstrainedBox(
       constraints: BoxConstraints(
@@ -64,7 +60,7 @@ class UpcomingEvents extends StatelessWidget {
                 onTap: (() {}),
                 child: TextButton(
                   onPressed: () {
-                    button.goToRoute;
+                    button.goToRoute();
                   },
                   child: Text(
                     button.label,

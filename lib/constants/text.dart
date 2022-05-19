@@ -77,3 +77,7 @@ const String hotyText = 'The Queensland Arabian Saddle Horse of the year is the 
     'the Crabbet Group, and an organizer of the Summer Show.  The Mark Grundy trophy ' +
     'for Derivative Newcomer is named for Mark Grundy, a prominent Crabbet breeder ' +
     'and a great showman who handled successful horses such as Arabian Park Phaeton.';
+
+const String membershipText = 'It`s easy to become a member of the club, members ' +
+    'receive discounted entry in our shows as well. \nSimply download and complete the ' +
+    'membership form and return to us at downsarabianclub@gmail.com.';

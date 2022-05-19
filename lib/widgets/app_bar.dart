@@ -86,7 +86,7 @@ class _AppBarState extends State<AppBar> {
         child: DecoratedBox(
           decoration: BoxDecoration(
               color: Theme.of(context).appBarTheme.backgroundColor,
-              border: showMenuBorder[button.index]
+              border: showMenuBorder[button.index!]
                   ? Border(
                       bottom: BorderSide(
                           color: Theme.of(context).backgroundColor, width: 2),
@@ -96,7 +96,7 @@ class _AppBarState extends State<AppBar> {
             onTap: (() {}),
             onHover: (hovered) {
               setState(() {
-                showMenuBorder[button.index] = hovered;
+                showMenuBorder[button.index!] = hovered;
               });
             },
             child: button.label == 'Shows'
@@ -126,7 +126,7 @@ class _AppBarState extends State<AppBar> {
                     child: DecoratedBox(
                   decoration: BoxDecoration(
                       color: Theme.of(context).appBarTheme.backgroundColor,
-                      border: showSubmenuBorder[item.index]
+                      border: showSubmenuBorder[item.index!]
                           ? Border(
                               bottom: BorderSide(
                                   color: Theme.of(context).backgroundColor,
@@ -139,7 +139,7 @@ class _AppBarState extends State<AppBar> {
                     }),
                     onHover: (hovered) {
                       setState(() {
-                        showSubmenuBorder[item.index] = hovered;
+                        showSubmenuBorder[item.index!] = hovered;
                       });
                     },
                     child: Text(item.label,

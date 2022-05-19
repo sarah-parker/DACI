@@ -32,7 +32,7 @@ class _DaciDrawerState extends State<DaciDrawer> {
           DecoratedBox(
             decoration: BoxDecoration(
                 color: Theme.of(context).appBarTheme.backgroundColor,
-                border: showBorder[button.index]
+                border: showBorder[button.index!]
                     ? Border(
                         bottom: BorderSide(
                             color: Theme.of(context).backgroundColor, width: 2),
@@ -42,7 +42,7 @@ class _DaciDrawerState extends State<DaciDrawer> {
               onTap: (() {}),
               onHover: (hovered) {
                 setState(() {
-                  showBorder[button.index] = hovered;
+                  showBorder[button.index!] = hovered;
                 });
               },
               child: Padding(
