@@ -9,8 +9,9 @@ import 'package:vrouter/vrouter.dart';
 
 class App extends StatefulWidget {
   final Widget child;
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  const App({Key? key, required this.child}) : super(key: key);
+  App({Key? key, required this.child}) : super(key: key);
 
   @override
   State<App> createState() => _AppState();
@@ -22,9 +23,12 @@ class _AppState extends State<App> {
     return VMaterialApp(
       theme: daciTheme,
       child: Scaffold(
+        key: widget.scaffoldKey,
         drawer: ScreenSizeWidget.isSmallScreen(context)
             ? DaciDrawer(
                 buttonDataList: _getButtonList(),
+                subMenuList: _getSubMenu(),
+                scaffoldKey: widget.scaffoldKey,
               )
             : null,
         appBar: PreferredSize(
@@ -32,11 +36,35 @@ class _AppState extends State<App> {
           child: custom.AppBar(
             appTitle: appTitle,
             buttonDataList: _getButtonList(),
+            subMenuList: _getSubMenu(),
           ),
         ),
         body: widget.child,
       ),
     );
+  }
+
+  _getSubMenu() {
+    return [
+      ButtonData(
+          label: 'YouNP',
+          goToRoute: () {
+            context.vRouter.to('/younp');
+          },
+          index: 0),
+      ButtonData(
+          label: 'TOTR',
+          goToRoute: () {
+            context.vRouter.to('/totr');
+          },
+          index: 1),
+      ButtonData(
+          label: 'HOTY',
+          goToRoute: () {
+            context.vRouter.to('/hoty');
+          },
+          index: 2),
+    ];
   }
 
   _getButtonList() {
@@ -59,12 +87,7 @@ class _AppState extends State<App> {
             context.vRouter.to('/committee');
           },
           index: 2),
-      ButtonData(
-          label: 'Shows',
-          goToRoute: () {
-            // context.vRouter.to('/committee');
-          },
-          index: 3),
+      ButtonData(label: 'Shows', goToRoute: () {}, index: 3),
       ButtonData(
           label: 'Results',
           goToRoute: () {
