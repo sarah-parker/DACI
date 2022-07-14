@@ -18,7 +18,9 @@ final daciTheme = ThemeData(
     iconTheme: IconThemeData(color: daciBackground),
     splashColor: daciDark,
     textTheme: TextTheme(
-      bodyText1: GoogleFonts.openSans(color: Colors.black),
+      bodyText1: GoogleFonts.openSans(
+          color: Colors.black, decoration: TextDecoration.underline),
+      bodyText2: GoogleFonts.openSans(color: Colors.black),
       headline1: GoogleFonts.montserrat(
         fontSize: 25,
         color: daciBackground,
@@ -48,6 +50,12 @@ final daciTheme = ThemeData(
         color: daciDark,
         fontWeight: FontWeight.w400,
         letterSpacing: 2,
+      ),
+      headline6: GoogleFonts.montserrat(
+        fontSize: 14,
+        color: daciBackground,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 1,
       ),
     ),
     backgroundColor: daciBackground,

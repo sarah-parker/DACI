@@ -2,6 +2,7 @@ import 'package:daci/constants/text.dart';
 import 'package:daci/pages/home/widgets/membership_form.dart';
 import 'package:daci/pages/home/widgets/upcoming_events.dart';
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class HomeSmall extends StatelessWidget {
   final Size screenSize;
@@ -15,19 +16,29 @@ class HomeSmall extends StatelessWidget {
         UpcomingEvents(screenSize: screenSize),
         Padding(
             padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
-        MembershipForm(screenSize: screenSize, textAlign: TextAlign.center,),
+        MembershipForm(screenSize: screenSize),
         Padding(
             padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
-        Text(
-          'About Us',
-          style: Theme.of(context).textTheme.headline2,
-          textAlign: TextAlign.left,
+        Image.asset(
+          'images/cropped-ico.png',
+          height: 150,
         ),
         Padding(
             padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
-        const Text(
-          aboutUsText,
-          textAlign: TextAlign.justify,
+        TextRenderer(
+          child: Text(
+            'About Us',
+            style: Theme.of(context).textTheme.headline2,
+            textAlign: TextAlign.left,
+          ),
+        ),
+        Padding(
+            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        const TextRenderer(
+          child: Text(
+            aboutUsText,
+            textAlign: TextAlign.justify,
+          ),
         ),
       ],
     );

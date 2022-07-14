@@ -1,23 +1,21 @@
 import 'package:daci/constants/text.dart';
-import 'package:daci/widgets/button_data.dart';
+import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/material.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class AppBar extends StatefulWidget {
   final double maxWidthSize;
   final String appTitle;
   final AssetImage? appLogo;
   final List<ButtonData> buttonDataList;
-  final List<ButtonData> subMenuList;
 
   const AppBar(
       {this.maxWidthSize = 0.0,
       required this.appTitle,
       required this.buttonDataList,
       this.appLogo,
-      required this.subMenuList,
       key})
       : super(key: key);
 
@@ -26,8 +24,7 @@ class AppBar extends StatefulWidget {
 }
 
 class _AppBarState extends State<AppBar> {
-  List showMenuBorder = [false, false, false, false, false];
-  List showSubmenuBorder = [false, false, false];
+  List showMenuBorder = [false, false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +38,17 @@ class _AppBarState extends State<AppBar> {
             onPressed: () {
               widget.buttonDataList[0].goToRoute();
             },
-            child: Text(appTitle, style: Theme.of(context).textTheme.headline1),
+            child: ScreenSizeWidget.isSmallScreen(context)
+                ? Transform.translate(
+                    offset: const Offset(-30.0, 0.0),
+                    child: TextRenderer(
+                      child: Text(appTitle,
+                          style: Theme.of(context).textTheme.headline6),
+                    ),
+                  )
+                : TextRenderer(
+                    child: Text(appTitle,
+                        style: Theme.of(context).textTheme.headline1)),
           ),
           !ScreenSizeWidget.isSmallScreen(context)
               ? Container(
@@ -52,14 +59,14 @@ class _AppBarState extends State<AppBar> {
                   ))
               : Container(),
           !ScreenSizeWidget.isSmallScreen(context)
-              ? Row(children: _generateRowElements(widget.subMenuList))
+              ? Row(children: _generateRowElements())
               : Container()
         ],
       ),
     );
   }
 
-  List<Widget> _generateRowElements(subMenuList) {
+  List<Widget> _generateRowElements() {
     List<Widget> buttons = [];
     for (var button in widget.buttonDataList) {
       buttons.add(Padding(
@@ -80,58 +87,21 @@ class _AppBarState extends State<AppBar> {
                 showMenuBorder[button.index!] = hovered;
               });
             },
-            child: button.label == 'Shows'
-                ? _generateSubMenu(subMenuList, button)
-                : TextButton(
-                    onPressed: () {
-                      button.goToRoute();
-                    },
-                    child: Text(
-                      button.label,
-                      style: Theme.of(context).appBarTheme.titleTextStyle,
-                    ),
-                  ),
+            child: TextButton(
+              onPressed: () {
+                button.goToRoute();
+              },
+              child: TextRenderer(
+                child: Text(
+                  button.label,
+                  style: Theme.of(context).appBarTheme.titleTextStyle,
+                ),
+              ),
+            ),
           ),
         ),
       ));
     }
     return buttons;
-  }
-
-  Widget _generateSubMenu(List<ButtonData> submenu, ButtonData parentButton) {
-    return PopupMenuButton(
-        offset: const Offset(0, 20),
-        itemBuilder: ((context) => [
-              for (var item in submenu)
-                PopupMenuItem(
-                    child: DecoratedBox(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).appBarTheme.backgroundColor,
-                      border: showSubmenuBorder[item.index!]
-                          ? Border(
-                              bottom: BorderSide(
-                                  color: Theme.of(context).backgroundColor,
-                                  width: 2),
-                            )
-                          : null),
-                  child: InkWell(
-                    onTap: (() {
-                      item.goToRoute();
-                    }),
-                    onHover: (hovered) {
-                      setState(() {
-                        showSubmenuBorder[item.index!] = hovered;
-                      });
-                    },
-                    child: Text(item.label,
-                        style: Theme.of(context).appBarTheme.titleTextStyle),
-                  ),
-                )),
-            ]),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: Text(parentButton.label,
-              style: Theme.of(context).appBarTheme.titleTextStyle),
-        ));
   }
 }

@@ -2,6 +2,7 @@ import 'package:daci/constants/text.dart';
 import 'package:daci/pages/home/widgets/membership_form.dart';
 import 'package:daci/pages/home/widgets/upcoming_events.dart';
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class HomeLarge extends StatelessWidget {
   final Size screenSize;
@@ -19,17 +20,26 @@ class HomeLarge extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'About Us',
-                style: Theme.of(context).textTheme.headline2,
-                textAlign: TextAlign.left,
+              Image.asset(
+                'images/cropped-ico.png',
+                height: 150,
+              ),
+              const Padding(padding: EdgeInsets.only(top: 15)),
+              TextRenderer(
+                child: Text(
+                  'About Us',
+                  style: Theme.of(context).textTheme.headline2,
+                  textAlign: TextAlign.left,
+                ),
               ),
               const Padding(padding: EdgeInsets.only(top: 15)),
               Padding(
                 padding: EdgeInsets.only(right: screenSize.width * 0.02),
-                child: const Text(
-                  aboutUsText,
-                  textAlign: TextAlign.justify,
+                child: const TextRenderer(
+                  child: Text(
+                    aboutUsText,
+                    textAlign: TextAlign.justify,
+                  ),
                 ),
               ),
             ],
@@ -41,7 +51,6 @@ class HomeLarge extends StatelessWidget {
             const Padding(padding: EdgeInsets.symmetric(vertical: 12)),
             MembershipForm(
               screenSize: screenSize,
-              textAlign: TextAlign.justify,
             )
           ],
         )

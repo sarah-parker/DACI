@@ -1,18 +1,33 @@
 import 'package:daci/constants/text.dart';
 import 'package:daci/helpers/file_helpers.dart';
+import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
-
+import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
-class MembershipForm extends StatelessWidget {
+class ScheduleAndEntry extends StatelessWidget {
   final Size screenSize;
 
-  const MembershipForm({Key? key, required this.screenSize}) : super(key: key);
+  const ScheduleAndEntry({Key? key, required this.screenSize})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    List<ButtonData> eventsList = [
+      ButtonData(
+          label: 'Download Schedule',
+          goToRoute: () {
+            downloadFile(
+                "assets/pdf/YouNP22-Schedule.pdf", "YouNP22-Schedule.pdf");
+          }),
+      ButtonData(
+          label: 'Enter YouNP',
+          goToRoute: () {
+            context.goNamed('younpentry');
+          }),
+    ];
+
     return ConstrainedBox(
       constraints: BoxConstraints(
           maxWidth: ScreenSizeWidget.isSmallScreen(context)
@@ -29,7 +44,7 @@ class MembershipForm extends StatelessWidget {
               padding: EdgeInsets.only(top: screenSize.height * 0.01),
               child: TextRenderer(
                 child: Text(
-                  'Join the club',
+                  'YouNP 2022 Resources',
                   style: Theme.of(context).textTheme.headline3,
                 ),
               ),
@@ -39,27 +54,28 @@ class MembershipForm extends StatelessWidget {
               indent: screenSize.width * .03,
               endIndent: screenSize.width * .03,
             ),
-            Padding(
-              padding: EdgeInsets.all(screenSize.height * 0.01),
-              child: const TextRenderer(
-                child: Text(
-                  membershipText,
-                  textAlign: TextAlign.center,
+            for (var button in eventsList)
+              InkWell(
+                onTap: (() {}),
+                child: TextButton(
+                  onPressed: () {
+                    button.goToRoute();
+                  },
+                  child: TextRenderer(
+                    child: Text(
+                      button.label,
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                  ),
                 ),
               ),
-            ),
-            InkWell(
-              onTap: (() {}),
-              child: TextButton(
-                onPressed: () {
-                  downloadFile('assets/pdf/Membership-Form-2021.pdf',
-                      'DACMembershipform2021.pdf');
-                },
-                child: TextRenderer(
-                  child: Text(
-                    'Download Membership Form',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: screenSize.height * 0.01),
+              child: TextRenderer(
+                child: Text(
+                  contactInfo,
+                  style: Theme.of(context).textTheme.bodyText2,
+                  textAlign: TextAlign.center,
                 ),
               ),
             )

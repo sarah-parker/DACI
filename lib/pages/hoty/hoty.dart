@@ -1,6 +1,7 @@
 import 'package:daci/constants/text.dart';
 import 'package:daci/widgets/image_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class Hoty extends StatelessWidget {
   const Hoty({Key? key}) : super(key: key);
@@ -19,33 +20,42 @@ class Hoty extends StatelessWidget {
           children: [
             Align(
               alignment: Alignment.center,
-              child: ImageSlider(
-                height: screenSize.height * .5,
-                width: screenSize.width * .5,
-                images: [
-                  Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
-                  Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
-                  Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
-                ],
+              child: ImageRenderer(
+                alt: 'Darling Downs Arabian Club Horse of the Year Show',
+                child: ImageSlider(
+                  height: screenSize.height * .5,
+                  width: screenSize.width * .5,
+                  images: [
+                    Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
+                  ],
+                ),
               ),
             ),
             Align(
                 alignment: Alignment.center,
-                child: Text(
-                  'Images © Trace Digital',
-                  style: Theme.of(context).textTheme.caption,
+                child: TextRenderer(
+                  child: Text(
+                    'Images © Trace Digital',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                 )),
             const Padding(padding: EdgeInsets.only(top: 15)),
-            Text(
-              'Qld Arabian Horse Of The Year Show',
-              style: Theme.of(context).textTheme.headline2,
-              textAlign: TextAlign.left,
+            TextRenderer(
+              child: Text(
+                'Qld Arabian Horse Of The Year Show',
+                style: Theme.of(context).textTheme.headline2,
+                textAlign: TextAlign.left,
+              ),
             ),
             const Padding(padding: EdgeInsets.only(top: 15)),
-            Text(
-              '22 - 23 October 2022',
-              style: Theme.of(context).textTheme.headline5,
-              textAlign: TextAlign.left,
+            TextRenderer(
+              child: Text(
+                '22 - 23 October 2022',
+                style: Theme.of(context).textTheme.headline5,
+                textAlign: TextAlign.left,
+              ),
             ),
             // Text(
             //   'Laidley Showgrounds',
@@ -55,7 +65,7 @@ class Hoty extends StatelessWidget {
 
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
-              child: Text(hotyText),
+              child: TextRenderer(child: Text(hotyText)),
             ),
           ],
         ),

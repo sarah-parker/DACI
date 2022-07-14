@@ -9,7 +9,7 @@ const String aboutUsText = 'The Downs Arabian Club Inc. is dedicated to promotin
     ' from the Darling Downs for educational, promotional and social activities. ' +
     'The Club’s membership today also sees a broad cross section of people with ' +
     'interest not only in showing their horse, but also endurance, pony club, ' +
-    'harness and dressage enthusiasts.Downs Arabians have long been a major ' +
+    'harness and dressage enthusiasts. Downs Arabians have long been a major ' +
     'influence on Arabian breeding in Australia, providing many champions at major ' +
     'State and National shows.\n\nThe Club’s founding members included Ken and ' +
     'Coralie Gordon (The Cameo Stud), Tom and Marion Sharman (Jangharm Arabians), ' +
@@ -31,7 +31,9 @@ const String committeeText =
         'a part of the committee allows you to have valued input towards the club’s direction,' +
         ' as well as supporting Arabian horse enthusiasts in the Darling Downs and south-east' +
         ' QLD regions. Not to mention the Downs Arabian Club is one of the friendliest' +
-        ' groups around! \n\nThis year’s office bearers and committee are as follows:\n';
+        ' groups around!\n\nInterested in joining the club? Contact us at ' +
+        'downsarabianclub@gmail.com. \n\nThis year’s office bearers and committee ' +
+        'are as follows:\n';
 
 const String younpText = 'The Youth & Non-Professional Show is a fun and ' +
     'relaxed showring environment for competitors to gain skills and confidence. ' +
@@ -78,6 +80,12 @@ const String hotyText = 'The Queensland Arabian Saddle Horse of the year is the 
     'for Derivative Newcomer is named for Mark Grundy, a prominent Crabbet breeder ' +
     'and a great showman who handled successful horses such as Arabian Park Phaeton.';
 
-const String membershipText = 'It`s easy to become a member of the club, members ' +
-    'receive discounted entry in our shows as well. \nSimply download and complete the ' +
-    'membership form and return to us at downsarabianclub@gmail.com.';
+const String membershipText = 'It`s easy to become a member of the club, members also ' +
+    'receive discounted entry in our shows.\nThe Downs Arabian Club Inc is ' +
+    'affiliated with the Arabian Horse Society of Australia. The AHSA Ltd. together ' +
+    'with Gow Gates Insurance Brokers, have an arranged Insurance Program to benefit ' +
+    'Affiliate Groups and their Members. \n\nTo join, simply download and complete the ' +
+    'membership form below and return to us at downsarabianclub@gmail.com.';
+
+const String contactInfo =
+    'Any questions? Email us at downsarabianclub@gmail.com';

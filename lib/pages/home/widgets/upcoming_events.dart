@@ -1,7 +1,9 @@
-import 'package:daci/widgets/button_data.dart';
+import 'package:daci/helpers/file_helpers.dart';
+import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
-import 'package:vrouter/vrouter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 class UpcomingEvents extends StatelessWidget {
   final Size screenSize;
@@ -13,22 +15,29 @@ class UpcomingEvents extends StatelessWidget {
       ButtonData(
           label: 'Gatton Show - 16 July 2022',
           goToRoute: () {
-            // context.vRouter.to('/');
+            downloadFile(
+                "assets/pdf/Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf",
+                "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
           }),
       ButtonData(
           label: 'Youth & Non- Professional Show - 24 July 2022',
           goToRoute: () {
-            context.vRouter.to('/younp');
+            context.goNamed('younp');
+          }),
+      ButtonData(
+          label: '> Enter YouNP <',
+          goToRoute: () {
+            context.goNamed('younpentry');
           }),
       ButtonData(
           label: 'Top Of The Range Show - 22-23 October 2022',
           goToRoute: () {
-            context.vRouter.to('/totr');
+            context.goNamed('totr');
           }),
       ButtonData(
           label: 'Horse Of The Year Show - 22-23 October 2022',
           goToRoute: () {
-            context.vRouter.to('/hoty');
+            context.goNamed('hoty');
           })
     ];
     return ConstrainedBox(
@@ -45,9 +54,11 @@ class UpcomingEvents extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(top: screenSize.height * 0.01),
-              child: Text(
-                'Upcoming Events',
-                style: Theme.of(context).textTheme.headline3,
+              child: TextRenderer(
+                child: Text(
+                  'Upcoming Events',
+                  style: Theme.of(context).textTheme.headline3,
+                ),
               ),
             ),
             Divider(
@@ -62,9 +73,11 @@ class UpcomingEvents extends StatelessWidget {
                   onPressed: () {
                     button.goToRoute();
                   },
-                  child: Text(
-                    button.label,
-                    style: Theme.of(context).textTheme.bodyText1,
+                  child: TextRenderer(
+                    child: Text(
+                      button.label,
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
                   ),
                 ),
               ),
