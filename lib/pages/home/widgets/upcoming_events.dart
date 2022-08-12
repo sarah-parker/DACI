@@ -12,23 +12,23 @@ class UpcomingEvents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<ButtonData> eventsList = [
-      ButtonData(
-          label: 'Gatton Show - 16 July 2022',
-          goToRoute: () {
-            downloadFile(
-                "assets/pdf/Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf",
-                "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
-          }),
-      ButtonData(
-          label: 'Youth & Non- Professional Show - 24 July 2022',
-          goToRoute: () {
-            context.goNamed('younp');
-          }),
-      ButtonData(
-          label: '> Enter YouNP <',
-          goToRoute: () {
-            context.goNamed('younpentry');
-          }),
+      // ButtonData(
+      //     label: 'Gatton Show - 16 July 2022',
+      //     goToRoute: () {
+      //       downloadFile(
+      //           "assets/pdf/Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf",
+      //           "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
+      //     }),
+      // ButtonData(
+      //     label: 'Youth & Non- Professional Show - 24 July 2022',
+      //     goToRoute: () {
+      //       context.goNamed('younp');
+      //     }),
+      // ButtonData(
+      //     label: '> Enter YouNP <',
+      //     goToRoute: () {
+      //       context.goNamed('younpentry');
+      //     }),
       ButtonData(
           label: 'Top Of The Range Show - 22-23 October 2022',
           goToRoute: () {
@@ -42,9 +42,8 @@ class UpcomingEvents extends StatelessWidget {
     ];
     return ConstrainedBox(
       constraints: BoxConstraints(
-          maxWidth: ScreenSizeWidget.isSmallScreen(context)
-              ? screenSize.width
-              : screenSize.width * .3,
+          maxWidth:
+              ScreenSizeWidget.isSmallScreen(context) ? screenSize.width : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
         color: Theme.of(context).primaryColor,

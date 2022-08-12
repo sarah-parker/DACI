@@ -21,6 +21,7 @@ class RoutedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp.router(
         routeInformationParser: _router.routeInformationParser,
+        routeInformationProvider: _router.routeInformationProvider,
         routerDelegate: _router.routerDelegate,
         debugShowCheckedModeBanner: false,
         title: 'Downs Arabian Club Inc',
@@ -33,38 +34,32 @@ class RoutedApp extends StatelessWidget {
       GoRoute(
           path: '/',
           name: 'home',
-          builder: (BuildContext context, GoRouterState state) =>
-              App(child: const Home()),
+          builder: (BuildContext context, GoRouterState state) => App(child: const Home()),
           routes: [
             GoRoute(
               path: 'committee',
               name: 'committee',
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const Committee()),
+              builder: (BuildContext context, GoRouterState state) => App(child: const Committee()),
             ),
             GoRoute(
               path: 'younp',
               name: 'younp',
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const Younp()),
+              builder: (BuildContext context, GoRouterState state) => App(child: const Younp()),
             ),
-            GoRoute(
-              path: 'younp/enter',
-              name: 'younpentry',
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: YounpEntry()),
-            ),
+            // GoRoute(
+            //   path: 'younp/enter',
+            //   name: 'younpentry',
+            //   builder: (BuildContext context, GoRouterState state) => App(child: YounpEntry()),
+            // ),
             GoRoute(
               path: 'totr',
               name: 'totr',
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const Totr()),
+              builder: (BuildContext context, GoRouterState state) => App(child: const Totr()),
             ),
             GoRoute(
               path: 'hoty',
               name: 'hoty',
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const Hoty()),
+              builder: (BuildContext context, GoRouterState state) => App(child: const Hoty()),
             ),
           ]),
     ],

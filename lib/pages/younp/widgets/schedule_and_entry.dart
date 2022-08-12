@@ -9,8 +9,7 @@ import 'package:seo_renderer/seo_renderer.dart';
 class ScheduleAndEntry extends StatelessWidget {
   final Size screenSize;
 
-  const ScheduleAndEntry({Key? key, required this.screenSize})
-      : super(key: key);
+  const ScheduleAndEntry({Key? key, required this.screenSize}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,21 +17,19 @@ class ScheduleAndEntry extends StatelessWidget {
       ButtonData(
           label: 'Download Schedule',
           goToRoute: () {
-            downloadFile(
-                "assets/pdf/YouNP22-Schedule.pdf", "YouNP22-Schedule.pdf");
+            downloadFile("assets/pdf/YouNP22-Schedule.pdf", "YouNP22-Schedule.pdf");
           }),
-      ButtonData(
-          label: 'Enter YouNP',
-          goToRoute: () {
-            context.goNamed('younpentry');
-          }),
+      // ButtonData(
+      //     label: 'Enter YouNP',
+      //     goToRoute: () {
+      //       context.goNamed('younpentry');
+      //     }),
     ];
 
     return ConstrainedBox(
       constraints: BoxConstraints(
-          maxWidth: ScreenSizeWidget.isSmallScreen(context)
-              ? screenSize.width
-              : screenSize.width * .3,
+          maxWidth:
+              ScreenSizeWidget.isSmallScreen(context) ? screenSize.width : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
         color: Theme.of(context).primaryColor,

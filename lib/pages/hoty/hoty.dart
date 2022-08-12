@@ -12,8 +12,7 @@ class Hoty extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(
-            vertical: 15.0, horizontal: screenSize.width * 0.05),
+        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: screenSize.width * 0.05),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,12 +56,11 @@ class Hoty extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
             ),
-            // Text(
-            //   'Laidley Showgrounds',
-            //   style: Theme.of(context).textTheme.headline5,
-            //   textAlign: TextAlign.left,
-            // ),
-
+            Text(
+              'Toowoomba Showgrounds',
+              style: Theme.of(context).textTheme.headline5,
+              textAlign: TextAlign.left,
+            ),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: TextRenderer(child: Text(hotyText)),

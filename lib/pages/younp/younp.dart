@@ -14,8 +14,7 @@ class Younp extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(
-            vertical: 15, horizontal: screenSize.width * 0.05),
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: screenSize.width * 0.05),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,22 +27,14 @@ class Younp extends StatelessWidget {
                   height: screenSize.height * .5,
                   width: screenSize.width * .5,
                   images: [
-                    Image.asset('images/slideshow/YouNP.jpg',
-                        fit: BoxFit.cover),
-                    Image.asset('images/slideshow/YouNP1.jpg',
-                        fit: BoxFit.cover),
-                    Image.asset('images/slideshow/YouNP2.jpeg',
-                        fit: BoxFit.cover),
-                    Image.asset('images/slideshow/YouNP3.jpg',
-                        fit: BoxFit.cover),
-                    Image.asset('images/slideshow/YouNP4.jpg',
-                        fit: BoxFit.cover),
-                    Image.asset('images/slideshow/YouNP5.jpg',
-                        fit: BoxFit.cover),
-                    Image.asset('images/slideshow/YouNP6.jpg',
-                        fit: BoxFit.cover),
-                    Image.asset('images/slideshow/YouNP7.jpg',
-                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP1.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP2.jpeg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP3.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP4.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP5.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP6.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/YouNP7.jpg', fit: BoxFit.cover),
                   ],
                 ),
               ),
