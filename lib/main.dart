@@ -1,7 +1,9 @@
 import 'package:daci/app.dart';
 import 'package:daci/pages/committee/committee.dart';
 import 'package:daci/pages/home/home.dart';
+import 'package:daci/pages/hoty/entry.dart';
 import 'package:daci/pages/hoty/hoty.dart';
+import 'package:daci/pages/totr/entry.dart';
 import 'package:daci/pages/totr/totr.dart';
 import 'package:daci/pages/younp/entry.dart';
 import 'package:daci/pages/younp/younp.dart';
@@ -57,9 +59,19 @@ class RoutedApp extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) => App(child: const Totr()),
             ),
             GoRoute(
+              path: 'totr/enter',
+              name: 'totrentry',
+              builder: (BuildContext context, GoRouterState state) => App(child: TotrEntry()),
+            ),
+            GoRoute(
               path: 'hoty',
               name: 'hoty',
               builder: (BuildContext context, GoRouterState state) => App(child: const Hoty()),
+            ),
+            GoRoute(
+              path: 'hoty/enter',
+              name: 'hotyentry',
+              builder: (BuildContext context, GoRouterState state) => App(child: HotyEntry()),
             ),
           ]),
     ],

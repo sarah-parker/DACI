@@ -1,5 +1,5 @@
-import 'package:daci/pages/younp/widgets/large_screen.dart';
-import 'package:daci/pages/younp/widgets/small_screen.dart';
+import 'package:daci/pages/younp/widgets/younp_large.dart';
+import 'package:daci/pages/younp/widgets/younp_small.dart';
 import 'package:daci/widgets/image_slider.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';

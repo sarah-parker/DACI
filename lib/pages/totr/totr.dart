@@ -1,8 +1,11 @@
-import 'package:daci/constants/text.dart';
 import 'package:daci/widgets/image_slider.dart';
+import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:seo_renderer/seo_renderer.dart';
+
+import 'widgets/totr_large.dart';
+import 'widgets/totr_small.dart';
 
 class Totr extends StatelessWidget {
   const Totr({Key? key}) : super(key: key);
@@ -68,10 +71,10 @@ class Totr extends StatelessWidget {
               style: Theme.of(context).textTheme.headline5,
               textAlign: TextAlign.left,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: TextRenderer(child: Text(totrText)),
-            ),
+            const Padding(padding: EdgeInsets.only(top: 15)),
+            ScreenSizeWidget.isSmallScreen(context)
+                ? TotrSmall(screenSize: screenSize)
+                : TotrLarge(screenSize: screenSize),
           ],
         ),
       ),

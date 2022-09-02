@@ -1,5 +1,7 @@
-import 'package:daci/constants/text.dart';
+import 'package:daci/pages/hoty/widgets/hoty_large.dart';
+import 'package:daci/pages/hoty/widgets/hoty_small.dart';
 import 'package:daci/widgets/image_slider.dart';
+import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
@@ -56,15 +58,17 @@ class Hoty extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
             ),
-            Text(
-              'Toowoomba Showgrounds',
-              style: Theme.of(context).textTheme.headline5,
-              textAlign: TextAlign.left,
+            TextRenderer(
+              child: Text(
+                'Toowoomba Showgrounds',
+                style: Theme.of(context).textTheme.headline5,
+                textAlign: TextAlign.left,
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: TextRenderer(child: Text(hotyText)),
-            ),
+            const Padding(padding: EdgeInsets.only(top: 15)),
+            ScreenSizeWidget.isSmallScreen(context)
+                ? HotySmall(screenSize: screenSize)
+                : HotyLarge(screenSize: screenSize),
           ],
         ),
       ),

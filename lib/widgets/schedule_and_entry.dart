@@ -1,31 +1,20 @@
 import 'package:daci/constants/text.dart';
-import 'package:daci/helpers/file_helpers.dart';
 import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
 class ScheduleAndEntry extends StatelessWidget {
   final Size screenSize;
+  final List<ButtonData> optionsList;
+  final String title;
 
-  const ScheduleAndEntry({Key? key, required this.screenSize}) : super(key: key);
+  const ScheduleAndEntry(
+      {Key? key, required this.screenSize, required this.optionsList, required this.title})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<ButtonData> eventsList = [
-      ButtonData(
-          label: 'Download Schedule',
-          goToRoute: () {
-            downloadFile("assets/pdf/YouNP22-Schedule.pdf", "YouNP22-Schedule.pdf");
-          }),
-      // ButtonData(
-      //     label: 'Enter YouNP',
-      //     goToRoute: () {
-      //       context.goNamed('younpentry');
-      //     }),
-    ];
-
     return ConstrainedBox(
       constraints: BoxConstraints(
           maxWidth:
@@ -41,7 +30,7 @@ class ScheduleAndEntry extends StatelessWidget {
               padding: EdgeInsets.only(top: screenSize.height * 0.01),
               child: TextRenderer(
                 child: Text(
-                  'YouNP 2022 Resources',
+                  title,
                   style: Theme.of(context).textTheme.headline3,
                 ),
               ),
@@ -51,7 +40,7 @@ class ScheduleAndEntry extends StatelessWidget {
               indent: screenSize.width * .03,
               endIndent: screenSize.width * .03,
             ),
-            for (var button in eventsList)
+            for (var button in optionsList)
               InkWell(
                 onTap: (() {}),
                 child: TextButton(

@@ -35,10 +35,20 @@ class UpcomingEvents extends StatelessWidget {
             context.goNamed('totr');
           }),
       ButtonData(
+          label: '[Enter TOTR]',
+          goToRoute: () {
+            context.goNamed('totrentry');
+          }),
+      ButtonData(
           label: 'Horse Of The Year Show - 22-23 October 2022',
           goToRoute: () {
             context.goNamed('hoty');
-          })
+          }),
+      ButtonData(
+          label: '[Enter HOTY]',
+          goToRoute: () {
+            context.goNamed('hotyentry');
+          }),
     ];
     return ConstrainedBox(
       constraints: BoxConstraints(
