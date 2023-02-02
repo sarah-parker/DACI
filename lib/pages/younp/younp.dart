@@ -58,14 +58,14 @@ class Younp extends StatelessWidget {
             const Padding(padding: EdgeInsets.only(top: 15)),
             TextRenderer(
               child: Text(
-                '24 July 2022',
+                '30 July 2023',
                 style: Theme.of(context).textTheme.headline5,
                 textAlign: TextAlign.left,
               ),
             ),
             TextRenderer(
               child: Text(
-                'Laidley Showgrounds',
+                'Gatton Showgrounds',
                 style: Theme.of(context).textTheme.headline5,
                 textAlign: TextAlign.left,
               ),

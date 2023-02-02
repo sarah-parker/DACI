@@ -58,16 +58,23 @@ class Totr extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
             ),
-            const Padding(padding: EdgeInsets.only(top: 15)),
+            // const Padding(padding: EdgeInsets.only(top: 15)),
+            // TextRenderer(
+            //   child: Text(
+            //     'Judged by Kerry Rogers (VIC) and Elissea Schroen (VIC)',
+            //     style: Theme.of(context).textTheme.headline5,
+            //     textAlign: TextAlign.left,
+            //   ),
+            // ),
             TextRenderer(
               child: Text(
-                '22 - 23 October 2022',
+                '22 - 23 October 2023',
                 style: Theme.of(context).textTheme.headline5,
                 textAlign: TextAlign.left,
               ),
             ),
             Text(
-              'Toowoomba Showgrounds',
+              'Gatton Showgrounds',
               style: Theme.of(context).textTheme.headline5,
               textAlign: TextAlign.left,
             ),

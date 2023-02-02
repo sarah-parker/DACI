@@ -1,8 +1,11 @@
 import 'package:daci/constants/text.dart';
 import 'package:daci/pages/home/widgets/membership_form.dart';
 import 'package:daci/pages/home/widgets/upcoming_events.dart';
+import 'package:daci/theme/theme_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeSmall extends StatelessWidget {
   final Size screenSize;
@@ -11,20 +14,39 @@ class HomeSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(interactiveStates.contains)) {
+        return daciLight;
+      }
+      return daciDark;
+    }
+
+    _launchURL() async {
+      Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/4');
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri);
+      } else {
+        context.goNamed('raffle');
+      }
+    }
+
     return Column(
       children: [
+        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         UpcomingEvents(screenSize: screenSize),
-        Padding(
-            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
-        MembershipForm(screenSize: screenSize),
-        Padding(
-            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        // MembershipForm(screenSize: screenSize),
+        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         Image.asset(
           'images/cropped-ico.png',
           height: 150,
         ),
-        Padding(
-            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         TextRenderer(
           child: Text(
             'About Us',
@@ -32,8 +54,7 @@ class HomeSmall extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
         ),
-        Padding(
-            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         const TextRenderer(
           child: Text(
             aboutUsText,

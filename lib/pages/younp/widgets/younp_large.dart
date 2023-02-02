@@ -41,7 +41,7 @@ class YounpLarge extends StatelessWidget {
               title: 'YouNP 2022 Resources',
               optionsList: [
                 ButtonData(
-                    label: 'Download Schedule',
+                    label: 'Download 2022 Schedule',
                     goToRoute: () {
                       downloadFile("assets/pdf/YouNP22-Schedule.pdf", "YouNP22-Schedule.pdf");
                     }),

@@ -4,6 +4,7 @@ import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UpcomingEvents extends StatelessWidget {
   final Size screenSize;
@@ -19,36 +20,46 @@ class UpcomingEvents extends StatelessWidget {
       //           "assets/pdf/Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf",
       //           "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
       //     }),
-      // ButtonData(
-      //     label: 'Youth & Non- Professional Show - 24 July 2022',
-      //     goToRoute: () {
-      //       context.goNamed('younp');
-      //     }),
+      ButtonData(
+          label: 'Youth & Non- Professional Show - 30 July 2023',
+          goToRoute: () {
+            context.goNamed('younp');
+          }),
       // ButtonData(
       //     label: '> Enter YouNP <',
       //     goToRoute: () {
       //       context.goNamed('younpentry');
       //     }),
       ButtonData(
-          label: 'Top Of The Range Show - 22-23 October 2022',
+          label: 'Top Of The Range Show - 22-23 October 2023',
           goToRoute: () {
             context.goNamed('totr');
           }),
+      // ButtonData(
+      //     label: '[Enter TOTR]',
+      //     goToRoute: () async {
+      //       Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/3');
+      //       if (await canLaunchUrl(uri)) {
+      //         await launchUrl(uri);
+      //       } else {
+      //         context.goNamed('totrentry');
+      //       }
+      //     }),
       ButtonData(
-          label: '[Enter TOTR]',
-          goToRoute: () {
-            context.goNamed('totrentry');
-          }),
-      ButtonData(
-          label: 'Horse Of The Year Show - 22-23 October 2022',
+          label: 'Horse Of The Year Show - 22-23 October 2023',
           goToRoute: () {
             context.goNamed('hoty');
           }),
-      ButtonData(
-          label: '[Enter HOTY]',
-          goToRoute: () {
-            context.goNamed('hotyentry');
-          }),
+      // ButtonData(
+      //     label: '[Enter HOTY]',
+      //     goToRoute: () async {
+      //       Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/2');
+      //       if (await canLaunchUrl(uri)) {
+      //         await launchUrl(uri);
+      //       } else {
+      //         context.goNamed('hotyentry');
+      //       }
+      //     }),
     ];
     return ConstrainedBox(
       constraints: BoxConstraints(

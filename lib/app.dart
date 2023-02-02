@@ -5,6 +5,7 @@ import 'package:daci/widgets/drawer.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class App extends StatefulWidget {
   final Widget child;

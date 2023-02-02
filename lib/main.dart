@@ -8,12 +8,14 @@ import 'package:daci/pages/totr/totr.dart';
 import 'package:daci/pages/younp/entry.dart';
 import 'package:daci/pages/younp/younp.dart';
 import 'package:daci/theme/theme.dart';
+import 'package:daci/widgets/entry_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
+  GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
   runApp(RobotDetector(child: RoutedApp()));
 }
 
@@ -31,7 +33,6 @@ class RoutedApp extends StatelessWidget {
       );
 
   final GoRouter _router = GoRouter(
-    urlPathStrategy: UrlPathStrategy.path,
     routes: <GoRoute>[
       GoRoute(
           path: '/',
@@ -58,21 +59,32 @@ class RoutedApp extends StatelessWidget {
               name: 'totr',
               builder: (BuildContext context, GoRouterState state) => App(child: const Totr()),
             ),
-            GoRoute(
-              path: 'totr/enter',
-              name: 'totrentry',
-              builder: (BuildContext context, GoRouterState state) => App(child: TotrEntry()),
-            ),
+            // GoRoute(
+            //   path: 'totr/enter',
+            //   name: 'totrentry',
+            //   builder: (BuildContext context, GoRouterState state) => App(
+            //       child: const EntryForm(
+            //           source: 'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/3')),
+            // ),
             GoRoute(
               path: 'hoty',
               name: 'hoty',
               builder: (BuildContext context, GoRouterState state) => App(child: const Hoty()),
             ),
-            GoRoute(
-              path: 'hoty/enter',
-              name: 'hotyentry',
-              builder: (BuildContext context, GoRouterState state) => App(child: HotyEntry()),
-            ),
+            // GoRoute(
+            //   path: 'hoty/enter',
+            //   name: 'hotyentry',
+            //   builder: (BuildContext context, GoRouterState state) => App(
+            //       child: const EntryForm(
+            //           source: 'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/2')),
+            // ),
+            // GoRoute(
+            //   path: 'raffle',
+            //   name: 'raffle',
+            //   builder: (BuildContext context, GoRouterState state) => App(
+            //       child: const EntryForm(
+            //           source: 'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/4')),
+            // ),
           ]),
     ],
     errorBuilder: (context, error) => App(child: const Home()),

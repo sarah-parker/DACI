@@ -5,6 +5,7 @@ import 'package:daci/widgets/schedule_and_entry.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HotySmall extends StatelessWidget {
   final Size screenSize;
@@ -19,16 +20,26 @@ class HotySmall extends StatelessWidget {
           screenSize: screenSize,
           title: 'HOTY 2022 Resources',
           optionsList: [
+            // ButtonData(
+            //     label: 'Enter HOTY',
+            //     goToRoute: () async {
+            //       Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/2');
+            //       if (await canLaunchUrl(uri)) {
+            //         await launchUrl(uri);
+            //       } else {
+            //         context.goNamed('hotyentry');
+            //       }
+            //     }),
             ButtonData(
-                label: 'Download Schedule',
+                label: 'Download 2022 Schedule',
                 goToRoute: () {
-                  downloadFile("assets/pdf/Hoty22-Schedule.pdf", "HOTY22-Schedule.pdf");
+                  downloadFile("assets/pdf/HOTY_Schedule_2022.pdf", "HOTY_Schedule_2022.pdf");
                 }),
-            ButtonData(
-                label: 'Enter HOTY',
-                goToRoute: () {
-                  context.goNamed('hotyentry');
-                }),
+            // ButtonData(
+            //     label: 'Download Horse Health Declaration',
+            //     goToRoute: () {
+            //       downloadFile("assets/pdf/Horse_Health_Dec.pdf", "Horse-Health-Declaration.pdf");
+            //     }),
           ],
         ),
         Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
