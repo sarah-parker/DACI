@@ -1,16 +1,16 @@
-name: Flutter Build
-run-name: Build for web
-on: [push]
-jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
-      - run: flutter pub get
-      - run: flutter build web
+# name: Flutter Build
+# run-name: Build for web
+# on: [push]
+# jobs:
+#   Explore-GitHub-Actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: subosito/flutter-action@v2
+#         with:
+#           channel: 'stable'
+#       - run: flutter pub get
+#       - run: flutter build web
       
 name: Build & Release Site
 on: [push]
