@@ -7,8 +7,7 @@ class DaciDrawer extends StatefulWidget {
   final List<ButtonData> buttonDataList;
   final GlobalKey<ScaffoldState> scaffoldKey;
 
-  const DaciDrawer(
-      {Key? key, required this.buttonDataList, required this.scaffoldKey})
+  const DaciDrawer({Key? key, required this.buttonDataList, required this.scaffoldKey})
       : super(key: key);
 
   @override
@@ -29,7 +28,7 @@ class _DaciDrawerState extends State<DaciDrawer> {
           child: TextRenderer(
             child: Text(
               appTitle,
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
           ),
@@ -40,8 +39,8 @@ class _DaciDrawerState extends State<DaciDrawer> {
                 color: Theme.of(context).appBarTheme.backgroundColor,
                 border: showBorder[button.index!]
                     ? Border(
-                        bottom: BorderSide(
-                            color: Theme.of(context).backgroundColor, width: 2),
+                        bottom:
+                            BorderSide(color: Theme.of(context).colorScheme.background, width: 2),
                       )
                     : null),
             child: InkWell(

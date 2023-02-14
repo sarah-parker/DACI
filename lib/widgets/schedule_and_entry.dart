@@ -31,7 +31,7 @@ class ScheduleAndEntry extends StatelessWidget {
               child: TextRenderer(
                 child: Text(
                   title,
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
               ),
             ),
@@ -50,7 +50,7 @@ class ScheduleAndEntry extends StatelessWidget {
                   child: TextRenderer(
                     child: Text(
                       button.label,
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
                 ),
@@ -60,7 +60,7 @@ class ScheduleAndEntry extends StatelessWidget {
               child: TextRenderer(
                 child: Text(
                   contactInfo,
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
               ),

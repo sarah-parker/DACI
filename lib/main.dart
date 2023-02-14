@@ -1,21 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:url_strategy/url_strategy.dart';
+import 'package:seo_renderer/seo_renderer.dart';
+
 import 'package:daci/app.dart';
 import 'package:daci/pages/committee/committee.dart';
 import 'package:daci/pages/home/home.dart';
-import 'package:daci/pages/hoty/entry.dart';
 import 'package:daci/pages/hoty/hoty.dart';
-import 'package:daci/pages/totr/entry.dart';
 import 'package:daci/pages/totr/totr.dart';
-import 'package:daci/pages/younp/entry.dart';
 import 'package:daci/pages/younp/younp.dart';
 import 'package:daci/theme/theme.dart';
-import 'package:daci/widgets/entry_form.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
-  GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
+  setPathUrlStrategy();
   runApp(RobotDetector(child: RoutedApp()));
 }
 
@@ -27,7 +25,7 @@ class RoutedApp extends StatelessWidget {
         routeInformationParser: _router.routeInformationParser,
         routeInformationProvider: _router.routeInformationProvider,
         routerDelegate: _router.routerDelegate,
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
         title: 'Downs Arabian Club Inc',
         theme: daciTheme,
       );

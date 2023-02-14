@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
+
 import 'package:daci/pages/hoty/widgets/hoty_large.dart';
 import 'package:daci/pages/hoty/widgets/hoty_small.dart';
 import 'package:daci/widgets/image_slider.dart';
 import 'package:daci/widgets/screen_size.dart';
-import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 class Hoty extends StatelessWidget {
   const Hoty({Key? key}) : super(key: key);
@@ -39,14 +40,14 @@ class Hoty extends StatelessWidget {
                 child: TextRenderer(
                   child: Text(
                     'Images © Trace Digital',
-                    style: Theme.of(context).textTheme.caption,
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 )),
             const Padding(padding: EdgeInsets.only(top: 15)),
             TextRenderer(
               child: Text(
                 'Qld Arabian Horse Of The Year Show',
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.displayMedium,
                 textAlign: TextAlign.left,
               ),
             ),
@@ -61,14 +62,14 @@ class Hoty extends StatelessWidget {
             TextRenderer(
               child: Text(
                 '22 - 23 October 2023',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
                 textAlign: TextAlign.left,
               ),
             ),
             TextRenderer(
               child: Text(
                 'Gatton Showgrounds',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
                 textAlign: TextAlign.left,
               ),
             ),

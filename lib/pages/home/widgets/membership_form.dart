@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
+
 import 'package:daci/constants/text.dart';
 import 'package:daci/helpers/file_helpers.dart';
 import 'package:daci/widgets/screen_size.dart';
-import 'package:flutter/material.dart';
-import 'dart:html' as html;
-
-import 'package:seo_renderer/seo_renderer.dart';
 
 class MembershipForm extends StatelessWidget {
   final Size screenSize;
@@ -15,9 +14,8 @@ class MembershipForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-          maxWidth: ScreenSizeWidget.isSmallScreen(context)
-              ? screenSize.width
-              : screenSize.width * .3,
+          maxWidth:
+              ScreenSizeWidget.isSmallScreen(context) ? screenSize.width : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
         color: Theme.of(context).primaryColor,
@@ -30,7 +28,7 @@ class MembershipForm extends StatelessWidget {
               child: TextRenderer(
                 child: Text(
                   'Join the club',
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
               ),
             ),
@@ -52,13 +50,12 @@ class MembershipForm extends StatelessWidget {
               onTap: (() {}),
               child: TextButton(
                 onPressed: () {
-                  downloadFile('assets/pdf/Membership-Form-2021.pdf',
-                      'DACMembershipform2021.pdf');
+                  downloadFile('assets/pdf/Membership-Form-2021.pdf', 'DACMembershipform2021.pdf');
                 },
                 child: TextRenderer(
                   child: Text(
                     'Download Membership Form',
-                    style: Theme.of(context).textTheme.bodyText1,
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
               ),

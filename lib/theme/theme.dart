@@ -12,46 +12,45 @@ final daciTheme = ThemeData(
       titleTextStyle: TextStyle(color: daciBackground),
     ),
     scaffoldBackgroundColor: daciBackground,
-    popupMenuTheme: PopupMenuThemeData(
-        color: daciDark, textStyle: TextStyle(color: daciBackground)),
+    popupMenuTheme:
+        PopupMenuThemeData(color: daciDark, textStyle: TextStyle(color: daciBackground)),
     drawerTheme: DrawerThemeData(backgroundColor: daciDark, elevation: 0),
     iconTheme: IconThemeData(color: daciBackground),
     splashColor: daciDark,
     textTheme: TextTheme(
-      bodyText1: GoogleFonts.openSans(
-          color: Colors.black, decoration: TextDecoration.underline),
-      bodyText2: GoogleFonts.openSans(color: Colors.black),
-      headline1: GoogleFonts.montserrat(
+      bodyLarge: GoogleFonts.openSans(color: Colors.black, decoration: TextDecoration.underline),
+      bodyMedium: GoogleFonts.openSans(color: Colors.black),
+      displayLarge: GoogleFonts.montserrat(
         fontSize: 25,
         color: daciBackground,
         fontWeight: FontWeight.w400,
         letterSpacing: 3,
       ),
-      headline2: GoogleFonts.montserrat(
+      displayMedium: GoogleFonts.montserrat(
         fontSize: 20,
         color: daciDark,
         fontWeight: FontWeight.w400,
         letterSpacing: 2,
       ),
-      headline3: GoogleFonts.montserrat(
+      displaySmall: GoogleFonts.montserrat(
         fontSize: 20,
         color: Colors.black,
         fontWeight: FontWeight.w400,
         letterSpacing: 2,
       ),
-      headline4: GoogleFonts.montserrat(
+      headlineMedium: GoogleFonts.montserrat(
         fontSize: 14,
         color: daciBackground,
         fontWeight: FontWeight.w400,
         letterSpacing: 3,
       ),
-      headline5: GoogleFonts.montserrat(
+      headlineSmall: GoogleFonts.montserrat(
         fontSize: 14,
         color: daciDark,
         fontWeight: FontWeight.w400,
         letterSpacing: 2,
       ),
-      headline6: GoogleFonts.montserrat(
+      titleLarge: GoogleFonts.montserrat(
         fontSize: 14,
         color: daciBackground,
         fontWeight: FontWeight.w400,

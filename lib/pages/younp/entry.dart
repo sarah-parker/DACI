@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class YounpEntry extends StatefulWidget {
   // final Size screenSize;
 
-  YounpEntry({Key? key}) : super(key: key);
+  const YounpEntry({Key? key}) : super(key: key);
 
   @override
   State<YounpEntry> createState() => _YounpEntryState();
@@ -17,8 +17,7 @@ class _YounpEntryState extends State<YounpEntry> {
     final IFrameElement iframeElement = IFrameElement();
     // iframeElement.height = (widget.screenSize.height * 0.9).toString();
     // iframeElement.width = (widget.screenSize.width * 0.8).toString();
-    iframeElement.src =
-        'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/1';
+    iframeElement.src = 'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/1';
     iframeElement.style.border = 'none';
 
     // ignore: undefined_prefixed_name

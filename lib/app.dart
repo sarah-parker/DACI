@@ -5,7 +5,6 @@ import 'package:daci/widgets/drawer.dart';
 import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class App extends StatefulWidget {
   final Widget child;
@@ -20,22 +19,24 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: widget.scaffoldKey,
-      drawer: ScreenSizeWidget.isSmallScreen(context)
-          ? DaciDrawer(
-              buttonDataList: _getButtonList(),
-              scaffoldKey: widget.scaffoldKey,
-            )
-          : null,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(50),
-        child: custom.AppBar(
-          appTitle: appTitle,
-          buttonDataList: _getButtonList(),
+    return SelectionArea(
+      child: Scaffold(
+        key: widget.scaffoldKey,
+        drawer: ScreenSizeWidget.isSmallScreen(context)
+            ? DaciDrawer(
+                buttonDataList: _getButtonList(),
+                scaffoldKey: widget.scaffoldKey,
+              )
+            : null,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(50),
+          child: custom.AppBar(
+            appTitle: appTitle,
+            buttonDataList: _getButtonList(),
+          ),
         ),
+        body: widget.child,
       ),
-      body: widget.child,
     );
   }
 

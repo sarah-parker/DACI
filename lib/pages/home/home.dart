@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
+
 import 'package:daci/pages/home/widgets/large_screen.dart';
 import 'package:daci/pages/home/widgets/small_screen.dart';
 import 'package:daci/widgets/image_slider.dart';
 import 'package:daci/widgets/screen_size.dart';
-import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -27,8 +28,7 @@ class _HomeState extends State<Home> {
               width: screenSize.width,
               images: [
                 Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
-                Image.asset('images/slideshow/Committee.jpg',
-                    fit: BoxFit.cover),
+                Image.asset('images/slideshow/Committee.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/YouNP.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/YouNP1.jpg', fit: BoxFit.cover),
@@ -47,12 +47,11 @@ class _HomeState extends State<Home> {
               child: TextRenderer(
                 child: Text(
                   'Images © Trace Digital & Sue Crockett',
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               )),
           Padding(
-            padding: EdgeInsets.symmetric(
-                vertical: 15, horizontal: screenSize.width * 0.1),
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: screenSize.width * 0.1),
             child: ScreenSizeWidget.isSmallScreen(context)
                 ? HomeSmall(screenSize: screenSize)
                 : HomeLarge(screenSize: screenSize),

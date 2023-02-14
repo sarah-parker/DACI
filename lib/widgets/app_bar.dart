@@ -42,20 +42,18 @@ class _AppBarState extends State<AppBar> {
                 ? Transform.translate(
                     offset: const Offset(-30.0, 0.0),
                     child: TextRenderer(
-                      child: Text(appTitle,
-                          style: Theme.of(context).textTheme.headline6),
+                      child: Text(appTitle, style: Theme.of(context).textTheme.titleLarge),
                     ),
                   )
                 : TextRenderer(
-                    child: Text(appTitle,
-                        style: Theme.of(context).textTheme.headline1)),
+                    child: Text(appTitle, style: Theme.of(context).textTheme.displayLarge)),
           ),
           !ScreenSizeWidget.isSmallScreen(context)
               ? Container(
                   height: 80,
                   padding: const EdgeInsets.only(left: 8.0),
                   child: VerticalDivider(
-                    color: Theme.of(context).backgroundColor,
+                    color: Theme.of(context).colorScheme.background,
                   ))
               : Container(),
           !ScreenSizeWidget.isSmallScreen(context)
@@ -76,8 +74,7 @@ class _AppBarState extends State<AppBar> {
               color: Theme.of(context).appBarTheme.backgroundColor,
               border: showMenuBorder[button.index!]
                   ? Border(
-                      bottom: BorderSide(
-                          color: Theme.of(context).backgroundColor, width: 2),
+                      bottom: BorderSide(color: Theme.of(context).colorScheme.background, width: 2),
                     )
                   : null),
           child: InkWell(

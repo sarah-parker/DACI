@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:daci/pages/younp/widgets/younp_large.dart';
 import 'package:daci/pages/younp/widgets/younp_small.dart';
 import 'package:daci/widgets/image_slider.dart';

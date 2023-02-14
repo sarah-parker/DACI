@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings, prefer_adjacent_string_concatenation
+
 const String appTitle = 'Downs Arabian Club Inc.';
 
 const String aboutUsText = 'The Downs Arabian Club Inc. is dedicated to promoting ' +
@@ -87,5 +89,4 @@ const String membershipText = 'It`s easy to become a member of the club, members
     'Affiliate Groups and their Members. \n\nTo join, simply download and complete the ' +
     'membership form below and return to us at downsarabianclub@gmail.com.';
 
-const String contactInfo =
-    'Any questions? Email us at downsarabianclub@gmail.com';
+const String contactInfo = 'Any questions? Email us at downsarabianclub@gmail.com';

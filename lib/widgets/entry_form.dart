@@ -10,10 +10,10 @@ class EntryForm extends StatefulWidget {
   const EntryForm({Key? key, required this.source}) : super(key: key);
 
   @override
-  _EntryFormState createState() => _EntryFormState();
+  EntryFormState createState() => EntryFormState();
 }
 
-class _EntryFormState extends State<EntryForm> {
+class EntryFormState extends State<EntryForm> {
   // Widget _iframeWidget;
   final IFrameElement _iframeElement = IFrameElement();
 
