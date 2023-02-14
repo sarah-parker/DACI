@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /images/
+
+Sitemap: https://www.downsarabianclub.com.au/sitemap.xml
