@@ -27,7 +27,7 @@ jobs:
 
 
     - name: Build APK
-      run: flutter build apk --release
+      run: flutter build web
 
     - name: Create Release
       id: create_release
