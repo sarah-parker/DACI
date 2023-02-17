@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  VM_USER: ${{ secrets.VM_USER }}
+  VM_HOST: ${{ secrets.VM_HOST }}
   VM_IP: ${{ secrets.VM_IP }}
   VM_KEY: ${{ secrets.VM_KEY }}
 
@@ -18,8 +18,8 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VM_IP }}
-          username: ${{ secrets.SSH_HOST }}
-          password: ${{ secrets.SSH_KEY}}
+          username: ${{ secrets.VM_HOST }}
+          password: ${{ secrets.VM_KEY}}
           port: 22
           script: |
             whoami
@@ -40,7 +40,7 @@ jobs:
 #         uses: appleboy/scp-action@master
 #         with:
 #           host: ${{ env.VM_IP }}
-#           username: ${{ env.VM_USER }}
+#           username: ${{ env.VM_HOST }}
 #           key: ${{ env.VM_KEY }}
 #           source: ./build/web/
 #           target: /var/www/dac
