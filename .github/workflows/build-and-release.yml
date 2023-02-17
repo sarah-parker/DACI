@@ -23,7 +23,8 @@ jobs:
 
     - name: Get version from tag
       id: version
-      run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\/v/}
+      run: echo "VERSION=$(echo ${GITHUB_REF#refs/tags/v})" >> $GITHUB_ENV
+
 
     - name: Build APK
       run: flutter build apk --release
@@ -33,9 +34,10 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        RELEASE_VERSION: ${{ env.VERSION }}
       with:
         tag_name: ${{ github.ref }}
-        release_name: Release ${{ steps.version.outputs.version }}
+        release_name: Release ${{ env.RELEASE_VERSION }}
         body: |
           Automatically built by GitHub Actions
         draft: false
