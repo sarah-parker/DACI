@@ -1,0 +1,45 @@
+name: Build and Release Flutter Project
+
+on:
+  create:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        channel: 'stable'
+
+    - name: Get version from tag
+      id: version
+      run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\/v/}
+
+    - name: Build APK
+      run: flutter build apk --release
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ steps.version.outputs.version }}
+        body: |
+          Automatically built by GitHub Actions
+        draft: false
+        prerelease: false
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-app-release
+        path: build/app/outputs/flutter-apk/app-release.apk
