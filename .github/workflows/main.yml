@@ -1,0 +1,50 @@
+name: Deploy to Oracle VM
+
+on:
+  workflow_dispatch:
+
+env:
+  VM_USER: ${{ secrets.VM_USER }}
+  VM_IP: ${{ secrets.VM_IP }}
+  VM_KEY: ${{ secrets.VM_KEY }}
+
+jobs:
+  test_ssh_connection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Test SSH connection
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VM_IP }}
+          username: ${{ secrets.SSH_HOST }}
+          password: ${{ secrets.SSH_KEY}}
+          port: 22
+          script: |
+            whoami
+            ls -la  
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Download web artifact
+#         uses: actions/download-artifact@v2
+#         with:
+#           name: web
+#           path: build
+
+#       - name: Copy web files to Oracle VM
+#         uses: appleboy/scp-action@master
+#         with:
+#           host: ${{ env.VM_IP }}
+#           username: ${{ env.VM_USER }}
+#           key: ${{ env.VM_KEY }}
+#           source: ./build/web/
+#           target: /var/www/dac
+
+#       - name: Restart Apache server
+#         run: |
+#           ssh -i ${{ env.VM_KEY }} ${{ env.VM_USER }}@${{ env.VM_IP }} "sudo systemctl restart apache2"
