@@ -19,9 +19,9 @@ jobs:
       with:
         channel: 'stable'
 
-    - name: Get version from tag
-      id: version
-      run: echo "::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/tags/v}"
+    - name: Create Environment File
+      run: |
+        echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
     - name: Build for Web
       run: flutter build web
@@ -31,6 +31,7 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
+        RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ env.RELEASE_VERSION }}
