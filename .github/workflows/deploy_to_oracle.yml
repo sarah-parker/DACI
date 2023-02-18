@@ -1,20 +1,27 @@
-name: SSH Connection Test
-on: [workflow_dispatch]
+name: Test SSH Connection
+
+on:
+  workflow_dispatch:
+
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.VM_KEY }}
+  KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
+  HOSTNAME: ${{ secrets.HOST }}
 
 jobs:
-  ssh-test:
+  test_ssh_connection:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Add known_hosts
-        run: echo "${{ secrets.KNOWN_HOSTS }}" >> $HOME/.ssh/known_hosts
-      - name: Test SSH Connection
-        env:
-          HOST: ${{ secrets.VM_HOST }}
-          USERNAME: ${{ secrets.ORACLE_VM_USERNAME }}
-          PRIVATE_KEY: ${{ secrets.VM_KEY }}
-        run: |
-          echo "$PRIVATE_KEY" > ssh_key
-          chmod 400 ssh_key
-          ssh -i ssh_key $USERNAME@$HOST
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.0
+      with:
+        ssh-private-key: ${{ env.SSH_PRIVATE_KEY }}
+
+    - name: Add host to known hosts
+      run: |
+        echo "${KNOWN_HOSTS}" > ~/.ssh/known_hosts
+
+    - name: Test SSH connection
+      run: |
+        ssh -o StrictHostKeyChecking=yes -v user@${HOSTNAME} "echo Connection successful"
