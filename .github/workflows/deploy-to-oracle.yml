@@ -33,7 +33,7 @@ jobs:
 #           target: /var/www/dac
       
       - name: Check dist directory contents
-        run: ls -la ./build/web/
+        run: ls -la /build/web/
       
 #       - name: Restart Apache server
 #         uses: appleboy/ssh-action@master
