@@ -25,6 +25,13 @@ jobs:
 
     - name: Build for Web
       run: flutter build web
+      
+    - name: Print current directory
+      run: pwd
+
+    - name: List all files in the current directory
+      run: ls -la
+
 
     - name: Create Release
       id: create_release
@@ -44,4 +51,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: my-app-release
-        path: build/web
+        path: build/web/
