@@ -11,4 +11,5 @@ jobs:
     uses: ./.github/workflows/build-and-release.yml
 
   deploy-to-oracle:
+    needs: build-and-release
     uses: ./.github/workflows/deploy-to-oracle.yml
