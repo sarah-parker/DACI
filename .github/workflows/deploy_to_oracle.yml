@@ -1,14 +1,14 @@
-name: Copy artifact to Oracle VM
+     
+name: Deploy to Oracle VM
 
 on:
-  workflow_dispatch:
-#   push:
-#     branches:
-#       - main
+  push:
+    branches:
+      - main
 
 env:
   VM_IP: ${{ secrets.ORACLE_VM_HOST }}
-  SSH_KEY: ${{ secrets.ORACLE_VM_PRIVATE_KEY }}
+  SSH_PRIVATE_KEY: ${{ secrets.ORACLE_VM_PRIVATE_KEY }}
   SSH_USERNAME: ${{ secrets.ORACLE_VM_USERNAME }}
 
 jobs:
@@ -20,21 +20,27 @@ jobs:
       
     - name: Install SSH
       run: sudo apt-get update && sudo apt-get install -y openssh-client
-    
-    - name: Output environmental variables
-      run: env
-
+      
     - name: Set up SSH
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$SSH_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H "$VM_IP" >> ~/.ssh/known_hosts
+      uses: webfactory/ssh-agent@v0.4.1
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       
-#     - name: Copy artifact to Oracle VM
-#       run: |
-#         scp -r ./dist/* "$SSH_USERNAME@$VM_IP:/var/www/dac"
-#         ssh "$SSH_USERNAME@$VM_IP" "sudo systemctl restart apache2"
+    - name: Copy artifact to Oracle VM
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ env.VM_IP }}
+        username: ${{ env.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: ./dist/
+        target: /var/www/dac
       
-    - name: Test connection
-      run: ssh "$SSH_USERNAME@$VM_IP" "echo Connected successfully"
+    - name: Restart Apache server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ env.VM_IP }}
+        username: ${{ env.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          sudo systemctl restart apache2
+
