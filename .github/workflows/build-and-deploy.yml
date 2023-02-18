@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-release:
     uses: ./.github/workflows/build-and-release.yml
+    secrets:
+      token: ${{ secrets.PAT }}
 
   deploy-to-oracle:
     needs: build-and-release
