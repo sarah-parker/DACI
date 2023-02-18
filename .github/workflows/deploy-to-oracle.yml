@@ -29,11 +29,11 @@ jobs:
 #           host: ${{ env.VM_IP }}
 #           username: ${{ env.SSH_USERNAME }}
 #           key: ${{ env.SSH_PRIVATE_KEY }}
-#           source: ./dist/
+#           source: ./build/web/
 #           target: /var/www/dac
       
       - name: Check dist directory contents
-        run: ls -la ./dist/
+        run: ls -la ./build/web/
       
 #       - name: Restart Apache server
 #         uses: appleboy/ssh-action@master
