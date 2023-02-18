@@ -41,10 +41,12 @@ jobs:
         prerelease: false
 
     - name: Upload web build
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3.1.2
       with:
-        name: my-app-release
+        name: daci
         path: build/web/
+        if-no-files-found: error
+
         
     - name: Print current directory
       run: pwd
