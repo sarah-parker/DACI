@@ -2,6 +2,7 @@ name: Deploy to Oracle VM
 
 on:
   workflow_dispatch:
+  workflow_call:
 
 env:
   VM_IP: ${{ secrets.ORACLE_VM_HOST }}
