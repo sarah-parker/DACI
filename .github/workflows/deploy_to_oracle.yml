@@ -20,6 +20,7 @@ jobs:
 
     - name: Add host to known hosts
       run: |
+        mkdir -p ~/.ssh
         echo "${KNOWN_HOSTS}" > ~/.ssh/known_hosts
 
     - name: Test SSH connection
