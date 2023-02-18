@@ -2,9 +2,10 @@
 name: Deploy to Oracle VM
 
 on:
-  push:
-    branches:
-      - main
+     workflow_dispatch:
+#   push:
+#     branches:
+#       - main
 
 env:
   VM_IP: ${{ secrets.ORACLE_VM_HOST }}
