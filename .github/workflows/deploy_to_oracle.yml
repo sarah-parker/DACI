@@ -1,12 +1,13 @@
 name: Copy artifact to Oracle VM
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+#   push:
+#     branches:
+#       - main
 
 env:
-  VM_IP: ${{ secrets.HOST }}
+  VM_IP: ${{ secrets.ORACLE_VM_HOST }}
   SSH_KEY: ${{ secrets.ORACLE_VM_PRIVATE_KEY }}
   SSH_USERNAME: ${{ secrets.ORACLE_VM_USERNAME }}
 
