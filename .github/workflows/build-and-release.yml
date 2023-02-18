@@ -1,8 +1,6 @@
 name: Build and Release Flutter Project
 
 on:
-#   push:
-#     branches: '**'
   workflow_dispatch:
   create:
     tags:
@@ -23,10 +21,9 @@ jobs:
 
     - name: Get version from tag
       id: version
-      run: echo "VERSION=$(echo ${GITHUB_REF#refs/tags/v})" >> $GITHUB_ENV
+      run: echo "::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/tags/v}"
 
-
-    - name: Build APK
+    - name: Build for Web
       run: flutter build web
 
     - name: Create Release
@@ -34,7 +31,6 @@ jobs:
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
-        RELEASE_VERSION: ${{ env.VERSION }}
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ env.RELEASE_VERSION }}
@@ -48,4 +44,3 @@ jobs:
       with:
         name: my-app-release
         path: build/web
-
