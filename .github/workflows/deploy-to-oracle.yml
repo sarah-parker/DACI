@@ -34,7 +34,7 @@ jobs:
       - name: Print current directory
         run: pwd
       - name: Check dist directory contents
-        run: ls -la ./build/web/
+        run: ls -la 
       
 #       - name: Restart Apache server
 #         uses: appleboy/ssh-action@master
