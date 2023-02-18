@@ -20,10 +20,9 @@ jobs:
       
     - name: Install SSH
       run: sudo apt-get update && sudo apt-get install -y openssh-client
+    
     - name: Output environmental variables
-      run: |
-        echo "VM_IP = $VM_IP"
-        echo "SSH_USERNAME = $SSH_USERNAME"
+      run: env
 
     - name: Set up SSH
       run: |
