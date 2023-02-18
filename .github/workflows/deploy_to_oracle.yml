@@ -7,7 +7,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
+      - name: Add known_hosts
+        run: echo "${{ secrets.KNOWN_HOSTS }}" >> $HOME/.ssh/known_hosts
       - name: Test SSH Connection
         env:
           HOST: ${{ secrets.VM_HOST }}
