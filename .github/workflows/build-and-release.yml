@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2.5.2
+      uses: actions/checkout@v2.x
 
     - name: Setup Flutter
-      uses: subosito/flutter-action@v1.12.1
+      uses: subosito/flutter-action@v1.x
       with:
         channel: 'stable'
 
@@ -35,7 +35,7 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1.1.8
+      uses: actions/create-release@v1.x
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
         RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
@@ -48,7 +48,7 @@ jobs:
         prerelease: false
 
     - name: Upload web build
-      uses: actions/upload-artifact@v2.3.3
+      uses: actions/upload-artifact@v2.x
       with:
         name: my-app-release
         path: build/web/
