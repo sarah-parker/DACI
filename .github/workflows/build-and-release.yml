@@ -44,7 +44,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
         name: daci
-        path: daci.zip
+        path: build/web/
         if-no-files-found: error
 
         
