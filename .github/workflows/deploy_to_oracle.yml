@@ -6,7 +6,7 @@ on:
 env:
   SSH_PRIVATE_KEY: ${{ secrets.VM_KEY }}
   KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
-  HOSTNAME: ${{ secrets.HOST }}
+  HOSTNAME: ${{ secrets.ORACLE_VM_USERNAME }}
 
 jobs:
   test_ssh_connection:
