@@ -3,7 +3,7 @@ name: Build and Release Flutter Project
 on:
 #   push:
 #     branches: '**'
-
+  workflow_dispatch:
   create:
     tags:
       - 'v*'
@@ -43,8 +43,9 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Upload APK
+    - name: Upload web build
       uses: actions/upload-artifact@v2
       with:
         name: my-app-release
-        path: build/app/outputs/flutter-apk/app-release.apk
+        path: build/web
+
