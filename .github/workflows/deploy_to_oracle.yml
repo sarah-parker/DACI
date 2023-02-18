@@ -1,50 +1,19 @@
-name: Deploy to Oracle VM
-
-on:
-  workflow_dispatch:
-
-env:
-  VM_HOST: ${{ secrets.VM_HOST }}
-  VM_IP: ${{ secrets.VM_IP }}
-  VM_KEY: ${{ secrets.VM_KEY }}
+name: SSH Connection Test
+on: [workflow_dispatch]
 
 jobs:
-  test_ssh_connection:
+  ssh-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: Test SSH connection
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.VM_IP }}
-          username: ${{ secrets.VM_HOST }}
-          password: ${{ secrets.VM_KEY}}
-          port: 22
-          script: |
-            whoami
-            ls -la  
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
 
-#       - name: Download web artifact
-#         uses: actions/download-artifact@v2
-#         with:
-#           name: web
-#           path: build
-
-#       - name: Copy web files to Oracle VM
-#         uses: appleboy/scp-action@master
-#         with:
-#           host: ${{ env.VM_IP }}
-#           username: ${{ env.VM_HOST }}
-#           key: ${{ env.VM_KEY }}
-#           source: ./build/web/
-#           target: /var/www/dac
-
-#       - name: Restart Apache server
-#         run: |
-#           ssh -i ${{ env.VM_KEY }} ${{ env.VM_USER }}@${{ env.VM_IP }} "sudo systemctl restart apache2"
+      - name: Test SSH Connection
+        env:
+          HOST: ${{ secrets.VM_HOST }}
+          USERNAME: ${{ secrets.ORACLE_VM_USERNAME }}
+          PRIVATE_KEY: ${{ secrets.VM_KEY }}
+        run: |
+          echo "$PRIVATE_KEY" > ssh_key
+          chmod 400 ssh_key
+          ssh -i ssh_key $USERNAME@$HOST
