@@ -14,3 +14,4 @@ jobs:
   deploy-to-oracle:
     needs: build-and-release
     uses: ./.github/workflows/deploy-to-oracle.yml
+    secrets: inherit
