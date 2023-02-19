@@ -1,0 +1,71 @@
+name: Build and Deploy Flutter Project
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+env:
+  VM_IP: ${{ secrets.ORACLE_VM_HOST }}
+  SSH_PRIVATE_KEY: ${{ secrets.ORACLE_VM_PRIVATE_KEY }}
+  SSH_USERNAME: ${{ secrets.ORACLE_VM_USERNAME }}
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+
+      - name: Create Environment File
+        run: |
+          echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Build for Web
+        run: flutter build web
+
+      - name: Copy artifacts to Oracle VM
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ env.VM_IP }}
+          username: ${{ env.SSH_USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          source: ./build/web/
+          target: /var/www/dac/
+
+      - name: Restart Apache2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.VM_IP }}
+          username: ${{ env.SSH_USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            sudo systemctl restart apache2
+
+      - name: Restart Oracle VM
+        uses: appleboy/restart-vm-action@master
+        with:
+          host: ${{ env.VM_IP }}
+          username: ${{ env.SSH_USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          name: Release ${{ env.RELEASE_VERSION }}
+          draft: false
+          prerelease: false
+          body: ''
+          commitish: ${{ github.sha }}
+          overwrite: true
+          files:
+            - ./build/web/
