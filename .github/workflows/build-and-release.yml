@@ -27,17 +27,14 @@ jobs:
       
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1.1.4
+      uses: ncipollo/release-action@v1
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
-        RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
       with:
+        name: Release ${{ env.RELEASE_VERSION }}
         tag_name: ${{ github.ref }}
-        release_name: Release ${{ env.RELEASE_VERSION }}
-        body: |
-          Automatically built by GitHub Actions
-        draft: false
-        prerelease: false
+        description: Automatically built by GitHub Actions
+        files: 'build/web/*'
 
     - name: Upload web build
       uses: actions/upload-artifact@v3.1.2
