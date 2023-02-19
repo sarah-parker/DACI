@@ -37,7 +37,7 @@ jobs:
           username: ${{ env.SSH_USERNAME }}
           key: ${{ env.SSH_PRIVATE_KEY }}
           source: ./build/web/*
-          target: /var/www/dac
+          target: /var/www/dac/
       
       - name: Restart Apache server
         uses: appleboy/ssh-action@v0.1.7
