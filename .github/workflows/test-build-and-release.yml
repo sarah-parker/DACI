@@ -18,10 +18,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.3.0
 
       - name: Setup Flutter
-        uses: subosito/flutter-action@v1
+        uses: subosito/flutter-action@v2.8.0
 
       - name: Create Environment File
         run: |
@@ -38,7 +38,7 @@ jobs:
           key: ${{ env.SSH_PRIVATE_KEY }}
           source: ./build/web/
           target: /var/www/dac/
-          strip_components: 1
+          strip_components: 2
 
       - name: Restart Apache2
         uses: appleboy/ssh-action@master
