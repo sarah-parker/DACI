@@ -4,6 +4,7 @@ import 'package:seo_renderer/seo_renderer.dart';
 
 import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/screen_size.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UpcomingEvents extends StatelessWidget {
   final Size screenSize;
@@ -19,6 +20,14 @@ class UpcomingEvents extends StatelessWidget {
       //           "assets/pdf/Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf",
       //           "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
       //     }),
+      ButtonData(
+          label: "Annual General Meeting",
+          goToRoute: () async {
+            Uri uri = Uri.parse('https://fb.me/e/41ONNTXmH');
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri);
+            }
+          }),
       ButtonData(
           label: 'Youth & Non- Professional Show - 30 July 2023',
           goToRoute: () {

@@ -1,3 +1,4 @@
+import 'package:daci/pages/home/widgets/agm_notice.dart';
 import 'package:flutter/material.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
@@ -61,8 +62,10 @@ class HomeLarge extends StatelessWidget {
         ),
         Column(
           children: [
-            UpcomingEvents(screenSize: screenSize),
+            AgmNotice(screenSize: screenSize),
             const Padding(padding: EdgeInsets.symmetric(vertical: 12)),
+            UpcomingEvents(screenSize: screenSize),
+
             // MembershipForm(screenSize: screenSize),
           ],
         )

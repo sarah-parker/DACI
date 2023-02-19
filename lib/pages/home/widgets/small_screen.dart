@@ -1,3 +1,4 @@
+import 'package:daci/pages/home/widgets/agm_notice.dart';
 import 'package:flutter/material.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
@@ -34,6 +35,8 @@ class HomeSmall extends StatelessWidget {
 
     return Column(
       children: [
+        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        AgmNotice(screenSize: screenSize),
         Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         UpcomingEvents(screenSize: screenSize),
         Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
