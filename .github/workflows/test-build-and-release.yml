@@ -1,0 +1,75 @@
+name: Test Build and Deploy Flutter Project
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+env:
+  VM_IP: ${{ secrets.ORACLE_VM_HOST }}
+  SSH_PRIVATE_KEY: ${{ secrets.ORACLE_VM_PRIVATE_KEY }}
+  SSH_USERNAME: ${{ secrets.ORACLE_VM_USERNAME }}
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3.3.0
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2.8.0
+
+      - name: Create Environment File
+        run: |
+          echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Build for Web
+        run: flutter build web
+        
+      - name: List current dir after download
+        shell: bash
+        run: ls ./build/web/*
+
+      - name: Copy artifacts to Oracle VM
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ env.VM_IP }}
+          username: ${{ env.SSH_USERNAME }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          source: ./build/web/*
+          target: /var/www/dac/
+          strip_components: 2
+#           rm: true
+
+#       - name: Restart Apache2
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ env.VM_IP }}
+#           username: ${{ env.SSH_USERNAME }}
+#           key: ${{ env.SSH_PRIVATE_KEY }}
+#           port: 22
+#           script: |
+#             sudo systemctl restart apache2
+
+#       - name: Restart Oracle VM
+#         uses: appleboy/restart-vm-action@master
+#         with:
+#           host: ${{ env.VM_IP }}
+#           username: ${{ env.SSH_USERNAME }}
+#           key: ${{ env.SSH_PRIVATE_KEY }}
+
+#       - name: Create Release
+#         id: create_release
+#         uses: ncipollo/release-action@v1.12.0
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.PAT }}
+#         with:
+#           name: Release ${{ env.RELEASE_VERSION }}
+#           tag: ${{ github.ref }}
+#           artifacts: 'build/web/*'
+#           replacesArtifacts: true
+#           artifactErrorsFailBuild: true

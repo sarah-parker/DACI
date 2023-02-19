@@ -35,11 +35,13 @@ jobs:
       with:
         name: Release ${{ env.RELEASE_VERSION }}
         tag: ${{ github.ref }}
-        artifacts: 'daci/**'
+        artifacts: 'build/web/*'
+        replacesArtifacts: true
+        artifactErrorsFailBuild: true
 
     - name: Upload web build
       uses: actions/upload-artifact@v3.1.2
       with:
         name: daci
-        path: build/web/**
+        path: build/web/
         if-no-files-found: error
