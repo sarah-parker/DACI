@@ -38,7 +38,7 @@ jobs:
           key: ${{ env.SSH_PRIVATE_KEY }}
           source: ./build/web/*
           target: /var/www/dac/
-#           strip_components: 2
+          strip_components: 2
           rm: true
 
       - name: Restart Apache2
