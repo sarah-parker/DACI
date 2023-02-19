@@ -27,12 +27,12 @@ jobs:
       
     - name: Create Release
       id: create_release
-      uses: ncipollo/release-action@v1
+      uses: ncipollo/release-action@v1.12.0
       env:
         GITHUB_TOKEN: ${{ secrets.PAT }}
       with:
         name: Release ${{ env.RELEASE_VERSION }}
-        tag_name: ${{ github.ref }}
+        tag: ${{ github.ref }}
         description: Automatically built by GitHub Actions
         files: 'build/web/*'
 
