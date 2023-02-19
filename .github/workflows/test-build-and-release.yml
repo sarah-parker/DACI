@@ -55,12 +55,12 @@ jobs:
           script: |
             sudo systemctl restart apache2
 
-      - name: Restart Oracle VM
-        uses: appleboy/restart-vm-action@master
-        with:
-          host: ${{ env.VM_IP }}
-          username: ${{ env.SSH_USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
+#       - name: Restart Oracle VM
+#         uses: appleboy/restart-vm-action@master
+#         with:
+#           host: ${{ env.VM_IP }}
+#           username: ${{ env.SSH_USERNAME }}
+#           key: ${{ env.SSH_PRIVATE_KEY }}
 
       - name: Create Release
         id: create_release
