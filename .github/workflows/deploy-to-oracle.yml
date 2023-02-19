@@ -36,7 +36,7 @@ jobs:
           host: ${{ env.VM_IP }}
           username: ${{ env.SSH_USERNAME }}
           key: ${{ env.SSH_PRIVATE_KEY }}
-          source: ./build/web/
+          source: ./build/web/*
           target: /var/www/dac
       
       - name: Restart Apache server
