@@ -18,7 +18,7 @@ class AgmNotice extends StatelessWidget {
               ScreenSizeWidget.isSmallScreen(context) ? screenSize.width : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
-        color: Theme.of(context).primaryColor,
+        color: Colors.red, //Theme.of(context).primaryColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
