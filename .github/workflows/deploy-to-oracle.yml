@@ -40,7 +40,7 @@ jobs:
           target: /var/www/dac
       
       - name: Restart Apache server
-        uses: appleboy/ssh-action@v.0.1.7
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ env.VM_IP }}
           username: ${{ env.SSH_USERNAME }}
