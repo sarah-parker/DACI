@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-release:
     uses: ./.github/workflows/build-and-release.yml
+    permissions:
+      contents: write
     secrets: inherit
 
   deploy-to-oracle:
