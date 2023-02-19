@@ -13,6 +13,8 @@ env:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
@@ -34,8 +36,9 @@ jobs:
           host: ${{ env.VM_IP }}
           username: ${{ env.SSH_USERNAME }}
           key: ${{ env.SSH_PRIVATE_KEY }}
-          source: ./build/web/**/*
+          source: ./build/web/
           target: /var/www/dac/
+          strip_components: 1
 
       - name: Restart Apache2
         uses: appleboy/ssh-action@master
@@ -56,15 +59,12 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: ncipollo/release-action@v1.12.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
-          tag_name: ${{ github.ref }}
           name: Release ${{ env.RELEASE_VERSION }}
-          draft: false
-          prerelease: false
-          body: ''
-          commitish: ${{ github.sha }}
-          overwrite: true
-          files: ./build/web/
+          tag: ${{ github.ref }}
+          artifacts: 'build/web/*'
+          replacesArtifacts: true
+          artifactErrorsFailBuild: true
