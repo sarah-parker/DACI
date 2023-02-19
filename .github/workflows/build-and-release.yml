@@ -43,9 +43,3 @@ jobs:
         name: daci
         path: build/web/
         if-no-files-found: error
-
-        
-    - name: Print current directory
-      run: pwd
-    - name: List files in dist folder
-      run: ls -la build/web/
