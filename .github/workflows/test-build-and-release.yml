@@ -39,6 +39,7 @@ jobs:
           source: ./build/web/
           target: /var/www/dac/
           strip_components: 2
+          rm: true
 
       - name: Restart Apache2
         uses: appleboy/ssh-action@master
