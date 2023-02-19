@@ -27,29 +27,33 @@ jobs:
         run: |
           echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
-#       - name: Build for Web
-#         run: flutter build web
+      - name: Build for Web
+        run: flutter build web
+        
+      - name: List current dir after download
+        shell: bash
+        run: ls ./build/web/*
 
-#       - name: Copy artifacts to Oracle VM
-#         uses: appleboy/scp-action@master
-#         with:
-#           host: ${{ env.VM_IP }}
-#           username: ${{ env.SSH_USERNAME }}
-#           key: ${{ env.SSH_PRIVATE_KEY }}
-#           source: ./build/web/*
-#           target: /var/www/dac/
-#           strip_components: 2
-#           rm: true
-
-      - name: Restart Apache2
-        uses: appleboy/ssh-action@master
+      - name: Copy artifacts to Oracle VM
+        uses: appleboy/scp-action@master
         with:
           host: ${{ env.VM_IP }}
           username: ${{ env.SSH_USERNAME }}
           key: ${{ env.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            sudo systemctl restart apache2
+          source: ./build/web/*
+          target: /var/www/dac/
+          strip_components: 2
+          rm: true
+
+#       - name: Restart Apache2
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ env.VM_IP }}
+#           username: ${{ env.SSH_USERNAME }}
+#           key: ${{ env.SSH_PRIVATE_KEY }}
+#           port: 22
+#           script: |
+#             sudo systemctl restart apache2
 
 #       - name: Restart Oracle VM
 #         uses: appleboy/restart-vm-action@master
