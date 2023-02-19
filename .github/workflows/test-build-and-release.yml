@@ -27,19 +27,19 @@ jobs:
         run: |
           echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
-      - name: Build for Web
-        run: flutter build web
+#       - name: Build for Web
+#         run: flutter build web
 
-      - name: Copy artifacts to Oracle VM
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ env.VM_IP }}
-          username: ${{ env.SSH_USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
-          source: ./build/web/*
-          target: /var/www/dac/
-          strip_components: 2
-          rm: true
+#       - name: Copy artifacts to Oracle VM
+#         uses: appleboy/scp-action@master
+#         with:
+#           host: ${{ env.VM_IP }}
+#           username: ${{ env.SSH_USERNAME }}
+#           key: ${{ env.SSH_PRIVATE_KEY }}
+#           source: ./build/web/*
+#           target: /var/www/dac/
+#           strip_components: 2
+#           rm: true
 
       - name: Restart Apache2
         uses: appleboy/ssh-action@master
@@ -58,14 +58,14 @@ jobs:
 #           username: ${{ env.SSH_USERNAME }}
 #           key: ${{ env.SSH_PRIVATE_KEY }}
 
-      - name: Create Release
-        id: create_release
-        uses: ncipollo/release-action@v1.12.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-        with:
-          name: Release ${{ env.RELEASE_VERSION }}
-          tag: ${{ github.ref }}
-          artifacts: 'build/web/*'
-          replacesArtifacts: true
-          artifactErrorsFailBuild: true
+#       - name: Create Release
+#         id: create_release
+#         uses: ncipollo/release-action@v1.12.0
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.PAT }}
+#         with:
+#           name: Release ${{ env.RELEASE_VERSION }}
+#           tag: ${{ github.ref }}
+#           artifacts: 'build/web/*'
+#           replacesArtifacts: true
+#           artifactErrorsFailBuild: true
