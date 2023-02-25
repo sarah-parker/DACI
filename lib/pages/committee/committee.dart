@@ -34,17 +34,19 @@ class Committee extends StatelessWidget {
                       child: Image.asset('images/slideshow/Social.jpg', fit: BoxFit.cover)),
                   ImageRenderer(
                       alt: 'Downs Arabian Club Top Of The Range Show',
-                      child: Image.asset('images/slideshow/TOTR9.jpg', fit: BoxFit.cover)),
+                      child: Image.asset('images/slideshow/Xmas-party-22.jpg', fit: BoxFit.cover)),
                   ImageRenderer(
                       alt: 'Downs Arabian Club Youth & Non-Pro Show',
-                      child: Image.asset('images/slideshow/YouNP3.jpg', fit: BoxFit.cover)),
+                      child:
+                          Image.asset('images/slideshow/Xmas-party-22.1.jpg', fit: BoxFit.cover)),
                   ImageRenderer(
                     alt: 'Downs Arabian Club Youth & Non-Pro Show',
-                    child: Image.asset('images/slideshow/YouNP2.jpeg', fit: BoxFit.cover),
+                    child: Image.asset('images/slideshow/Xmas-party-22.2.jpg', fit: BoxFit.cover),
                   ),
                   ImageRenderer(
                       alt: 'Downs Arabian Club Top Of The Range Show',
-                      child: Image.asset('images/slideshow/TOTR6.jpg', fit: BoxFit.cover)),
+                      child:
+                          Image.asset('images/slideshow/Xmas-party-22.3.jpg', fit: BoxFit.cover)),
                 ],
               ),
             ),

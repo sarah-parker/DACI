@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/screen_size.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class UpcomingEvents extends StatelessWidget {
   final Size screenSize;

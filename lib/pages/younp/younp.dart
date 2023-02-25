@@ -1,11 +1,10 @@
-// ignore_for_file: deprecated_member_use
+import 'package:flutter/material.dart';
+import 'package:seo_renderer/seo_renderer.dart';
 
 import 'package:daci/pages/younp/widgets/younp_large.dart';
 import 'package:daci/pages/younp/widgets/younp_small.dart';
 import 'package:daci/widgets/image_slider.dart';
 import 'package:daci/widgets/screen_size.dart';
-import 'package:flutter/material.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 
 class Younp extends StatelessWidget {
   const Younp({Key? key}) : super(key: key);
@@ -29,8 +28,9 @@ class Younp extends StatelessWidget {
                   height: screenSize.height * .5,
                   width: screenSize.width * .5,
                   images: [
-                    Image.asset('images/slideshow/YouNP.jpg', fit: BoxFit.cover),
                     Image.asset('images/slideshow/YouNP1.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/younp22-winners.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/younp-prizes.jpg', fit: BoxFit.cover),
                     Image.asset('images/slideshow/YouNP2.jpeg', fit: BoxFit.cover),
                     Image.asset('images/slideshow/YouNP3.jpg', fit: BoxFit.cover),
                     Image.asset('images/slideshow/YouNP4.jpg', fit: BoxFit.cover),

@@ -1,7 +1,8 @@
-import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'package:daci/widgets/screen_size.dart';
 
 class AgmNotice extends StatelessWidget {
   final Size screenSize;
@@ -18,7 +19,7 @@ class AgmNotice extends StatelessWidget {
               ScreenSizeWidget.isSmallScreen(context) ? screenSize.width : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
-        color: Colors.red, //Theme.of(context).primaryColor,
+        color: Theme.of(context).primaryColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,

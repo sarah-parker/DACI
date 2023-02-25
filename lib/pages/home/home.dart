@@ -30,7 +30,6 @@ class _HomeState extends State<Home> {
                 Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/Committee.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR.jpg', fit: BoxFit.cover),
-                Image.asset('images/slideshow/YouNP.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/YouNP1.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/YouNP3.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR1.jpg', fit: BoxFit.cover),
