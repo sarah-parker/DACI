@@ -37,6 +37,8 @@ jobs:
   deploy-to-oracle:
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      contents: write    
     steps:
       - name: Copy artifacts to Oracle VM
         uses: appleboy/scp-action@master
