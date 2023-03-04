@@ -14,7 +14,7 @@ import 'package:daci/theme/theme.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
-  setPathUrlStrategy();
+  // setPathUrlStrategy();
   runApp(RobotDetector(child: RoutedApp()));
 }
 
