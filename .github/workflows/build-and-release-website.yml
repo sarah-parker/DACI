@@ -54,7 +54,6 @@ jobs:
           port: 22
           script: |
             sudo systemctl restart apache2
-            sudo reboot
 
       - name: Create Release
         id: create_release
