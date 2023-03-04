@@ -1,4 +1,4 @@
-name: Test Build and Deploy Flutter Project
+name: Build and Deploy Flutter Project
 
 on:
   push:
@@ -11,29 +11,29 @@ env:
   SSH_USERNAME: ${{ secrets.ORACLE_VM_USERNAME }}
 
 jobs:
-  build:
+  build-and-deploy-to-oracle:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3
 
       - name: Setup Flutter
-        uses: subosito/flutter-action@v2.8.0
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
 
       - name: Create Environment File
         run: |
           echo "RELEASE_VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
-
+      
+      - run: flutter pub get
+      
       - name: Build for Web
-        run: flutter build web --web-renderer html --release
-
-  deploy-to-oracle:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+        run: flutter build web 
+       
       - name: Copy artifacts to Oracle VM
         uses: appleboy/scp-action@master
         with:
@@ -56,10 +56,6 @@ jobs:
             sudo systemctl restart apache2
             sudo reboot
 
-  release:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Create Release
         id: create_release
         uses: ncipollo/release-action@v1.12.0
