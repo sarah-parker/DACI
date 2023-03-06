@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+  Options +SymLinksIfOwnerMatch
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond $1 !^(index\.html|assets|robots\.txt|favicon\.png)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.*$ index.html [L]
+  RewriteCond %{HTTP_HOST} !^www\.downsarabianclub.\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.downsarabianclub.com.au/$1 [R=301,L]
+  
+  Redirect 302 /totr/enter https://www.downsarabianclub.com.au/totr
+  Redirect 302 /hoty/enter https://www.downsarabianclub.com.au/hoty
+  Redirect 302 /younp/enter https://www.downsarabianclub.com.au/younp
+  
+  ErrorDocument 404 https://www.downsarabianclub.com.au/error
+
+<IfModule mod_authz_core.c>
+  <FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
