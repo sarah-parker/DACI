@@ -6,8 +6,6 @@
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^.*$ index.html [L]
-  RewriteCond %{HTTP_HOST} !^www\.downsarabianclub.\.com$ [NC]
-  RewriteRule ^(.*)$ https://www.downsarabianclub.com.au/$1 [R=301,L]
   
   Redirect 302 /totr/enter https://www.downsarabianclub.com.au/totr
   Redirect 302 /hoty/enter https://www.downsarabianclub.com.au/hoty
