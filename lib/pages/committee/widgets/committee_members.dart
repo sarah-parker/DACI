@@ -89,7 +89,7 @@ class CommitteeMembers extends StatelessWidget {
                   child: Text('Publicity Officer',
                       style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center),
                 ),
-                Text('Sharyn Dorber\n', textAlign: TextAlign.center)
+                Text('Vacant\n', textAlign: TextAlign.center)
               ],
             ),
           ),
@@ -102,7 +102,7 @@ class CommitteeMembers extends StatelessWidget {
                 child: Text('Committee Members',
                     style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center),
               ),
-              Text('Stacey Sharman\n')
+              Text('Hollie Webster\nStacey Sharman\n')
             ],
           ),
           Padding(

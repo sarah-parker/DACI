@@ -61,7 +61,7 @@ class HomeLarge extends StatelessWidget {
         ),
         Column(
           children: [
-            AgmNotice(screenSize: screenSize),
+            // AgmNotice(screenSize: screenSize),
             const Padding(padding: EdgeInsets.symmetric(vertical: 12)),
             UpcomingEvents(screenSize: screenSize),
 

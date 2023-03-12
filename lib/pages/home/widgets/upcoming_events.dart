@@ -21,9 +21,9 @@ class UpcomingEvents extends StatelessWidget {
       //           "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
       //     }),
       ButtonData(
-          label: "Annual General Meeting",
+          label: "Breeding Clinic - 9 July 2023",
           goToRoute: () async {
-            Uri uri = Uri.parse('https://fb.me/e/41ONNTXmH');
+            Uri uri = Uri.parse('https://fb.me/e/KuxnmgwB');
             if (await canLaunchUrl(uri)) {
               await launchUrl(uri);
             }
