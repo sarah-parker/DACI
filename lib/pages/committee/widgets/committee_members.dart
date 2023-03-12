@@ -102,7 +102,7 @@ class CommitteeMembers extends StatelessWidget {
                 child: Text('Committee Members',
                     style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center),
               ),
-              Text('Hollie Webster\nStacey Sharman\n')
+              Text('Hollie Webster\n')
             ],
           ),
           Padding(
