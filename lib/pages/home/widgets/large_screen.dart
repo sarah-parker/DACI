@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 
 import 'package:daci/constants/text.dart';
-import 'package:daci/pages/home/widgets/agm_notice.dart';
 import 'package:daci/pages/home/widgets/upcoming_events.dart';
 
 class HomeLarge extends StatelessWidget {

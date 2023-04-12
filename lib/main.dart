@@ -36,28 +36,33 @@ class RoutedApp extends StatelessWidget {
       GoRoute(
           path: '/',
           name: 'home',
-          builder: (BuildContext context, GoRouterState state) => App(child: const Home()),
+          builder: (BuildContext context, GoRouterState state) =>
+              App(child: const Home()),
           routes: [
             GoRoute(
               path: 'committee',
               name: 'committee',
-              builder: (BuildContext context, GoRouterState state) => App(child: const Committee()),
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const Committee()),
             ),
             GoRoute(
               path: 'younp',
               name: 'younp',
-              builder: (BuildContext context, GoRouterState state) => App(child: const Younp()),
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const Younp()),
             ),
             GoRoute(
               path: 'younp/enter',
               name: 'younpentry',
               redirect: (BuildContext context, GoRouterState state) => "/younp",
-              builder: (BuildContext context, GoRouterState state) => App(child: const Younp()),
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const Younp()),
             ),
             GoRoute(
               path: 'totr',
               name: 'totr',
-              builder: (BuildContext context, GoRouterState state) => App(child: const Totr()),
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const Totr()),
             ),
             GoRoute(
               path: 'totr/enter',
@@ -75,7 +80,8 @@ class RoutedApp extends StatelessWidget {
             GoRoute(
               path: 'hoty',
               name: 'hoty',
-              builder: (BuildContext context, GoRouterState state) => App(child: const Hoty()),
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const Hoty()),
             ),
             GoRoute(
               path: 'hoty/enter',
@@ -94,12 +100,14 @@ class RoutedApp extends StatelessWidget {
             GoRoute(
               path: 'raffle',
               name: 'raffle',
-              builder: (BuildContext context, GoRouterState state) => App(child: const Home()),
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const Home()),
             ),
             GoRoute(
               path: 'error',
               name: 'error',
-              builder: (BuildContext context, GoRouterState state) => App(child: const NotFound()),
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const NotFound()),
             ),
           ]),
     ],
