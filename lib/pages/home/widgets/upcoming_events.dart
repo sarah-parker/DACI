@@ -1,3 +1,4 @@
+import 'package:daci/helpers/file_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seo_renderer/seo_renderer.dart';
@@ -33,6 +34,13 @@ class UpcomingEvents extends StatelessWidget {
           goToRoute: () {
             context.goNamed('younp');
           }),
+      ButtonData(
+          label: '>> Download YouNP23 Schedule <<',
+          goToRoute: () {
+            downloadFile(
+                "assets/pdf/YouNP23-Schedule.pdf", "YouNP23-Schedule.pdf");
+          }),
+
       // ButtonData(
       //     label: '> Enter YouNP <',
       //     goToRoute: () {
@@ -71,8 +79,9 @@ class UpcomingEvents extends StatelessWidget {
     ];
     return ConstrainedBox(
       constraints: BoxConstraints(
-          maxWidth:
-              ScreenSizeWidget.isSmallScreen(context) ? screenSize.width : screenSize.width * .3,
+          maxWidth: ScreenSizeWidget.isSmallScreen(context)
+              ? screenSize.width
+              : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
         color: Theme.of(context).primaryColor,
