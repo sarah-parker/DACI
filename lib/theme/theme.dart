@@ -12,13 +12,14 @@ final daciTheme = ThemeData(
       titleTextStyle: TextStyle(color: daciBackground),
     ),
     scaffoldBackgroundColor: daciBackground,
-    popupMenuTheme:
-        PopupMenuThemeData(color: daciDark, textStyle: TextStyle(color: daciBackground)),
+    popupMenuTheme: PopupMenuThemeData(
+        color: daciDark, textStyle: TextStyle(color: daciBackground)),
     drawerTheme: DrawerThemeData(backgroundColor: daciDark, elevation: 0),
     iconTheme: IconThemeData(color: daciBackground),
     splashColor: daciDark,
     textTheme: TextTheme(
-      bodyLarge: GoogleFonts.openSans(color: Colors.black, decoration: TextDecoration.underline),
+      bodyLarge: GoogleFonts.openSans(
+          color: Colors.black, decoration: TextDecoration.underline),
       bodyMedium: GoogleFonts.openSans(color: Colors.black),
       displayLarge: GoogleFonts.montserrat(
         fontSize: 25,
@@ -57,5 +58,8 @@ final daciTheme = ThemeData(
         letterSpacing: 1,
       ),
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: daciDark, foregroundColor: daciBackground)),
     backgroundColor: daciBackground,
     hoverColor: daciDark);

@@ -35,12 +35,23 @@ class UpcomingEvents extends StatelessWidget {
             context.goNamed('younp');
           }),
       ButtonData(
-          label: '>> Download YouNP23 Schedule <<',
+          label: 'Download YouNP23 Schedule',
           goToRoute: () {
             downloadFile(
                 "assets/pdf/YouNP23-Schedule.pdf", "YouNP23-Schedule.pdf");
           }),
-
+      ButtonData(
+          label: 'Enter YouNP',
+          goToRoute: () async {
+            // context.goNamed('younpentry');
+            Uri uri = Uri.parse(
+                'https://www.cognitoforms.com/DownsArabianClubInc/YouNP23Nomination');
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri);
+            } else {
+              context.goNamed('younpentry');
+            }
+          }),
       // ButtonData(
       //     label: '> Enter YouNP <',
       //     goToRoute: () {
@@ -104,20 +115,29 @@ class UpcomingEvents extends StatelessWidget {
               endIndent: screenSize.width * .03,
             ),
             for (var button in eventsList)
-              InkWell(
-                onTap: (() {}),
-                child: TextButton(
-                  onPressed: () {
-                    button.goToRoute();
-                  },
-                  child: TextRenderer(
-                    child: Text(
-                      button.label,
-                      style: Theme.of(context).textTheme.bodyMedium,
+              button.label.contains(RegExp("Enter|Download"))
+                  ? Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            button.goToRoute();
+                          },
+                          child: Text(button.label)),
+                    )
+                  : InkWell(
+                      onTap: (() {}),
+                      child: TextButton(
+                        onPressed: () {
+                          button.goToRoute();
+                        },
+                        child: TextRenderer(
+                          child: Text(
+                            button.label,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ),
           ],
         ),
       ),

@@ -63,7 +63,6 @@ class HomeLarge extends StatelessWidget {
             // AgmNotice(screenSize: screenSize),
             const Padding(padding: EdgeInsets.symmetric(vertical: 12)),
             UpcomingEvents(screenSize: screenSize),
-
             // MembershipForm(screenSize: screenSize),
           ],
         )

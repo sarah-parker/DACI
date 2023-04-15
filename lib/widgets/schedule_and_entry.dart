@@ -10,15 +10,19 @@ class ScheduleAndEntry extends StatelessWidget {
   final String title;
 
   const ScheduleAndEntry(
-      {Key? key, required this.screenSize, required this.optionsList, required this.title})
+      {Key? key,
+      required this.screenSize,
+      required this.optionsList,
+      required this.title})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-          maxWidth:
-              ScreenSizeWidget.isSmallScreen(context) ? screenSize.width : screenSize.width * .3,
+          maxWidth: ScreenSizeWidget.isSmallScreen(context)
+              ? screenSize.width
+              : screenSize.width * .3,
           minWidth: screenSize.width * .3),
       child: Container(
         color: Theme.of(context).primaryColor,
@@ -41,20 +45,29 @@ class ScheduleAndEntry extends StatelessWidget {
               endIndent: screenSize.width * .03,
             ),
             for (var button in optionsList)
-              InkWell(
-                onTap: (() {}),
-                child: TextButton(
-                  onPressed: () {
-                    button.goToRoute();
-                  },
-                  child: TextRenderer(
-                    child: Text(
-                      button.label,
-                      style: Theme.of(context).textTheme.bodyMedium,
+              button.label.contains(RegExp("Enter|Download"))
+                  ? Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            button.goToRoute();
+                          },
+                          child: Text(button.label)),
+                    )
+                  : InkWell(
+                      onTap: (() {}),
+                      child: TextButton(
+                        onPressed: () {
+                          button.goToRoute();
+                        },
+                        child: TextRenderer(
+                          child: Text(
+                            button.label,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: screenSize.height * 0.01),
               child: TextRenderer(

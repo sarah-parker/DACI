@@ -27,18 +27,17 @@ class YounpSmall extends StatelessWidget {
                   downloadFile("assets/pdf/YouNP23-Schedule.pdf",
                       "YouNP23-Schedule.pdf");
                 }),
-            // ButtonData(
-            //     label: 'Enter YouNP',
-            //     goToRoute: () async {
-            //       // context.goNamed('younpentry');
-            //       Uri uri = Uri.parse(
-            //           'https://www.cognitoforms.com/DownsArabianClubInc/YouNP23Nomination');
-            //       if (await canLaunchUrl(uri)) {
-            //         await launchUrl(uri);
-            //       } else {
-            //         context.goNamed('younpentry');
-            //       }
-            //     }),
+            ButtonData(
+                label: 'Enter YouNP',
+                goToRoute: () async {
+                  Uri uri = Uri.parse(
+                      'https://www.cognitoforms.com/DownsArabianClubInc/YouNP23Nomination');
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri);
+                  } else {
+                    context.goNamed('younpentry');
+                  }
+                }),
           ],
         ),
         Padding(
