@@ -12,7 +12,7 @@ import 'package:daci/pages/totr/totr.dart';
 import 'package:daci/pages/younp/younp.dart';
 import 'package:daci/theme/theme.dart';
 
-import 'pages/younp/sponsors.dart';
+// import 'pages/younp/sponsors.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -60,12 +60,12 @@ class RoutedApp extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) =>
                   App(child: const Younp()),
             ),
-            GoRoute(
-              path: 'younp/sponsors',
-              name: 'younpsponsors',
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const YounpSponsors()),
-            ),
+            // GoRoute(
+            //   path: 'younp/sponsors',
+            //   name: 'younpsponsors',
+            //   builder: (BuildContext context, GoRouterState state) =>
+            //       App(child: const YounpSponsors()),
+            // ),
             GoRoute(
               path: 'totr',
               name: 'totr',
