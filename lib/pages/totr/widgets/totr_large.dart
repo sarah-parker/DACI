@@ -52,23 +52,31 @@ class TotrLarge extends StatelessWidget {
                 //       }
                 //     }),
                 ButtonData(
-                    label: 'Download 2022 Schedule',
+                    label: 'Download 2023 Schedule',
                     goToRoute: () {
-                      downloadFile("assets/pdf/2022-Top-of-the-Range-Schedule.pdf",
-                          "2022-Top-of-the-Range-Schedule.pdf");
+                      downloadFile(
+                          "assets/pdf/2023-Top-of-the-Range-Schedule.pdf",
+                          "2023-Top-of-the-Range-Schedule.pdf");
                     }),
-                // ButtonData(
-                //     label: 'Download Horse Health Declaration',
-                //     goToRoute: () {
-                //       downloadFile(
-                //           "assets/pdf/Horse_Health_Dec.pdf", "Horse-Health-Declaration.pdf");
-                //     }),
-                // ButtonData(
-                //     label: 'Download Non-Pro Declaration',
-                //     goToRoute: () {
-                //       downloadFile(
-                //           "assets/pdf/Non_Pro_declaration.pdf", "Non-Professional-Declaration");
-                //     }),
+                ButtonData(
+                    label: 'Download Horse Health Declaration',
+                    goToRoute: () {
+                      downloadFile("assets/pdf/Horse_Health_Dec.pdf",
+                          "Horse-Health-Declaration.pdf");
+                    }),
+                ButtonData(
+                    label: 'Download Non-Pro Declaration',
+                    goToRoute: () {
+                      downloadFile("assets/pdf/Non_Pro_declaration.pdf",
+                          "Non-Professional-Declaration");
+                    }),
+                ButtonData(
+                    label: 'Download Sponsorship Opportunities',
+                    goToRoute: () {
+                      downloadFile(
+                          "assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
+                          "TOTR_Sponsorship_Opportunities.pdf");
+                    }),
               ],
             ),
           ],

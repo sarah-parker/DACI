@@ -28,7 +28,8 @@ class _HomeState extends State<Home> {
               width: screenSize.width,
               images: [
                 Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
-                Image.asset('images/slideshow/Committee.jpg', fit: BoxFit.cover),
+                Image.asset('images/slideshow/Committee.jpg',
+                    fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/YouNP1.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/YouNP3.jpg', fit: BoxFit.cover),
@@ -38,6 +39,16 @@ class _HomeState extends State<Home> {
                 Image.asset('images/slideshow/TOTR5.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR7.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR8.jpg', fit: BoxFit.cover),
+                ImageRenderer(
+                    alt: 'Downs Arabian Club Top Of The Range Show',
+                    child: Image.asset('images/slideshow/Breeding_clinic2.jpeg',
+                        fit: BoxFit.cover)),
+                Image.asset('images/slideshow/YouNP23_prizes.jpg',
+                    fit: BoxFit.cover),
+                Image.asset('images/slideshow/YouNP23_prizes2.jpg',
+                    fit: BoxFit.cover),
+                Image.asset('images/slideshow/YouNP23_winners.jpg',
+                    fit: BoxFit.cover),
               ],
             ),
           ),
@@ -50,7 +61,8 @@ class _HomeState extends State<Home> {
                 ),
               )),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 15, horizontal: screenSize.width * 0.1),
+            padding: EdgeInsets.symmetric(
+                vertical: 15, horizontal: screenSize.width * 0.1),
             child: ScreenSizeWidget.isSmallScreen(context)
                 ? HomeSmall(screenSize: screenSize)
                 : HomeLarge(screenSize: screenSize),

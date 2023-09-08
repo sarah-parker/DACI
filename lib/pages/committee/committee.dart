@@ -14,7 +14,8 @@ class Committee extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: screenSize.width * 0.05),
+        padding: EdgeInsets.symmetric(
+            vertical: 15.0, horizontal: screenSize.width * 0.05),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,26 +28,49 @@ class Committee extends StatelessWidget {
                 images: [
                   ImageRenderer(
                     alt: 'Downs Arabian Club committee members',
-                    child: Image.asset('images/slideshow/Committee.jpg', fit: BoxFit.cover),
+                    child: Image.asset('images/slideshow/Committee.jpg',
+                        fit: BoxFit.cover),
                   ),
                   ImageRenderer(
                       alt: 'Downs Arabian Club social event',
-                      child: Image.asset('images/slideshow/Social.jpg', fit: BoxFit.cover)),
+                      child: Image.asset('images/slideshow/Social.jpg',
+                          fit: BoxFit.cover)),
                   ImageRenderer(
                       alt: 'Downs Arabian Club Top Of The Range Show',
-                      child: Image.asset('images/slideshow/Xmas-party-22.jpg', fit: BoxFit.cover)),
+                      child: Image.asset('images/slideshow/Xmas-party-22.jpg',
+                          fit: BoxFit.cover)),
                   ImageRenderer(
                       alt: 'Downs Arabian Club Youth & Non-Pro Show',
-                      child:
-                          Image.asset('images/slideshow/Xmas-party-22.1.jpg', fit: BoxFit.cover)),
+                      child: Image.asset('images/slideshow/Xmas-party-22.1.jpg',
+                          fit: BoxFit.cover)),
                   ImageRenderer(
                     alt: 'Downs Arabian Club Youth & Non-Pro Show',
-                    child: Image.asset('images/slideshow/Xmas-party-22.2.jpg', fit: BoxFit.cover),
+                    child: Image.asset('images/slideshow/Xmas-party-22.2.jpg',
+                        fit: BoxFit.cover),
                   ),
                   ImageRenderer(
                       alt: 'Downs Arabian Club Top Of The Range Show',
-                      child:
-                          Image.asset('images/slideshow/Xmas-party-22.3.jpg', fit: BoxFit.cover)),
+                      child: Image.asset('images/slideshow/Xmas-party-22.3.jpg',
+                          fit: BoxFit.cover)),
+                  ImageRenderer(
+                      alt: 'Downs Arabian Club Top Of The Range Show',
+                      child: Image.asset('images/slideshow/Breeding_clinic.jpg',
+                          fit: BoxFit.cover)),
+                  ImageRenderer(
+                      alt: 'Downs Arabian Club Top Of The Range Show',
+                      child: Image.asset(
+                          'images/slideshow/Breeding_clinic2.jpeg',
+                          fit: BoxFit.cover)),
+                  ImageRenderer(
+                      alt: 'Downs Arabian Club Top Of The Range Show',
+                      child: Image.asset(
+                          'images/slideshow/Breeding_clinic3.jpeg',
+                          fit: BoxFit.cover)),
+                  ImageRenderer(
+                      alt: 'Downs Arabian Club Top Of The Range Show',
+                      child: Image.asset(
+                          'images/slideshow/Breeding_clinic4.jpeg',
+                          fit: BoxFit.cover)),
                 ],
               ),
             ),

@@ -12,6 +12,8 @@ import 'package:daci/pages/totr/totr.dart';
 import 'package:daci/pages/younp/younp.dart';
 import 'package:daci/theme/theme.dart';
 
+import 'pages/younp/sponsors.dart';
+
 void main() {
   // debugPaintSizeEnabled = true;
   setPathUrlStrategy();
@@ -59,6 +61,12 @@ class RoutedApp extends StatelessWidget {
                   App(child: const Younp()),
             ),
             GoRoute(
+              path: 'younp/sponsors',
+              name: 'younpsponsors',
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const YounpSponsors()),
+            ),
+            GoRoute(
               path: 'totr',
               name: 'totr',
               builder: (BuildContext context, GoRouterState state) =>
@@ -97,12 +105,13 @@ class RoutedApp extends StatelessWidget {
             //       child: const EntryForm(
             //           source: 'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/2')),
             // ),
-            GoRoute(
-              path: 'raffle',
-              name: 'raffle',
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const Home()),
-            ),
+
+            // GoRoute(
+            //   path: 'raffle',
+            //   name: 'raffle',
+            //   builder: (BuildContext context, GoRouterState state) =>
+            //       App(child: const Home()),
+            // ),
             GoRoute(
               path: 'error',
               name: 'error',

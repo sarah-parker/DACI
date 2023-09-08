@@ -15,7 +15,8 @@ class Hoty extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: screenSize.width * 0.05),
+        padding: EdgeInsets.symmetric(
+            vertical: 15.0, horizontal: screenSize.width * 0.05),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,8 +30,12 @@ class Hoty extends StatelessWidget {
                   width: screenSize.width * .5,
                   images: [
                     Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/HOTY.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/HOTY21.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/HOTY22_prizes.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/HOTY22.jpg',
+                        fit: BoxFit.cover),
                   ],
                 ),
               ),
@@ -61,7 +66,7 @@ class Hoty extends StatelessWidget {
             // ),
             TextRenderer(
               child: Text(
-                '22 - 23 October 2023',
+                '21 - 22 October 2023',
                 style: Theme.of(context).textTheme.headlineSmall,
                 textAlign: TextAlign.left,
               ),

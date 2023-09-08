@@ -16,7 +16,8 @@ class Totr extends StatelessWidget {
 
     return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: screenSize.width * 0.05),
+        padding: EdgeInsets.symmetric(
+            vertical: 15.0, horizontal: screenSize.width * 0.05),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,15 +30,24 @@ class Totr extends StatelessWidget {
                   height: screenSize.height * .5,
                   width: screenSize.width * .5,
                   images: [
-                    Image.asset('images/slideshow/TOTR3.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR4.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR5.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR6.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR7.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR8.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR9.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR10.jpg', fit: BoxFit.cover),
-                    Image.asset('images/slideshow/TOTR11.jpg', fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR3.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR4.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR5.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR6.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR7.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR8.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR9.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR10.jpg',
+                        fit: BoxFit.cover),
+                    Image.asset('images/slideshow/TOTR11.jpg',
+                        fit: BoxFit.cover),
                   ],
                 ),
               ),
@@ -68,7 +78,7 @@ class Totr extends StatelessWidget {
             // ),
             TextRenderer(
               child: Text(
-                '22 - 23 October 2023',
+                '21 - 22 October 2023',
                 style: Theme.of(context).textTheme.headlineSmall,
                 textAlign: TextAlign.left,
               ),

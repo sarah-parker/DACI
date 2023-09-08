@@ -21,47 +21,48 @@ class UpcomingEvents extends StatelessWidget {
       //           "assets/pdf/Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf",
       //           "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
       //     }),
-      ButtonData(
-          label: "Breeding Clinic - 9 July 2023",
-          goToRoute: () async {
-            Uri uri = Uri.parse('https://fb.me/e/KuxnmgwB');
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri);
-            }
-          }),
-      ButtonData(
-          label: 'Youth & Non- Professional Show - 30 July 2023',
-          goToRoute: () {
-            context.goNamed('younp');
-          }),
-      ButtonData(
-          label: 'Download YouNP23 Schedule',
-          goToRoute: () {
-            downloadFile(
-                "assets/pdf/YouNP23-Schedule.pdf", "YouNP23-Schedule.pdf");
-          }),
-      ButtonData(
-          label: 'Enter YouNP',
-          goToRoute: () async {
-            // context.goNamed('younpentry');
-            Uri uri = Uri.parse(
-                'https://www.cognitoforms.com/DownsArabianClubInc/YouNP23Nomination');
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri);
-            } else {
-              context.goNamed('younpentry');
-            }
-          }),
+
       // ButtonData(
-      //     label: '> Enter YouNP <',
+      //     label: 'Youth & Non- Professional Show - 30 July 2023',
       //     goToRoute: () {
-      //       context.goNamed('younpentry');
+      //       context.goNamed('younp');
+      //     }),
+      // ButtonData(
+      //     label: 'Download YouNP23 Schedule',
+      //     goToRoute: () {
+      //       downloadFile(
+      //           "assets/pdf/YouNP23-Schedule.pdf", "YouNP23-Schedule.pdf");
+      //     }),
+      // ButtonData(
+      //     label: 'Enter YouNP',
+      //     goToRoute: () async {
+      //       // context.goNamed('younpentry');
+      //       Uri uri = Uri.parse(
+      //           'https://www.cognitoforms.com/DownsArabianClubInc/YouNP23Nomination');
+      //       if (await canLaunchUrl(uri)) {
+      //         await launchUrl(uri);
+      //       } else {
+      //         context.goNamed('younpentry');
+      //       }
       //     }),
       ButtonData(
-          label: 'Top Of The Range Show - 22-23 October 2023',
+          label: 'Top Of The Range Show - 21-22 October 2023',
           goToRoute: () {
             context.goNamed('totr');
           }),
+      ButtonData(
+          label: 'Download TOTR Schedule',
+          goToRoute: () {
+            downloadFile("assets/pdf/2023-Top-of-the-Range-Schedule.pdf",
+                "2023-Top-of-the-Range-Schedule.pdf");
+          }),
+      ButtonData(
+          label: 'Download TOTR Sponsorship Opportunities',
+          goToRoute: () {
+            downloadFile("assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
+                "TOTR_Sponsorship_Opportunities.pdf");
+          }),
+
       // ButtonData(
       //     label: '[Enter TOTR]',
       //     goToRoute: () async {
@@ -73,10 +74,23 @@ class UpcomingEvents extends StatelessWidget {
       //       }
       //     }),
       ButtonData(
-          label: 'Horse Of The Year Show - 22-23 October 2023',
+          label: 'Horse Of The Year Show - 21-22 October 2023',
           goToRoute: () {
             context.goNamed('hoty');
           }),
+      ButtonData(
+          label: 'Download HOTY Schedule',
+          goToRoute: () {
+            downloadFile(
+                "assets/pdf/HOTY_Schedule_2023.pdf", "HOTY_Schedule_2023.pdf");
+          }),
+      ButtonData(
+          label: 'Download HOTY Sponsorship Opportunities',
+          goToRoute: () {
+            downloadFile("assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
+                "HOTY_Sponsorship_Opportunities.pdf");
+          }),
+
       // ButtonData(
       //     label: '[Enter HOTY]',
       //     goToRoute: () async {
