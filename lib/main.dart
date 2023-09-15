@@ -1,4 +1,6 @@
 import 'package:daci/pages/404/404.dart';
+import 'package:daci/pages/hoty/sponsors.dart';
+import 'package:daci/pages/totr/sponsors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -78,6 +80,14 @@ class RoutedApp extends StatelessWidget {
               redirect: (BuildContext context, GoRouterState state) => "/totr",
               // builder: (BuildContext context, GoRouterState state) => App(child: const Totr()),
             ),
+            GoRoute(
+              path: 'totr/sponsors',
+              name: 'totrsponsors',
+              // redirect: (BuildContext context, GoRouterState state) => "/hoty",
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const TOTRSponsors()),
+            ),
+
             // GoRoute(
             //   path: 'totr/enter',
             //   name: 'totrentry',
@@ -97,7 +107,13 @@ class RoutedApp extends StatelessWidget {
               redirect: (BuildContext context, GoRouterState state) => "/hoty",
               // builder: (BuildContext context, GoRouterState state) => App(child: const Hoty()),
             ),
-
+            GoRoute(
+              path: 'hoty/sponsors',
+              name: 'hotysponsors',
+              // redirect: (BuildContext context, GoRouterState state) => "/hoty",
+              builder: (BuildContext context, GoRouterState state) =>
+                  App(child: const HotySponsors()),
+            ),
             // GoRoute(
             //   path: 'hoty/enter',
             //   name: 'hotyentry',
