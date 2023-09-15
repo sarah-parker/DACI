@@ -1,5 +1,7 @@
 User-agent: *
 
 Disallow: /images/
+Disallow: /hoty/sponsors
+Disallow: /totr/sponsors
 
 Sitemap: https://www.downsarabianclub.com.au/sitemap.xml
