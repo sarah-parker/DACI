@@ -34,8 +34,10 @@ class HotySponsors extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(12.0),
             child: Text(
-                """As you prepare for the competition, we invite you to explore and support our generous sponsors, whose contributions make this event possible. \n
-                    Click below to learn more about them and how they enhance our equestrian community."""),
+              """As you prepare for the competition, we invite you to explore and support our generous sponsors, whose contributions make this event possible. \n
+Click below to learn more about them and how they enhance our equestrian community.""",
+              textAlign: TextAlign.center,
+            ),
           ),
           Wrap(
             spacing: 15,

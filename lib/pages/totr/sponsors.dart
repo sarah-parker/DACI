@@ -35,7 +35,8 @@ class TOTRSponsors extends StatelessWidget {
             padding: EdgeInsets.all(12.0),
             child: Text(
                 """As we gear up for the competition, we'd like to express our gratitude to our dedicated sponsors. They play a vital role in making this show a success. \n
-                    Please take a moment to discover our sponsors' offerings by clicking below. Your support of their businesses is a valuable part of our equestrian community."""),
+Please take a moment to discover our sponsors' offerings by clicking below. Your support of their businesses is a valuable part of our equestrian community.""",
+                textAlign: TextAlign.center),
           ),
           Wrap(
             spacing: 15,
