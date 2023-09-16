@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class TOTRSponsors extends StatelessWidget {
-  const TOTRSponsors({super.key});
+class YouNPSponsors extends StatelessWidget {
+  const YouNPSponsors({super.key});
 
   @override
   Widget build(BuildContext context) {

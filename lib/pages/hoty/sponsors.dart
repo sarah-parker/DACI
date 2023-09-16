@@ -8,7 +8,7 @@ class HotySponsors extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
-    _launchURL(String url) async {
+    launchURL(String url) async {
       Uri uri = Uri.parse(url);
       if (await canLaunchUrl(uri)) {
         await launchUrl(uri);
@@ -34,8 +34,8 @@ class HotySponsors extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(12.0),
             child: Text(
-                "As you prepare for the competition, we invite you to explore and support our generous sponsors, whose contributions make this event possible. \n" +
-                    "Click below to learn more about them and how they enhance our equestrian community."),
+                """As you prepare for the competition, we invite you to explore and support our generous sponsors, whose contributions make this event possible. \n
+                    Click below to learn more about them and how they enhance our equestrian community."""),
           ),
           Wrap(
             spacing: 15,
@@ -44,7 +44,7 @@ class HotySponsors extends StatelessWidget {
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
                       onTap: () =>
-                          _launchURL('https://toowoombagrooming.com.au/'),
+                          launchURL('https://toowoombagrooming.com.au/'),
                       child: Image.asset(
                         'images/toowoomba-grooming.png',
                         height: 250,

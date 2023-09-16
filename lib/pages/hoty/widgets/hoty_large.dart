@@ -5,6 +5,7 @@ import 'package:daci/constants/text.dart';
 import 'package:daci/helpers/file_helpers.dart';
 import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/schedule_and_entry.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HotyLarge extends StatelessWidget {
   final Size screenSize;
@@ -40,17 +41,15 @@ class HotyLarge extends StatelessWidget {
               screenSize: screenSize,
               title: 'HOTY 2023 Resources',
               optionsList: [
-                // ButtonData(
-                //     label: 'Enter HOTY',
-                //     goToRoute: () async {
-                //       Uri uri =
-                //           Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/2');
-                //       if (await canLaunchUrl(uri)) {
-                //         await launchUrl(uri);
-                //       } else {
-                //         context.goNamed('hotyentry');
-                //       }
-                //     }),
+                ButtonData(
+                    label: 'Enter HOTY',
+                    goToRoute: () async {
+                      Uri uri = Uri.parse(
+                          'https://www.cognitoforms.com/DownsArabianClubInc/HOTY23Nomination');
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri);
+                      }
+                    }),
                 ButtonData(
                     label: 'Download 2023 Schedule',
                     goToRoute: () {

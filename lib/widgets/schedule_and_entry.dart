@@ -48,11 +48,22 @@ class ScheduleAndEntry extends StatelessWidget {
               button.label.contains(RegExp("Enter|Download"))
                   ? Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: ElevatedButton(
-                          onPressed: () {
-                            button.goToRoute();
-                          },
-                          child: Text(button.label)),
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: button.label.contains(RegExp("Enter"))
+                            ? ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.red[900]),
+                                onPressed: () {
+                                  button.goToRoute();
+                                },
+                                child: Text(button.label))
+                            : ElevatedButton(
+                                onPressed: () {
+                                  button.goToRoute();
+                                },
+                                child: Text(button.label)),
+                      ),
                     )
                   : InkWell(
                       onTap: (() {}),

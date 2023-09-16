@@ -63,16 +63,15 @@ class UpcomingEvents extends StatelessWidget {
                 "TOTR_Sponsorship_Opportunities.pdf");
           }),
 
-      // ButtonData(
-      //     label: '[Enter TOTR]',
-      //     goToRoute: () async {
-      //       Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/3');
-      //       if (await canLaunchUrl(uri)) {
-      //         await launchUrl(uri);
-      //       } else {
-      //         context.goNamed('totrentry');
-      //       }
-      //     }),
+      ButtonData(
+          label: 'Enter TOTR',
+          goToRoute: () async {
+            Uri uri = Uri.parse(
+                'https://www.cognitoforms.com/DownsArabianClubInc/TOTR23Nomination');
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri);
+            }
+          }),
       ButtonData(
           label: 'Horse Of The Year Show - 21-22 October 2023',
           goToRoute: () {
@@ -91,16 +90,15 @@ class UpcomingEvents extends StatelessWidget {
                 "HOTY_Sponsorship_Opportunities.pdf");
           }),
 
-      // ButtonData(
-      //     label: '[Enter HOTY]',
-      //     goToRoute: () async {
-      //       Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/2');
-      //       if (await canLaunchUrl(uri)) {
-      //         await launchUrl(uri);
-      //       } else {
-      //         context.goNamed('hotyentry');
-      //       }
-      //     }),
+      ButtonData(
+          label: 'Enter HOTY',
+          goToRoute: () async {
+            Uri uri = Uri.parse(
+                'https://www.cognitoforms.com/DownsArabianClubInc/HOTY23Nomination');
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri);
+            }
+          }),
     ];
     return ConstrainedBox(
       constraints: BoxConstraints(
@@ -132,22 +130,36 @@ class UpcomingEvents extends StatelessWidget {
               button.label.contains(RegExp("Enter|Download"))
                   ? Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: ElevatedButton(
-                          onPressed: () {
-                            button.goToRoute();
-                          },
-                          child: Text(button.label)),
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: button.label.contains(RegExp("Enter"))
+                            ? ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.red[900]),
+                                onPressed: () {
+                                  button.goToRoute();
+                                },
+                                child: Text(button.label))
+                            : ElevatedButton(
+                                onPressed: () {
+                                  button.goToRoute();
+                                },
+                                child: Text(button.label)),
+                      ),
                     )
                   : InkWell(
                       onTap: (() {}),
-                      child: TextButton(
-                        onPressed: () {
-                          button.goToRoute();
-                        },
-                        child: TextRenderer(
-                          child: Text(
-                            button.label,
-                            style: Theme.of(context).textTheme.bodyMedium,
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: TextButton(
+                          onPressed: () {
+                            button.goToRoute();
+                          },
+                          child: TextRenderer(
+                            child: Text(
+                              button.label,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
                           ),
                         ),
                       ),

@@ -5,6 +5,7 @@ import 'package:daci/constants/text.dart';
 import 'package:daci/helpers/file_helpers.dart';
 import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/schedule_and_entry.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TotrSmall extends StatelessWidget {
   final Size screenSize;
@@ -19,16 +20,15 @@ class TotrSmall extends StatelessWidget {
           screenSize: screenSize,
           title: 'TOTR 2023 Resources',
           optionsList: [
-            // ButtonData(
-            //     label: 'Enter TOTR',
-            //     goToRoute: () async {
-            //       Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/3');
-            //       if (await canLaunchUrl(uri)) {
-            //         await launchUrl(uri);
-            //       } else {
-            //         context.goNamed('totrentry');
-            //       }
-            //     }),
+            ButtonData(
+                label: 'Enter TOTR',
+                goToRoute: () async {
+                  Uri uri = Uri.parse(
+                      'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/3');
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri);
+                  }
+                }),
             ButtonData(
                 label: 'Download 2023 Schedule',
                 goToRoute: () {
@@ -36,16 +36,16 @@ class TotrSmall extends StatelessWidget {
                       "2023-Top-of-the-Range-Schedule.pdf");
                 }),
             ButtonData(
-                label: 'Download Horse Health Declaration',
-                goToRoute: () {
-                  downloadFile("assets/pdf/Horse_Health_Dec.pdf",
-                      "Horse-Health-Declaration.pdf");
-                }),
-            ButtonData(
                 label: 'Download Non-Pro Declaration',
                 goToRoute: () {
                   downloadFile("assets/pdf/Non_Pro_declaration.pdf",
                       "Non-Professional-Declaration");
+                }),
+            ButtonData(
+                label: 'Download Horse Health Declaration',
+                goToRoute: () {
+                  downloadFile("assets/pdf/Horse_Health_Dec.pdf",
+                      "Horse-Health-Declaration.pdf");
                 }),
             ButtonData(
                 label: 'Download Sponsorship Opportunities',

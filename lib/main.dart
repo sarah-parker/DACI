@@ -55,13 +55,6 @@ class RoutedApp extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) =>
                   App(child: const Younp()),
             ),
-            GoRoute(
-              path: 'younp/enter',
-              name: 'younpentry',
-              redirect: (BuildContext context, GoRouterState state) => "/younp",
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const Younp()),
-            ),
             // GoRoute(
             //   path: 'younp/sponsors',
             //   name: 'younpsponsors',
@@ -75,37 +68,17 @@ class RoutedApp extends StatelessWidget {
                   App(child: const Totr()),
             ),
             GoRoute(
-              path: 'totr/enter',
-              name: 'totrentry',
-              redirect: (BuildContext context, GoRouterState state) => "/totr",
-              // builder: (BuildContext context, GoRouterState state) => App(child: const Totr()),
-            ),
-            GoRoute(
               path: 'totr/sponsors',
               name: 'totrsponsors',
               // redirect: (BuildContext context, GoRouterState state) => "/hoty",
               builder: (BuildContext context, GoRouterState state) =>
                   App(child: const TOTRSponsors()),
             ),
-
-            // GoRoute(
-            //   path: 'totr/enter',
-            //   name: 'totrentry',
-            //   builder: (BuildContext context, GoRouterState state) => App(
-            //       child: const EntryForm(
-            //           source: 'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/3')),
-            // ),
             GoRoute(
               path: 'hoty',
               name: 'hoty',
               builder: (BuildContext context, GoRouterState state) =>
                   App(child: const Hoty()),
-            ),
-            GoRoute(
-              path: 'hoty/enter',
-              name: 'hotyentry',
-              redirect: (BuildContext context, GoRouterState state) => "/hoty",
-              // builder: (BuildContext context, GoRouterState state) => App(child: const Hoty()),
             ),
             GoRoute(
               path: 'hoty/sponsors',
@@ -114,20 +87,6 @@ class RoutedApp extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) =>
                   App(child: const HotySponsors()),
             ),
-            // GoRoute(
-            //   path: 'hoty/enter',
-            //   name: 'hotyentry',
-            //   builder: (BuildContext context, GoRouterState state) => App(
-            //       child: const EntryForm(
-            //           source: 'https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/2')),
-            // ),
-
-            // GoRoute(
-            //   path: 'raffle',
-            //   name: 'raffle',
-            //   builder: (BuildContext context, GoRouterState state) =>
-            //       App(child: const Home()),
-            // ),
             GoRoute(
               path: 'error',
               name: 'error',
