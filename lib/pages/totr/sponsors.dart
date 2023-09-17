@@ -43,12 +43,18 @@ class TOTRSponsors extends StatelessWidget {
               spacing: 15,
               runSpacing: 15,
               children: [
-                // Column(
-                //   children: [
-                //     Text("• Carlyn Brennan",
-                //         style: Theme.of(context).textTheme.displayMedium),
-                //   ],
-                // ),
+                Column(
+                  children: [
+                    // Text("• Ranvet",
+                    //     style: Theme.of(context).textTheme.displayMedium),
+                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Glengannon Arabians",
+                        style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Jenala Welsh Stud",
+                        style: Theme.of(context).textTheme.displayMedium),
+                  ],
+                ),
                 MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
@@ -58,15 +64,14 @@ class TOTRSponsors extends StatelessWidget {
                           'images/toowoomba-grooming.png',
                           height: 250,
                         ))),
-                // MouseRegion(
-                //     cursor: SystemMouseCursors.click,
-                //     child: GestureDetector(
-                //         onTap: () => launchURL(
-                //             'https://www.facebook.com/horseland.goldcoast'),
-                //         child: Image.asset(
-                //           'images/Horseland-GC.jpg',
-                //           height: 250,
-                //         )))
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () => launchURL('https://www.ranvet.com.au/'),
+                        child: Image.asset(
+                          'images/ranvet-logo.png',
+                          height: 100,
+                        )))
               ],
             ),
           ],
