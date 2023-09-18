@@ -70,7 +70,16 @@ class HotySponsors extends StatelessWidget {
                         child: Image.asset(
                           'images/Horseland-GC.jpg',
                           height: 250,
-                        )))
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () =>
+                            launchURL('https://www.hoofprintz.com.au/'),
+                        child: Image.asset(
+                          'images/hoofprintzlogo.png',
+                          height: 250,
+                        ))),
               ],
             ),
           ],
