@@ -80,6 +80,15 @@ class HotySponsors extends StatelessWidget {
                           'images/hoofprintzlogo.png',
                           height: 250,
                         ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () =>
+                            launchURL('https://www.facebook.com/manueleqtrans'),
+                        child: Image.asset(
+                          'images/Manuel-Equine-Transport.jpg',
+                          height: 250,
+                        ))),
               ],
             ),
           ],

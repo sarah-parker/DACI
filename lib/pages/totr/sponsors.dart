@@ -45,13 +45,19 @@ class TOTRSponsors extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    // Text("• Ranvet",
-                    //     style: Theme.of(context).textTheme.displayMedium),
-                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Zuhra Arabians",
+                        style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Lea-Ma Arabians",
+                        style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
                     Text("• Glengannon Arabians",
                         style: Theme.of(context).textTheme.displayMedium),
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
                     Text("• Jenala Welsh Stud",
+                        style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Toft Arabians",
                         style: Theme.of(context).textTheme.displayMedium),
                   ],
                 ),
@@ -71,7 +77,16 @@ class TOTRSponsors extends StatelessWidget {
                         child: Image.asset(
                           'images/ranvet-logo.png',
                           height: 100,
-                        )))
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () => launchURL(
+                            'https://www.facebook.com/horseland.goldcoast'),
+                        child: Image.asset(
+                          'images/Horseland-GC.jpg',
+                          height: 250,
+                        ))),
               ],
             ),
           ],
