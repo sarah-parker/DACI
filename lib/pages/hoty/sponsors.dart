@@ -49,8 +49,8 @@ class HotySponsors extends StatelessWidget {
                     Text("• Carlyn Brennan",
                         style: Theme.of(context).textTheme.displayMedium),
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    // Text("• Hoofprintz Photography",
-                    //     style: Theme.of(context).textTheme.displayMedium),
+                    Text("• Saddleup Fittings",
+                        style: Theme.of(context).textTheme.displayMedium),
                   ],
                 ),
                 MouseRegion(

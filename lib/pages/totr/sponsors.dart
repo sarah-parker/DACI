@@ -59,6 +59,36 @@ class TOTRSponsors extends StatelessWidget {
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
                     Text("• Toft Arabians",
                         style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Fitton Insurance",
+                        style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Reid River Arabians",
+                        style: Theme.of(context).textTheme.displayMedium),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text("• Saddleup Fittings",
+                        style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Southside Bricklaying QLD",
+                        style: Theme.of(context).textTheme.displayMedium),
+                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    // Text("• Glengannon Arabians",
+                    //     style: Theme.of(context).textTheme.displayMedium),
+                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    // Text("• Jenala Welsh Stud",
+                    //     style: Theme.of(context).textTheme.displayMedium),
+                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    // Text("• Toft Arabians",
+                    //     style: Theme.of(context).textTheme.displayMedium),
+                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    // Text("• Fitton Insurance",
+                    //     style: Theme.of(context).textTheme.displayMedium),
+                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    // Text("• Reid River Arabians",
+                    //     style: Theme.of(context).textTheme.displayMedium),
                   ],
                 ),
                 MouseRegion(
@@ -86,6 +116,15 @@ class TOTRSponsors extends StatelessWidget {
                         child: Image.asset(
                           'images/Horseland-GC.jpg',
                           height: 250,
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () =>
+                            launchURL('https://www.countysaddlery.com.au/'),
+                        child: Image.asset(
+                          'images/County-Logo.png',
+                          height: 275,
                         ))),
               ],
             ),
