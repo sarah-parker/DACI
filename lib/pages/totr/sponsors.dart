@@ -45,13 +45,13 @@ class TOTRSponsors extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Text("• Zuhra Arabians",
+                    Text("• Southside Bricklaying QLD",
                         style: Theme.of(context).textTheme.displayMedium),
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
                     Text("• Lea-Ma Arabians",
                         style: Theme.of(context).textTheme.displayMedium),
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    Text("• Glengannon Arabians",
+                    Text("• The Rug Lady - Sheena Williams",
                         style: Theme.of(context).textTheme.displayMedium),
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
                     Text("• Jenala Welsh Stud",
@@ -63,34 +63,34 @@ class TOTRSponsors extends StatelessWidget {
                     Text("• Fitton Insurance",
                         style: Theme.of(context).textTheme.displayMedium),
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    Text("• Reid River Arabians",
-                        style: Theme.of(context).textTheme.displayMedium),
-                  ],
-                ),
-                Column(
-                  children: [
                     Text("• Saddleup Fittings",
                         style: Theme.of(context).textTheme.displayMedium),
-                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    Text("• Southside Bricklaying QLD",
-                        style: Theme.of(context).textTheme.displayMedium),
-                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    // Text("• Glengannon Arabians",
-                    //     style: Theme.of(context).textTheme.displayMedium),
-                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    // Text("• Jenala Welsh Stud",
-                    //     style: Theme.of(context).textTheme.displayMedium),
-                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    // Text("• Toft Arabians",
-                    //     style: Theme.of(context).textTheme.displayMedium),
-                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    // Text("• Fitton Insurance",
-                    //     style: Theme.of(context).textTheme.displayMedium),
-                    // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
-                    // Text("• Reid River Arabians",
-                    //     style: Theme.of(context).textTheme.displayMedium),
                   ],
                 ),
+                // Column(
+                //   children: [
+                //     Text("• The Rug Lady - Sheena Williams",
+                //         style: Theme.of(context).textTheme.displayMedium),
+                //     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                //     Text("• Southside Bricklaying QLD",
+                //         style: Theme.of(context).textTheme.displayMedium),
+                // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                // Text("• Glengannon Arabians",
+                //     style: Theme.of(context).textTheme.displayMedium),
+                // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                // Text("• Jenala Welsh Stud",
+                //     style: Theme.of(context).textTheme.displayMedium),
+                // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                // Text("• Toft Arabians",
+                //     style: Theme.of(context).textTheme.displayMedium),
+                // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                // Text("• Fitton Insurance",
+                //     style: Theme.of(context).textTheme.displayMedium),
+                // const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                // Text("• Reid River Arabians",
+                //     style: Theme.of(context).textTheme.displayMedium),
+                //   ],
+                // ),
                 MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
@@ -124,6 +124,42 @@ class TOTRSponsors extends StatelessWidget {
                             launchURL('https://www.countysaddlery.com.au/'),
                         child: Image.asset(
                           'images/County-Logo.png',
+                          height: 275,
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () => launchURL(
+                            'https://www.facebook.com/profile.php?id=100063613077083'),
+                        child: Image.asset(
+                          'images/Zuhra-Arabians.jpg',
+                          height: 275,
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        // onTap: () => launchURL(
+                        //     'https://www.facebook.com/profile.php?id=100063613077083'),
+                        child: Image.asset(
+                      'images/reid-river-arabians-logo.jpg',
+                      height: 275,
+                    ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () =>
+                            launchURL('https://www.facebook.com/DaMarArabians'),
+                        child: Image.asset(
+                          'images/DAMAR.PNG',
+                          height: 275,
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () =>
+                            launchURL('https://www.magicbreedplus.com.au/'),
+                        child: Image.asset(
+                          'images/magic-breed-plus.png',
                           height: 275,
                         ))),
               ],

@@ -69,10 +69,10 @@ packages:
     dependency: transitive
     description:
       name: float_column
-      sha256: "493bef32951f2fc927d7928a777f9ff73460d2f3bc620f191b84b73f27954f69"
+      sha256: "518b9d49ca8c9edbd35011325913ec6a6f7835fa665fd6e4cfdc48fc7d7de4eb"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.1"
+    version: "2.1.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -111,18 +111,18 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: bd7e671d26fd39c78cba82070fa34ef1f830b0e7ed1aeebccabc6561302a7ee5
+      sha256: a07c781bf55bf11ae85133338e4850f0b4e33e261c44a66c750fc707d65d8393
       url: "https://pub.dev"
     source: hosted
-    version: "6.5.9"
+    version: "11.1.2"
   google_fonts:
     dependency: "direct main"
     description:
       name: google_fonts
-      sha256: "6b6f10f0ce3c42f6552d1c70d2c28d764cf22bb487f50f66cca31dcd5194f4d6"
+      sha256: f0b8d115a13ecf827013ec9fc883390ccc0e87a96ed5347a3114cac177ef18e8
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.4"
+    version: "6.1.0"
   html:
     dependency: transitive
     description:
@@ -135,10 +135,10 @@ packages:
     dependency: "direct main"
     description:
       name: http
-      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
+      sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.6"
+    version: "1.1.0"
   http_parser:
     dependency: transitive
     description:
@@ -271,10 +271,10 @@ packages:
     dependency: "direct main"
     description:
       name: selectable
-      sha256: a9a79702ef7fd904aa591528a2471e3b2f145cfde308b041297f6d623a13c5ee
+      sha256: "18432ba915b3e82a367e6ec9038666e0cc3147336cba125a9aa5768dc84296eb"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.11"
+    version: "0.3.0"
   seo_renderer:
     dependency: "direct main"
     description:
@@ -436,10 +436,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "9e82a402b7f3d518fb9c02d0e9ae45952df31b9bf34d77baf19da2de03fc2aaa"
+      sha256: "350a11abd2d1d97e0cc7a28a81b781c08002aa2864d9e3f192ca0ffa18b06ed3"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.7"
+    version: "5.0.9"
   xdg_directories:
     dependency: transitive
     description:

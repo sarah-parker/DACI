@@ -51,6 +51,9 @@ class HotySponsors extends StatelessWidget {
                     const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
                     Text("• Saddleup Fittings",
                         style: Theme.of(context).textTheme.displayMedium),
+                    const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+                    Text("• Lisa Kahler",
+                        style: Theme.of(context).textTheme.displayMedium),
                   ],
                 ),
                 MouseRegion(
@@ -88,6 +91,24 @@ class HotySponsors extends StatelessWidget {
                         child: Image.asset(
                           'images/Manuel-Equine-Transport.jpg',
                           height: 250,
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () =>
+                            launchURL('https://www.magicbreedplus.com.au/'),
+                        child: Image.asset(
+                          'images/magic-breed-plus.png',
+                          height: 275,
+                        ))),
+                MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                        onTap: () =>
+                            launchURL('https://www.portersplainland.com.au/'),
+                        child: Image.asset(
+                          'images/porters-plainland-hotel-logo.png',
+                          height: 275,
                         ))),
               ],
             ),
