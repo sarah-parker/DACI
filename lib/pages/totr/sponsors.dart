@@ -130,7 +130,7 @@ class TOTRSponsors extends StatelessWidget {
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
                         onTap: () => launchURL(
-                            'https://www.facebook.com/profile.php?id=100063613077083'),
+                            'https://www.facebook.com/Zuhra.Arabians'),
                         child: Image.asset(
                           'images/Zuhra-Arabians.jpg',
                           height: 275,
