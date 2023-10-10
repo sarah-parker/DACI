@@ -1,5 +1,7 @@
+import 'package:daci/widgets/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:seo_renderer/seo_renderer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:daci/constants/text.dart';
 import 'package:daci/pages/home/widgets/upcoming_events.dart';
@@ -23,29 +25,41 @@ class HomeSmall extends StatelessWidget {
     //   return daciDark;
     // }
 
-    // _launchURL() async {
-    //   Uri uri = Uri.parse('https://www.cognitoforms.com/f/4WNFz3iZ20isTwHw4lSfDQ/4');
-    //   if (await canLaunchUrl(uri)) {
-    //     await launchUrl(uri);
-    //   } else {
-    //     context.goNamed('raffle');
-    //   }
-    // }
+    launchURL(String url) async {
+      Uri uri = Uri.parse(url);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri);
+      } else {}
+    }
 
     return Column(
       children: [
         // Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         // AgmNotice(screenSize: screenSize),
-        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+                onTap: () => launchURL(
+                    'https://www.cognitoforms.com/DownsArabianClubInc/MagicBreedRaffle2'),
+                child: Image.asset(
+                  'images/Raffle-Flyer23.jpg',
+                  width: screenSize.width,
+                ))),
+
+        Padding(
+            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         UpcomingEvents(screenSize: screenSize),
-        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        Padding(
+            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         // MembershipForm(screenSize: screenSize),
-        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        Padding(
+            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         Image.asset(
           'images/cropped-ico.png',
           height: 150,
         ),
-        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        Padding(
+            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         TextRenderer(
           child: Text(
             'About Us',
@@ -53,7 +67,8 @@ class HomeSmall extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
         ),
-        Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
+        Padding(
+            padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         const TextRenderer(
           child: Text(
             aboutUsText,

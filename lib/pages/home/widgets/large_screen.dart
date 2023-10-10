@@ -3,6 +3,7 @@ import 'package:seo_renderer/seo_renderer.dart';
 
 import 'package:daci/constants/text.dart';
 import 'package:daci/pages/home/widgets/upcoming_events.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeLarge extends StatelessWidget {
   final Size screenSize;
@@ -22,6 +23,12 @@ class HomeLarge extends StatelessWidget {
     //   }
     //   return daciDark;
     // }
+    launchURL(String url) async {
+      Uri uri = Uri.parse(url);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri);
+      } else {}
+    }
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -32,6 +39,15 @@ class HomeLarge extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                      onTap: () => launchURL(
+                          'https://www.cognitoforms.com/DownsArabianClubInc/MagicBreedRaffle2'),
+                      child: Image.asset(
+                        'images/Raffle-Flyer23.jpg',
+                        width: screenSize.width * .4,
+                      ))),
               const Padding(padding: EdgeInsets.only(top: 20)),
               Image.asset(
                 'images/cropped-ico.png',
