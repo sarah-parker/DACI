@@ -56,22 +56,22 @@ class UpcomingEvents extends StatelessWidget {
             downloadFile("assets/pdf/2023-Top-of-the-Range-Schedule.pdf",
                 "2023-Top-of-the-Range-Schedule.pdf");
           }),
-      ButtonData(
-          label: 'Download TOTR Sponsorship Opportunities',
-          goToRoute: () {
-            downloadFile("assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
-                "TOTR_Sponsorship_Opportunities.pdf");
-          }),
+      // ButtonData(
+      //     label: 'Download TOTR Sponsorship Opportunities',
+      //     goToRoute: () {
+      //       downloadFile("assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
+      //           "TOTR_Sponsorship_Opportunities.pdf");
+      //     }),
 
-      ButtonData(
-          label: 'Enter TOTR',
-          goToRoute: () async {
-            Uri uri = Uri.parse(
-                'https://www.cognitoforms.com/DownsArabianClubInc/TOTR23Nomination');
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri);
-            }
-          }),
+      // ButtonData(
+      //     label: 'Enter TOTR',
+      //     goToRoute: () async {
+      //       Uri uri = Uri.parse(
+      //           'https://www.cognitoforms.com/DownsArabianClubInc/TOTR23Nomination');
+      //       if (await canLaunchUrl(uri)) {
+      //         await launchUrl(uri);
+      //       }
+      //     }),
       ButtonData(
           label: 'Horse Of The Year Show - 21-22 October 2023',
           goToRoute: () {
@@ -83,22 +83,22 @@ class UpcomingEvents extends StatelessWidget {
             downloadFile(
                 "assets/pdf/HOTY_Schedule_2023.pdf", "HOTY_Schedule_2023.pdf");
           }),
-      ButtonData(
-          label: 'Download HOTY Sponsorship Opportunities',
-          goToRoute: () {
-            downloadFile("assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
-                "HOTY_Sponsorship_Opportunities.pdf");
-          }),
+      // ButtonData(
+      //     label: 'Download HOTY Sponsorship Opportunities',
+      //     goToRoute: () {
+      //       downloadFile("assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
+      //           "HOTY_Sponsorship_Opportunities.pdf");
+      //     }),
 
-      ButtonData(
-          label: 'Enter HOTY',
-          goToRoute: () async {
-            Uri uri = Uri.parse(
-                'https://www.cognitoforms.com/DownsArabianClubInc/HOTY23Nomination');
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri);
-            }
-          }),
+      // ButtonData(
+      //     label: 'Enter HOTY',
+      //     goToRoute: () async {
+      //       Uri uri = Uri.parse(
+      //           'https://www.cognitoforms.com/DownsArabianClubInc/HOTY23Nomination');
+      //       if (await canLaunchUrl(uri)) {
+      //         await launchUrl(uri);
+      //       }
+      //     }),
     ];
     return ConstrainedBox(
       constraints: BoxConstraints(

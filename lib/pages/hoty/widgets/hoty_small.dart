@@ -20,15 +20,15 @@ class HotySmall extends StatelessWidget {
           screenSize: screenSize,
           title: 'HOTY 2022 Resources',
           optionsList: [
-            ButtonData(
-                label: 'Enter HOTY',
-                goToRoute: () async {
-                  Uri uri = Uri.parse(
-                      'https://www.cognitoforms.com/DownsArabianClubInc/HOTY23Nomination');
-                  if (await canLaunchUrl(uri)) {
-                    await launchUrl(uri);
-                  }
-                }),
+            // ButtonData(
+            //     label: 'Enter HOTY',
+            //     goToRoute: () async {
+            //       Uri uri = Uri.parse(
+            //           'https://www.cognitoforms.com/DownsArabianClubInc/HOTY23Nomination');
+            //       if (await canLaunchUrl(uri)) {
+            //         await launchUrl(uri);
+            //       }
+            //     }),
             ButtonData(
                 label: 'Download 2023 Schedule',
                 goToRoute: () {
@@ -41,12 +41,12 @@ class HotySmall extends StatelessWidget {
                   downloadFile("assets/pdf/Horse_Health_Dec.pdf",
                       "Horse-Health-Declaration.pdf");
                 }),
-            ButtonData(
-                label: 'Download Sponsorship Opportunities',
-                goToRoute: () {
-                  downloadFile("assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
-                      "HOTY_Sponsorship_Opportunities.pdf");
-                }),
+            // ButtonData(
+            //     label: 'Download Sponsorship Opportunities',
+            //     goToRoute: () {
+            //       downloadFile("assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
+            //           "HOTY_Sponsorship_Opportunities.pdf");
+            //     }),
           ],
         ),
         Padding(

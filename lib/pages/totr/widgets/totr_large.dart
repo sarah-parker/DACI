@@ -41,15 +41,15 @@ class TotrLarge extends StatelessWidget {
               screenSize: screenSize,
               title: 'TOTR 2022 Resources',
               optionsList: [
-                ButtonData(
-                    label: 'Enter TOTR',
-                    goToRoute: () async {
-                      Uri uri = Uri.parse(
-                          'https://www.cognitoforms.com/DownsArabianClubInc/TOTR23Nomination');
-                      if (await canLaunchUrl(uri)) {
-                        await launchUrl(uri);
-                      }
-                    }),
+                // ButtonData(
+                //     label: 'Enter TOTR',
+                //     goToRoute: () async {
+                //       Uri uri = Uri.parse(
+                //           'https://www.cognitoforms.com/DownsArabianClubInc/TOTR23Nomination');
+                //       if (await canLaunchUrl(uri)) {
+                //         await launchUrl(uri);
+                //       }
+                //     }),
                 ButtonData(
                     label: 'Download 2023 Schedule',
                     goToRoute: () {
@@ -69,13 +69,13 @@ class TotrLarge extends StatelessWidget {
                       downloadFile("assets/pdf/Horse_Health_Dec.pdf",
                           "Horse-Health-Declaration.pdf");
                     }),
-                ButtonData(
-                    label: 'Download Sponsorship Opportunities',
-                    goToRoute: () {
-                      downloadFile(
-                          "assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
-                          "TOTR_Sponsorship_Opportunities.pdf");
-                    }),
+                // ButtonData(
+                //     label: 'Download Sponsorship Opportunities',
+                //     goToRoute: () {
+                //       downloadFile(
+                //           "assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
+                //           "TOTR_Sponsorship_Opportunities.pdf");
+                //     }),
               ],
             ),
           ],
