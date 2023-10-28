@@ -66,7 +66,7 @@ class Hoty extends StatelessWidget {
             // ),
             TextRenderer(
               child: Text(
-                '21 - 22 October 2023',
+                '12 - 13 October 2024',
                 style: Theme.of(context).textTheme.headlineSmall,
                 textAlign: TextAlign.left,
               ),

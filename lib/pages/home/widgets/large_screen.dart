@@ -39,15 +39,15 @@ class HomeLarge extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                      onTap: () => launchURL(
-                          'https://www.cognitoforms.com/DownsArabianClubInc/MagicBreedRaffle2'),
-                      child: Image.asset(
-                        'images/Raffle-Flyer23.jpg',
-                        width: screenSize.width * .4,
-                      ))),
+              // MouseRegion(
+              //     cursor: SystemMouseCursors.click,
+              //     child: GestureDetector(
+              //         onTap: () => launchURL(
+              //             'https://www.cognitoforms.com/DownsArabianClubInc/MagicBreedRaffle2'),
+              //         child: Image.asset(
+              //           'images/Raffle-Flyer23.jpg',
+              //           width: screenSize.width * .4,
+              //         ))),
               const Padding(padding: EdgeInsets.only(top: 20)),
               Image.asset(
                 'images/cropped-ico.png',

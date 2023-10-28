@@ -67,26 +67,26 @@ class RoutedApp extends StatelessWidget {
               builder: (BuildContext context, GoRouterState state) =>
                   App(child: const Totr()),
             ),
-            GoRoute(
-              path: 'totr/sponsors',
-              name: 'totrsponsors',
-              // redirect: (BuildContext context, GoRouterState state) => "/hoty",
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const TOTRSponsors()),
-            ),
+            // GoRoute(
+            //   path: 'totr/sponsors',
+            //   name: 'totrsponsors',
+            //   // redirect: (BuildContext context, GoRouterState state) => "/hoty",
+            //   builder: (BuildContext context, GoRouterState state) =>
+            //       App(child: const TOTRSponsors()),
+            // ),
             GoRoute(
               path: 'hoty',
               name: 'hoty',
               builder: (BuildContext context, GoRouterState state) =>
                   App(child: const Hoty()),
             ),
-            GoRoute(
-              path: 'hoty/sponsors',
-              name: 'hotysponsors',
-              // redirect: (BuildContext context, GoRouterState state) => "/hoty",
-              builder: (BuildContext context, GoRouterState state) =>
-                  App(child: const HotySponsors()),
-            ),
+            // GoRoute(
+            //   path: 'hoty/sponsors',
+            //   name: 'hotysponsors',
+            //   // redirect: (BuildContext context, GoRouterState state) => "/hoty",
+            //   builder: (BuildContext context, GoRouterState state) =>
+            //       App(child: const HotySponsors()),
+            // ),
             GoRoute(
               path: 'error',
               name: 'error',

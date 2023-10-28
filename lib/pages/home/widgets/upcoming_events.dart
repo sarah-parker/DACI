@@ -22,17 +22,17 @@ class UpcomingEvents extends StatelessWidget {
       //           "Gatton-Show-Arabian-Horse-Feature-Show-Schedule.pdf");
       //     }),
 
-      // ButtonData(
-      //     label: 'Youth & Non- Professional Show - 30 July 2023',
-      //     goToRoute: () {
-      //       context.goNamed('younp');
-      //     }),
-      // ButtonData(
-      //     label: 'Download YouNP23 Schedule',
-      //     goToRoute: () {
-      //       downloadFile(
-      //           "assets/pdf/YouNP23-Schedule.pdf", "YouNP23-Schedule.pdf");
-      //     }),
+      ButtonData(
+          label: 'Youth & Non- Professional Show - 28 July 2024',
+          goToRoute: () {
+            context.goNamed('younp');
+          }),
+      ButtonData(
+          label: 'Download YouNP23 Schedule',
+          goToRoute: () {
+            downloadFile(
+                "assets/pdf/YouNP23-Schedule.pdf", "YouNP23-Schedule.pdf");
+          }),
       // ButtonData(
       //     label: 'Enter YouNP',
       //     goToRoute: () async {
@@ -46,12 +46,12 @@ class UpcomingEvents extends StatelessWidget {
       //       }
       //     }),
       ButtonData(
-          label: 'Top Of The Range Show - 21-22 October 2023',
+          label: 'Top Of The Range Show - 12-13 October 2024',
           goToRoute: () {
             context.goNamed('totr');
           }),
       ButtonData(
-          label: 'Download TOTR Schedule',
+          label: 'Download TOTR23 Schedule',
           goToRoute: () {
             downloadFile("assets/pdf/2023-Top-of-the-Range-Schedule.pdf",
                 "2023-Top-of-the-Range-Schedule.pdf");
@@ -73,12 +73,12 @@ class UpcomingEvents extends StatelessWidget {
       //       }
       //     }),
       ButtonData(
-          label: 'Horse Of The Year Show - 21-22 October 2023',
+          label: 'Horse Of The Year Show - 12-13 October 2024',
           goToRoute: () {
             context.goNamed('hoty');
           }),
       ButtonData(
-          label: 'Download HOTY Schedule',
+          label: 'Download HOTY23 Schedule',
           goToRoute: () {
             downloadFile(
                 "assets/pdf/HOTY_Schedule_2023.pdf", "HOTY_Schedule_2023.pdf");
