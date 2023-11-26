@@ -34,18 +34,6 @@ class HomeSmall extends StatelessWidget {
 
     return Column(
       children: [
-        // Padding(padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
-        // AgmNotice(screenSize: screenSize),
-        // MouseRegion(
-        //     cursor: SystemMouseCursors.click,
-        //     child: GestureDetector(
-        //         onTap: () => launchURL(
-        //             'https://www.cognitoforms.com/DownsArabianClubInc/MagicBreedRaffle2'),
-        //         child: Image.asset(
-        //           'images/Raffle-Flyer23.jpg',
-        //           width: screenSize.width,
-        //         ))),
-
         Padding(
             padding: EdgeInsets.symmetric(vertical: screenSize.height * .01)),
         UpcomingEvents(screenSize: screenSize),
