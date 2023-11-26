@@ -32,7 +32,6 @@ class _HomeState extends State<Home> {
                     fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/YouNP1.jpg', fit: BoxFit.cover),
-                Image.asset('images/slideshow/YouNP3.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR1.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR2.jpg', fit: BoxFit.cover),
                 Image.asset('images/slideshow/TOTR3.jpg', fit: BoxFit.cover),
@@ -42,6 +41,10 @@ class _HomeState extends State<Home> {
                 ImageRenderer(
                     alt: 'Downs Arabian Club Top Of The Range Show',
                     child: Image.asset('images/slideshow/Breeding_clinic2.jpeg',
+                        fit: BoxFit.cover)),
+                ImageRenderer(
+                    alt: 'Downs Arabian Club Top Of The Range Show',
+                    child: Image.asset('images/slideshow/Breeding_clinic3.jpeg',
                         fit: BoxFit.cover)),
                 Image.asset('images/slideshow/YouNP23_prizes.jpg',
                     fit: BoxFit.cover),
