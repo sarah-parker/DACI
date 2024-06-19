@@ -61,5 +61,4 @@ final daciTheme = ThemeData(
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             backgroundColor: daciDark, foregroundColor: daciBackground)),
-    backgroundColor: daciBackground,
     hoverColor: daciDark);
