@@ -28,10 +28,10 @@ class UpcomingEvents extends StatelessWidget {
             context.goNamed('younp');
           }),
       ButtonData(
-          label: 'Download YouNP23 Schedule',
+          label: 'Download YouNP24 Schedule',
           goToRoute: () {
             downloadFile(
-                "assets/pdf/YouNP23-Schedule.pdf", "YouNP23-Schedule.pdf");
+                "assets/pdf/YouNP24-Schedule.pdf", "YouNP24 Schedule.pdf");
           }),
       // ButtonData(
       //     label: 'Enter YouNP',

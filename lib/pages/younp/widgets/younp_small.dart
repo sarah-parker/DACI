@@ -17,13 +17,13 @@ class YounpSmall extends StatelessWidget {
       children: [
         ScheduleAndEntry(
           screenSize: screenSize,
-          title: 'YouNP 2022 Resources',
+          title: 'YouNP 2024 Resources',
           optionsList: [
             ButtonData(
-                label: 'Download 2023 Schedule',
+                label: 'Download 2024 Schedule',
                 goToRoute: () {
-                  downloadFile("assets/pdf/YouNP23-Schedule.pdf",
-                      "YouNP23-Schedule.pdf");
+                  downloadFile("assets/pdf/YouNP24-Schedule.pdf",
+                      "YouNP24-Schedule.pdf");
                 }),
             // ButtonData(
             //     label: 'Enter YouNP',
