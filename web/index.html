@@ -46,7 +46,7 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    var serviceWorkerVersion = null;
+    var serviceWorkerVersion = '{{flutter_service_worker_version}}';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -71,7 +71,6 @@
             function waitForActivation(serviceWorker) {
               serviceWorker.addEventListener('statechange', () => {
                 if (serviceWorker.state == 'activated') {
-                  console.log('Installed new service worker.');
                   loadMainDartJs();
                 }
               });
@@ -81,14 +80,9 @@
               // one for the first time. Simply wait for it to activate.
               waitForActivation(reg.installing || reg.waiting);
             } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
-              // When the app updates the serviceWorkerVersion changes, so we
-              // need to ask the service worker to update.
-              console.log('New service worker available.');
               reg.update();
               waitForActivation(reg.installing);
             } else {
-              // Existing service worker is still good.
-              console.log('Loading app from service worker.');
               loadMainDartJs();
             }
           });

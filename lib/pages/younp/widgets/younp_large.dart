@@ -5,6 +5,7 @@ import 'package:daci/constants/text.dart';
 import 'package:daci/helpers/file_helpers.dart';
 import 'package:daci/models/button_data.dart';
 import 'package:daci/widgets/schedule_and_entry.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class YounpLarge extends StatelessWidget {
   final Size screenSize;
@@ -46,15 +47,15 @@ class YounpLarge extends StatelessWidget {
                       downloadFile("assets/pdf/YouNP24-Schedule.pdf",
                           "YouNP24 Schedule.pdf");
                     }),
-                // ButtonData(
-                //     label: 'Enter YouNP',
-                //     goToRoute: () async {
-                //       Uri uri = Uri.parse(
-                //           'https://www.cognitoforms.com/DownsArabianClubInc/YouNP23Nomination');
-                //       if (await canLaunchUrl(uri)) {
-                //         await launchUrl(uri);
-                //       }
-                // }),
+                ButtonData(
+                    label: 'Enter YouNP',
+                    goToRoute: () async {
+                      Uri uri = Uri.parse(
+                          'https://www.cognitoforms.com/DownsArabianClubInc/YouNP24Nomination');
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri);
+                      }
+                    }),
               ],
             ),
           ],

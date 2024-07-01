@@ -33,18 +33,17 @@ class UpcomingEvents extends StatelessWidget {
             downloadFile(
                 "assets/pdf/YouNP24-Schedule.pdf", "YouNP24 Schedule.pdf");
           }),
-      // ButtonData(
-      //     label: 'Enter YouNP',
-      //     goToRoute: () async {
-      //       // context.goNamed('younpentry');
-      //       Uri uri = Uri.parse(
-      //           'https://www.cognitoforms.com/DownsArabianClubInc/YouNP23Nomination');
-      //       if (await canLaunchUrl(uri)) {
-      //         await launchUrl(uri);
-      //       } else {
-      //         context.goNamed('younpentry');
-      //       }
-      //     }),
+      ButtonData(
+          label: 'Enter YouNP',
+          goToRoute: () async {
+            Uri uri = Uri.parse(
+                'https://www.cognitoforms.com/DownsArabianClubInc/YouNP24Nomination');
+            if (await canLaunchUrl(uri)) {
+              await launchUrl(uri);
+            } else {
+              context.goNamed('younpentry');
+            }
+          }),
       ButtonData(
           label: 'Top Of The Range Show - 12-13 October 2024',
           goToRoute: () {
