@@ -50,17 +50,17 @@ class UpcomingEvents extends StatelessWidget {
             context.goNamed('totr');
           }),
       ButtonData(
-          label: 'Download TOTR23 Schedule',
+          label: 'Download TOTR24 Schedule',
           goToRoute: () {
-            downloadFile("assets/pdf/2023-Top-of-the-Range-Schedule.pdf",
-                "2023-Top-of-the-Range-Schedule.pdf");
+            downloadFile("assets/pdf/2024-Top-of-the-Range-Schedule.pdf",
+                "2024-Top-of-the-Range-Schedule.pdf");
           }),
-      // ButtonData(
-      //     label: 'Download TOTR Sponsorship Opportunities',
-      //     goToRoute: () {
-      //       downloadFile("assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
-      //           "TOTR_Sponsorship_Opportunities.pdf");
-      //     }),
+      ButtonData(
+          label: 'Download TOTR Sponsorship Opportunities',
+          goToRoute: () {
+            downloadFile("assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
+                "TOTR_Sponsorship_Opportunities.pdf");
+          }),
 
       // ButtonData(
       //     label: 'Enter TOTR',
@@ -77,17 +77,17 @@ class UpcomingEvents extends StatelessWidget {
             context.goNamed('hoty');
           }),
       ButtonData(
-          label: 'Download HOTY23 Schedule',
+          label: 'Download HOTY24 Schedule',
           goToRoute: () {
             downloadFile(
-                "assets/pdf/HOTY_Schedule_2023.pdf", "HOTY_Schedule_2023.pdf");
+                "assets/pdf/HOTY_Schedule_2024.pdf", "HOTY_Schedule_2024.pdf");
           }),
-      // ButtonData(
-      //     label: 'Download HOTY Sponsorship Opportunities',
-      //     goToRoute: () {
-      //       downloadFile("assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
-      //           "HOTY_Sponsorship_Opportunities.pdf");
-      //     }),
+      ButtonData(
+          label: 'Download HOTY Sponsorship Opportunities',
+          goToRoute: () {
+            downloadFile("assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
+                "HOTY_Sponsorship_Opportunities.pdf");
+          }),
 
       // ButtonData(
       //     label: 'Enter HOTY',

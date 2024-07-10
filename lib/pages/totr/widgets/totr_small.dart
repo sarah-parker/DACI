@@ -18,7 +18,7 @@ class TotrSmall extends StatelessWidget {
       children: [
         ScheduleAndEntry(
           screenSize: screenSize,
-          title: 'TOTR 2023 Resources',
+          title: 'TOTR 2024 Resources',
           optionsList: [
             // ButtonData(
             //     label: 'Enter TOTR',
@@ -30,10 +30,10 @@ class TotrSmall extends StatelessWidget {
             //       }
             //     }),
             ButtonData(
-                label: 'Download 2023 Schedule',
+                label: 'Download 2024 Schedule',
                 goToRoute: () {
-                  downloadFile("assets/pdf/2023-Top-of-the-Range-Schedule.pdf",
-                      "2023-Top-of-the-Range-Schedule.pdf");
+                  downloadFile("assets/pdf/2024-Top-of-the-Range-Schedule.pdf",
+                      "2024-Top-of-the-Range-Schedule.pdf");
                 }),
             ButtonData(
                 label: 'Download Non-Pro Declaration',
@@ -47,12 +47,12 @@ class TotrSmall extends StatelessWidget {
                   downloadFile("assets/pdf/Horse_Health_Dec.pdf",
                       "Horse-Health-Declaration.pdf");
                 }),
-            // ButtonData(
-            //     label: 'Download Sponsorship Opportunities',
-            //     goToRoute: () {
-            //       downloadFile("assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
-            //           "TOTR_Sponsorship_Opportunities.pdf");
-            //     }),
+            ButtonData(
+                label: 'Download Sponsorship Opportunities',
+                goToRoute: () {
+                  downloadFile("assets/pdf/TOTR_Sponsorship_Opportunities.pdf",
+                      "TOTR_Sponsorship_Opportunities.pdf");
+                }),
           ],
         ),
         Padding(

@@ -39,7 +39,7 @@ class HotyLarge extends StatelessWidget {
           children: [
             ScheduleAndEntry(
               screenSize: screenSize,
-              title: 'HOTY 2023 Resources',
+              title: 'HOTY 2024 Resources',
               optionsList: [
                 // ButtonData(
                 //     label: 'Enter HOTY',
@@ -51,10 +51,10 @@ class HotyLarge extends StatelessWidget {
                 //       }
                 //     }),
                 ButtonData(
-                    label: 'Download 2023 Schedule',
+                    label: 'Download 2024 Schedule',
                     goToRoute: () {
-                      downloadFile("assets/pdf/HOTY_Schedule_2023.pdf",
-                          "HOTY_Schedule_2023.pdf");
+                      downloadFile("assets/pdf/HOTY_Schedule_2024.pdf",
+                          "HOTY_Schedule_2024.pdf");
                     }),
                 ButtonData(
                     label: 'Download Horse Health Declaration',
@@ -62,13 +62,13 @@ class HotyLarge extends StatelessWidget {
                       downloadFile("assets/pdf/Horse_Health_Dec.pdf",
                           "Horse-Health-Declaration.pdf");
                     }),
-                // ButtonData(
-                //     label: 'Download Sponsorship Opportunities',
-                //     goToRoute: () {
-                //       downloadFile(
-                //           "assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
-                //           "HOTY_Sponsorship_Opportunities.pdf");
-                //     }),
+                ButtonData(
+                    label: 'Download Sponsorship Opportunities',
+                    goToRoute: () {
+                      downloadFile(
+                          "assets/pdf/HOTY_Sponsorship_Opportunities.pdf",
+                          "HOTY_Sponsorship_Opportunities.pdf");
+                    }),
               ],
             ),
           ],
